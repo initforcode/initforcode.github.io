@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official website of init.">
+  <meta name="author" content="Harsha Vamsi">
+  <title>Home | #!nit</title>
+  <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Inconsolata" /> -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" type="text/css" href="css/jquery.fullpage.min.css" /> -->
+  <link rel="shortcut icon" href="assets/img/favicon.png">
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.28/css/uikit.min.css" />
+  <link rel='stylesheet' href='assets/css/animate.css'>
+  <link rel='stylesheet' href='assets/css/font-awesome.min.css'>
+  <!-- jQuery is required -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+  <!-- UIkit JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.28/js/uikit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.28/js/uikit-icons.min.js"></script>
+</head>
+
+<body data-spy="scroll" data-target=".uk-dotnav" data-offset="50">
+  <div id="menu-icon" style="position: fixed; top:10px; right:10px; z-index: 1001 !important;" uk-toggle="target: #offcanvas-nav-primary">
+  </div>
+  <!-- <button class="uk-button uk-button-default uk-margin-small-right" type="button">Primary Nav</button> -->
+  <div class="uk-offcanvas-content">
+    <div id="offcanvas-nav-primary" uk-offcanvas="overlay: false; flip: true">
+      <div class="uk-offcanvas-bar uk-flex uk-flex-column" style="background-color: #000; width:100vw; z-index: -1; letter-spacing: 2px; font-size : 32px;">
+        <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical" uk-scrollspy-nav="closest: li; scroll: true">
+          <li class="uk-active"><a href="#home" uk-scroll>Home</a></li>
+          <li><a href="#ingenius" uk-scroll>About</a></li>
+          <li><a href="#participate" uk-scroll>ASD</a></li>
+          <li><a href="#inspiration" uk-scroll>Scripts</a></li>
+          <li><a href="#register" uk-scroll>Workshops</a></li>
+          <li><a href="#faq" uk-scroll>Members</a></li>
+          <li><a href="#IEEE" uk-scroll>IEEE CompSoc</a></li>
+          <li><a href="#contactus" uk-scroll>Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $(".uk-nav-primary li").click(function() {
+          UIkit.offcanvas("#offcanvas-nav-primary").hide();
+        });
+      });
+    </script>
+  </div>
+  <div id="particles-js"></div>
+  <!-- <div id="fullpage"> -->
+  <section id="home" class="section active" style="width: 100%; min-height: 100vh;">
+    <div class="col-md-6 col-md-offset-3 text-center" id="logo-area">
+      <center>
+        <img class="img img-responsive" style="max-height:180px;" src="assets/img/logo.png">
+      </center>
+      <h2 style="color : #fff;"> <span style="font-weight: 300">September</span><strong> 23 | 24</strong></h2>
+      <p style="font-size: 42px; font-weight: 800; padding-top: 80px;">#get<span style="color:#28A8E0">Set</span>Hack</p>
+      <!-- <h2 style="color : #fff;"> <span style="font-weight: bold">#getSetHack</strong></h2> -->
+    </div>
+    <div id="dot-nav" class="uk-position-center-right uk-position-medium" style="position: fixed !important; z-index: +1;">
+      <ul class="uk-dotnav uk-dotnav-vertical" uk-scrollspy-nav="closest: li; scroll: true; offset: 30">
+        <li class="uk-active" title="Home" uk-tooltip="pos: left"><a href="#home" uk-scroll>Item 1</a></li>
+        <li title="inGenius" uk-tooltip="pos: left"><a href="#ingenius" uk-scroll>Item 3</a></li>
+        <li title="Participate" uk-tooltip="pos: left"><a href="#participate" uk-scroll>Item 4</a></li>
+        <li title="Inspiration" uk-tooltip="pos: left"><a href="#inspiration" uk-scroll>Item 5</a></li>
+        <li title="Register" uk-tooltip="pos: left"><a href="#register" uk-scroll>Item 5</a></li>
+        <li title="FAQ" uk-tooltip="pos: left"><a href="#faq" uk-scroll>Item 5</a></li>
+        <li title="IEEE Compsoc" uk-tooltip="pos: left"><a href="#IEEE" uk-scroll>Item 2</a></li>
+        <li title="Sponsors" uk-tooltip="pos: left"><a href="#sponsors" uk-scroll>Item 2</a></li>
+        <li title="Contact Us" uk-tooltip="pos: left"><a href="#contactus">Item 5</a></li>
+        <!-- <li title="Brochure" uk-tooltip="pos: left"><a href="#">Item 5</a></li> -->
+      </ul>
+    </div>
+  </section>
+  <div class="bulblogo hidden" style="position: fixed; top: 10px; left: 15px; z-index: 999;"> <a href="#home" uk-scroll><img class="img img-responsive" style="height:60px;" src="assets/img/icon.png"></a></div>
+  <script>
+    $(document).ready(function() {
+      $(window).scroll(function() {
+        var scrollPos = $(window).scrollTop();
+        if (scrollPos >= 600) {
+          $(".bulblogo").addClass("large-nav").promise().done(function() {
+            $(".bulblogo").removeClass("hidden").addClass("fadeInLeft animated");
+          });
+        } else if (scrollPos <= 500) {
+          $(".bulblogo").removeClass("large-nav").promise().done(function() {
+            $(".bulblogo").removeClass("fadeInLeft").addClass("fadeOutLeft").promise().done(function() {
+              $(".bulblogo").removeClass("fadeOutLeft").addClass("hidden");
+            });
+          });
+        }
+      });
+    });
+  </script>
+  <section id="ingenius" style="min-height: 100vh;" class="section uk-padding-large">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
+          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">&lt;inGenius&gt;</h3>
+        </div>
+        <div class="col-sm-12">
+          <div class="row container">
+            <div class="col-md-6 uk-padding-large uk-padding-remove-vertical main-content">
+              <p style="color:#2d9687;">
+                inGenius, the flagship event of PESITSouth IEEE Computer Society, is an annual 24-hour hackathon.
+                <br>
+                <br> After five successful iterations, inGenius 2017 is back! This time around, our theme is Open Hack. The future is data-driven. So get behind the wheel &amp; hack it out on the 23rd &amp; 24th of September, 2017.
+              </p>
+              <p class="text-center">
+                <a href="brochure.pdf" style="color: #2d9687;" class="uk-button uk-button-default uk-button-large uk-margin-medium uk-margin-remove-bottom" target="_blank">Brochure</a>
+              </p>
+              <!-- <p style="color:#fff; letter-spacing: 2px; font-weight: 300 !important; font-size: 15px;">
+                            PESIT South ACM Student Chapter was started in 2007 by the Computer Science Department of PESIT South Campus. We also organise workshops, seminars and a couple of amazing events like inGenius (annual) and the Pursuit (bi-annual Online Treasure Hunt)!
+                        </p> -->
+            </div>
+            <div id="svg-logos" class="col-md-6 uk-margin-large uk-margin-remove-vertical">
+              <div class="row uk-margin uk-margin-remove-horizontal">
+                <img class="img img-responsive pull-right" style="max-height: 400px !important;" src="assets/img/logo.png">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
+          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">&lt;/inGenius&gt;</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="participate" uk-scrollspy="cls:uk-animation-fade;repeat:true;" style="min-height: 100vh;" class="section uk-padding-large">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
+          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">&lt;Participate&gt;</h3>
+        </div>
+        <div class="col-sm-12 text-center uk-padding">
+          <div class="row uk-margin-medium uk-padding uk-padding-remove-vertical">
+            <div class="col-sm-4" uk-scrollspy="cls:uk-animation-slide-left">
+              <center>
+                <div id="lc-1" class="logo-container uk-margin-medium uk-margin-remove-top">
+                  <!-- <div class="icon-container"> -->
+                  <div class="part-icon-cont text-center" style="">
+                    <span class="fa fa-calendar" style="color : #fff; font-size : 40px;z-index: 999;"></span>
+                  </div>
+                  <!-- </div> -->
+                </div>
+              </center>
+              <div class="logo-info-container">
+                <h4> Mark your dates for 23rd - 24th September </h4>
+              </div>
+            </div>
+            <div class="col-sm-4" uk-scrollspy="cls:uk-animation-fade">
+              <center>
+                <div id="lc-2" class="logo-container uk-margin-medium uk-margin-remove-top">
+                  <!-- <div class="icon-container"> -->
+                  <div class="part-icon-cont text-center" style="">
+                    <span class="fa fa-camera-retro" style="color : #fff; font-size : 40px;z-index: 999;"></span>
+                  </div>
+                  <!-- </div> -->
+                </div>
+              </center>
+              <div class="logo-info-container">
+                <h4> Thinking big? Think bigger! Come and blow our minds. </h4>
+              </div>
+            </div>
+            <div class="col-sm-4" uk-scrollspy="cls:uk-animation-slide-right">
+              <center>
+                <div id="lc-3" class="logo-container uk-margin-medium uk-margin-remove-top">
+                  <div class="part-icon-cont text-center" style="">
+                    <span class="fa fa-clock-o" style="color : #fff; font-size : 40px;z-index: 999;"></span>
+                  </div>
+                </div>
+              </center>
+              <div class="logo-info-container">
+                <h4> The 24 hour event will feature food, games and a lot of fun. </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 text-center uk-padding">
+          <div class="row uk-margin-medium uk-padding uk-padding-remove-vertical">
+            <div class="col-sm-4" uk-scrollspy="cls:uk-animation-slide-left">
+              <center>
+                <div id="lc-4" class="logo-container uk-margin-medium uk-margin-remove-top">
+                  <!-- <div class="icon-container"> -->
+                  <div class="part-icon-cont text-center" style="">
+                    <span class="fa fa-coffee" style="color : #fff; font-size : 40px;z-index: 999;"></span>
+                  </div>
+                  <!-- </div> -->
+                </div>
+              </center>
+              <div class="logo-info-container">
+                <h4> Build and register your team online, along with an abstract about your hack! </h4>
+              </div>
+            </div>
+            <div class="col-sm-4" uk-scrollspy="cls:uk-animation-slide-fade">
+              <center>
+                <div id="lc-5" class="logo-container uk-margin-medium uk-margin-remove-top">
+                  <div class="part-icon-cont text-center" style="">
+                    <span class="fa fa-thumbs-o-up" style="color : #fff; font-size : 40px;z-index: 999;"></span>
+                  </div>
+                </div>
+              </center>
+              <div class="logo-info-container">
+                <h4> Teams with the best hack ideas get shortlisted. </h4>
+              </div>
+            </div>
+            <div class="col-sm-4" uk-scrollspy="cls:uk-animation-slide-right">
+              <center>
+                <div id="lc-6" class="logo-container uk-margin-medium uk-margin-remove-top">
+                  <div id="lc-6-icon-cont" class="text-center" style="">
+                    <span class="fa fa-ticket" style="color : #fff; font-size : 40px;z-index: 999;"></span>
+                  </div>
+                </div>
+              </center>
+              <div class="logo-info-container" style="padding-top:10px;">
+                <h4> Shortlisted teams collect ticket and gear up for the event. </h4>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="row uk-padding uk-padding-remove-vertical"> -->
+          <!-- </div> -->
+        </div>
+        <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
+          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">&lt;/Participate&gt;</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="inspiration" uk-scrollspy="cls:uk-animation-fade;repeat:true;" style="min-height: 100vh;" class="section uk-padding-large">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
+          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">&lt;Inspiration&gt;</h3>
+        </div>
+        <div class="col-sm-12">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-3 col-xs-12 speaker-container wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <div class="product-front col-sm-12 container" style="padding:0px;">
+                  <div class="col-sm-12 image-container" id="hack1">
+                    <img src="assets/img/phone.jpg" class="img img-responsive" alt="" />
+                    <div class="uk-overlay-default uk-position-cover">
+                      <div class="uk-position-center">
+                        <a href="#modal-full-1" uk-toggle><span uk-overlay-icon></span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="stats col-sm-12">
+                    <div class="stats-container text-center">
+                      <span class="product-name">ZDRAVO</span>
+                      <p>Communication</p>
+                      <a href="#modal-full-1" uk-toggle class="open-popup-link read-more" style="display:none;">View Details</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3 col-xs-12 speaker-container wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <div class="product-front col-sm-12 container" style="padding:0px;">
+                  <div class="col-sm-12 image-container" id="hack3">
+                    <img src="assets/img/iot.jpg" class="img img-responsive" alt="" />
+                    <div class="uk-overlay-default uk-position-cover">
+                      <div class="uk-position-center">
+                        <a href="#modal-full-3" uk-toggle><span uk-overlay-icon></span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="stats col-sm-12">
+                    <div class="stats-container text-center">
+                      <span class="product-name">APC</span>
+                      <p>Detection &amp; Prevention</p>
+                      <a href="#modal-full-3" uk-toggle class="open-popup-link read-more" style="display:none;">View Details</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3 col-xs-12 speaker-container wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <div class="product-front col-sm-12 container" style="padding:0px;">
+                  <div class="col-sm-12 image-container" id="hack4">
+                    <img src="assets/img/sportfolio.jpg" class="img img-responsive" alt="" />
+                    <div class="uk-overlay-default uk-position-cover">
+                      <div class="uk-position-center">
+                        <a href="#modal-full-4" uk-toggle><span uk-overlay-icon></span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="stats col-sm-12">
+                    <div class="stats-container text-center">
+                      <span class="product-name">A.I. Commentator</span>
+                      <p>A.I.</p>
+                      <a href="#modal-full-4" uk-toggle class="open-popup-link read-more" style="display:none;">View Details</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3 col-xs-12 speaker-container wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <div class="product-front col-sm-12 container" style="padding:0px;">
+                  <div class="col-sm-12 image-container" id="hack2">
+                    <img src="assets/img/hardware.jpg" class="img img-responsive" alt="" />
+                    <div class="uk-overlay-default uk-position-cover">
+                      <div class="uk-position-center">
+                        <a href="#modal-full-2" uk-toggle><span uk-overlay-icon></span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="stats col-sm-12">
+                    <div class="stats-container text-center">
+                      <span class="product-name">Pregnancy Monitoring Belt</span>
+                      <p>Health &amp; Medicine</p>
+                      <a href="#modal-full-2" uk-toggle class="open-popup-link read-more" style="display:none;">View Details</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3 col-xs-12 speaker-container wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <div class="product-front col-sm-12 container" style="padding:0px;">
+                  <div class="col-sm-12 image-container" id="hack5">
+                    <img src="assets/img/lights.jpg" class="img img-responsive" alt="" />
+                    <div class="uk-overlay-default uk-position-cover">
+                      <div class="uk-position-center">
+                        <a href="#modal-full-5" uk-toggle><span uk-overlay-icon></span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="stats col-sm-12">
+                    <div class="stats-container text-center">
+                      <span class="product-name">Ardor</span>
+                      <p>Commute</p>
+                      <a href="#modal-full-5" uk-toggle class="open-popup-link read-more" style="display:none;">View Details</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3 col-xs-12 speaker-container wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <div class="product-front col-sm-12 container" style="padding:0px;">
+                  <div class="col-sm-12 image-container" id="hack6">
+                    <img src="assets/img/web.jpg" class="img img-responsive" alt="" />
+                    <div class="uk-overlay-default uk-position-cover">
+                      <div class="uk-position-center">
+                        <a href="#modal-full-6" uk-toggle><span uk-overlay-icon></span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="stats col-sm-12">
+                    <div class="stats-container text-center">
+                      <span class="product-name">Web Navigation</span>
+                      <p>Physical Disability</p>
+                      <a href="#modal-full-6" uk-toggle class="open-popup-link read-more" style="display:none;">View Details</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3 col-xs-12 speaker-container wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <div class="product-front col-sm-12 container" style="padding:0px;">
+                  <div class="col-sm-12 image-container" id="hack7">
+                    <img src="assets/img/social.jpg" class="img img-responsive" alt="" />
+                    <div class="uk-overlay-default uk-position-cover">
+                      <div class="uk-position-center">
+                        <a href="#modal-full-7" uk-toggle><span uk-overlay-icon></span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="stats col-sm-12">
+                    <div class="stats-container text-center">
+                      <span class="product-name">Pied Piper</span>
+                      <p>Recommendation System</p>
+                      <a href="#modal-full-7" uk-toggle class="open-popup-link read-more" style="display:none;">View Details</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3 col-xs-12 speaker-container wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <div class="product-front col-sm-12 container" style="padding:0px;">
+                  <div class="col-sm-12 image-container" id="hack8">
+                    <img src="assets/img/barcode.png" class="img img-responsive" alt="" />
+                    <div class="uk-overlay-default uk-position-cover">
+                      <div class="uk-position-center">
+                        <a href="#modal-full-8" uk-toggle><span uk-overlay-icon></span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="stats col-sm-12">
+                    <div class="stats-container text-center">
+                      <span class="product-name">Team Rocket</span>
+                      <p>E-Commerce</p>
+                      <a href="#modal-full-8" uk-toggle class="open-popup-link read-more" style="display:none;">View Details</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript">
+          $(document).ready(function() {
+            $(".image-container").hover(function() {
+              var t = $(this).attr('id');
+              var tt = "#" + t + ">.uk-overlay-default";
+              console.log("#" + t + ">.uk-overlay-default");
+              $(tt).fadeToggle(300);
+            });
+          });
+        </script>
+        <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
+          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">&lt;/Inspiration&gt;</h3>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <section id="register" uk-scrollspy="cls:uk-animation-fade;repeat:true;" style="min-height: 100vh;" class="uk-padding-large">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
+          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">&lt;Register&gt;</h3>
+        </div>
+        <div class="col-sm-12">
+          <div class="row container-fluid uk-padding-large uk-padding-remove-vertical text-center">
+            <h2 style="color: #fff;" class="uk-margin-medium">Registrations are now <span class="">closed</span>!</h2>
+            <p class="uk-margin-medium"> Keep checking <a href="http://facebook.com/ingeniushack" target="_blank"> facebook.com/ingeniushack </a> for list of shortlisted teams. </p>
+          </div>
+        </div>
+        <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
+          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">&lt;/Register&gt;</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="faq" style="min-height: 100vh;" uk-scrollspy="cls:uk-animation-fade;repeat:true;" class="section uk-padding-large">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
+          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">&lt;FAQ&gt;</h3>
+        </div>
+        <div class="col-sm-12">
+          <div class="row container">
+            <div class="col-sm-10 col-sm-offset-1 uk-padding-large uk-padding-remove-vertical main-content">
+              <ul uk-accordion="collapsible: false">
+                <li uk-scrollspy="cls:uk-animation-fade">
+                  <h3 class="uk-accordion-title">Who can attend inGenius 2017?</h3>
+                  <div class="uk-accordion-content">
+                    <p>The only restriction is that you must be a student! Age is no bar as long as you have a valid current university/ college/ school ID. Build your team with that in mind and register.</p>
+                  </div>
+                </li>
+                <li uk-scrollspy="cls:uk-animation-fade">
+                  <h3 class="uk-accordion-title">Is there a registration fee?</h3>
+                  <div class="uk-accordion-content">
+                    <p>Registering your team along with your hack idea is free (obviously :P). But, once shortlisted, teams need to buy tickets which are worth ₹400 per person in the team.
+                      <br>There is an optional T-Shirt that can be bought along with your ticket that will cost Rs.200.</p>
+                  </div>
+                </li>
+                <li uk-scrollspy="cls:uk-animation-fade">
+                  <h3 class="uk-accordion-title">How many people can I have in my team?</h3>
+                  <div class="uk-accordion-content">
+                    <p>You must have at least 2 people in your team, and a maximum of 3 people. Fancy, crazy team names are encouraged! No obscenity, mind you.</p>
+                  </div>
+                </li>
+                <li uk-scrollspy="cls:uk-animation-fade">
+                  <h3 class="uk-accordion-title">How do I get shortlisted?</h3>
+                  <div class="uk-accordion-content">
+                    <p>Register your hack ideas online. Give us a 100 word abstract about your hack to show us how awesome your idea is! This hack description is what will get you a confirmation mail if we like your idea. You can also add some weight to
+                      your hack by including your github and linkedin profile links. If we like your idea, you will be sent an email confirming your participation a few weeks before the event. Don't forget to keep checking your inbox (also, check SPAM,
+                      just in case!).
+                      <br>Registrations for the hackathon will open soon!</p>
+                  </div>
+                </li>
+                <li uk-scrollspy="cls:uk-animation-fade">
+                  <h3 class="uk-accordion-title">What do I have to bring?</h3>
+                  <div class="uk-accordion-content">
+                    <p>Mandatory:
+                      <br> A valid College ID (or Government ID if none available).
+                      <br> Laptop, chargers &amp; other required peripherals.
+                      <br> Any and all hardware equipment required for the completion of your hack.
+                      <br> No Objection Certificate for each female participant Unadulterated enthusiasm!
+                      <br>
+                      <br> Optional:
+                      <br> Data card / dongles for internet access (just in case!). Anything you need to be comfy during the night.</p>
+                  </div>
+                </li>
+                <li uk-scrollspy="cls:uk-animation-fade">
+                  <h3 class="uk-accordion-title">How long is the event? Do I have to stay throughout?</h3>
+                  <div class="uk-accordion-content">
+                    <p>Everybody gets 24 hours to work on their hacks. Including inauguration and prize distributions etc, the entire event lasts about 30 hours. You are free to leave the venue before 6 PM on day one and come back next morning after 5-6
+                      AM.Female participants must carry a No Objection Certificate signed by their guardian in order to be allowed to stay the night!</p>
+                  </div>
+                </li>
+                <li uk-scrollspy="cls:uk-animation-fade">
+                  <h3 class="uk-accordion-title">How will you judge?</h3>
+                  <div class="uk-accordion-content">
+                    <p>Based on your hack domain, judges will visit your team and do the judgement. The top 10 teams will be selected and will have to present their hacks on stage to all the judges.</p>
+                  </div>
+                </li>
+                <li uk-scrollspy="cls:uk-animation-fade">
+                  <h3 class="uk-accordion-title">I have a question that's not answered here</h3>
+                  <div class="uk-accordion-content">
+                    <p>We're here to help you however you need! Feel free to drop us an <a href="mailto:ingeniushack@gmail.com">email</a>. You could also reach out to us on <a href="https://facebook.com/inGeniusHack">Facebook</a> or on <a href="https://twitter.com/ingeniushack">Twitter</a>.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
+          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">&lt;/FAQ&gt;</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="IEEE" uk-scrollspy="cls:uk-animation-fade;repeat:true;" style="width: 100%; min-height: 100vh;" class="section uk-padding-large uk-padding-remove-vertical">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
+          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">&lt;CompSoc&gt;</h3>
+        </div>
+        <div class="col-sm-12">
+          <div class="row container">
+            <div class="col-md-5 uk-margin-large pull-right">
+              <center><img class="img img-responsive" src="assets/img/compsoc_white_1.png" uk-scrollspy="cls:uk-animation-fade"></center>
+            </div>
+            <div class="col-md-7 uk-padding-large uk-padding-remove-vertical pull-left main-content">
+              <p style="color:#FFBA4C;">
+                IEEE PESITSouth Computer Society has been started in 2017 by the Computer Science Department of PESIT South Campus. We also organise workshops, seminars and a couple of amazing events like inGenius (annual) and the Pursuit (bi-annual Online Treasure Hunt)!
+              </p>
+            </div>
+          </div>
+          <div class="row container">
+            <div class="col-md-5 uk-margin-large pull-right">
+              <center><img class="img img-responsive" src="assets/img/IEEECompsoc.png" uk-scrollspy="cls:uk-animation-fade"></center>
+            </div>
+            <div class="col-md-7 uk-padding-large uk-padding-remove-vertical pull-left main-content">
+              <p>
+                The IEEE Computer Society is the world's leading membership organization dedicated to computer science and technology. Serving more than 60,000 members, the IEEE Computer Society is the trusted information, networking, and career-development source for
+                a global community of technology leaders that includes researchers, educators, software engineers, IT professionals, employers, and students.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
+          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">&lt;/CompSoc&gt;</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contactus" uk-scrollspy="cls:uk-animation-fade;repeat:true;" style="min-height: 100vh;" class="uk-padding-large">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
+          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">&lt;ContactUs&gt;</h3>
+        </div>
+        <div class="col-sm-12">
+          <div class="row container-fluid uk-padding-large uk-padding-remove-vertical">
+            <div class="col-sm-5 main-content uk-margin-large uk-padding-medium uk-padding-remove-vertical">
+              <h2 style="color : #fff"> Say Hi, we won't bite! =)</h2>
+              <p style="color:#2d9687;">
+                If you have any doubts, clarifications, want to register or just want to say hi, please reach us on the following contacts. Hope to see you at inGenius 2017!
+              </p>
+              <p style="color:#2d9687; font-size: 18px;">
+                <span class="fa fa-location-arrow" style="color: #FFF165"></span>&nbsp; PESIT Bangalore South Campus, Hosur Road - 560 100
+              </p>
+              <p style="color:#2d9687; font-size: 18px;">
+                <span class="fa fa-phone" style="color: #FFF165"></span>&nbsp;Harsha Vamsi : +91 8050012762
+                <br><span class="random-filler-space"></span> vamsi@ingeniushack.com
+              </p>
+              <p style="color:#2d9687; font-size: 18px;">
+                <span class="fa fa-phone" style="color: #FFF165"></span>&nbsp;Somya Bansal : +91 9740881851
+                <br><span class="random-filler-space"></span> somya@ingeniushack.com
+              </p>
+            </div>
+            <div class="col-sm-7 uk-padding-medium uk-margin-medium">
+              <div class="pull-right form-div">
+                <form action="https://formspree.io/ingeniushack@gmail.com" method="POST">
+                  <div class="uk-margin">
+                    <div class="uk-inline" style="width: 100%;">
+                      <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: user"></span>
+                      <input class="uk-input input-feild uk-form-large" name="name" placeholder="Name" type="text">
+                    </div>
+                  </div>
+                  <div class="uk-margin">
+                    <div class="uk-inline" style="width: 100%;">
+                      <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: mail"></span>
+                      <input class="uk-input input-feild uk-form-large" name="_replyto" placeholder="Email" type="text">
+                    </div>
+                  </div>
+                  <div class="uk-margin">
+                    <div class="uk-inline" style="width: 100%;">
+                      <textarea rows=6 style="width:100%;" name="message" placeholder=" Message" class="input-feild uk-form-large"></textarea>
+                    </div>
+                  </div>
+                  <div class="uk-margin">
+                    <div class="uk-inline" style="width: 100%;">
+                      <button style="width: 100%;" class="uk-button green-button" type="submit">Send</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- <div class="col-sm-6" style="height: 200px; width: 200px; -webkit-clip-path: polygon(50% 0%, 0% 100%,100% 100%);clip-path: polygon(50% 0%, 0% 100%, 100% 100%); background-color: #2d9687">
+
+                    </div> -->
+          </div>
+        </div>
+        <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
+          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">&lt;/ContactUs&gt;</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="venue" style="min-height: 100vh;" class="section uk-padding-large">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <iframe src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJwb4iy7xsrjsRdl79p7cwrUs&key=AIzaSyDpCzZMqCELL53PLmHZ57-jAH8NGnZ8jPA" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <section id="footer" class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center uk-margin-large uk-margin-remove-bottom social-links">
+          <a href="https://facebook.com/ingeniushack" target="_blank"><span class="fa fa-facebook"></span></a>
+          <a href="https://twitter.com/ingeniushack" target="_blank"><span class="fa fa-twitter"></span></a>
+          <a href="https://instagram.com/ingeniushackathon" target="_blank"><span class="fa fa-instagram"></span></a>
+        </div>
+        <div class="col-sm-12 text-center" style="padding-bottom: 10px;">
+          <span class="made-with">Made with &#x2764; by <a style="color: #fff;" href="https://sites.google.com/site/pesitsouthieeecompsoc/">PESITSouth IEEE Computer Society</a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- </div> -->
+  <div id="modal-full-1" class="uk-modal-full" uk-modal style="z-index: 1002;">
+    <div class="uk-modal-dialog">
+      <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+      <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
+        <div class="uk-background-cover modal-background" style="background-image: url('assets/img/phone.jpg');" uk-height-viewport></div>
+        <div class="uk-padding-large">
+          <h1 class="text-center hack-modal-title">ZDRAVO</h1>
+          <p class="hack-modal-by text-center">By :- PESIT Bangalore South Campus</p>
+          <p class="hack-modal-info">We plan to call our project [a mobile application] "ZDRAVO" (which means "hello" in serbian). ZDRAVO will integrate calling and texting functionalities by allowing every call you make to get dispatched with a short message indicating the subject
+            of your call, similar to an email. This way the receiver of your call knows why you are calling, and can thus decide whether or no accept it. We plan on implementing our idea through Android Studio.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-full-2" class="uk-modal-full" uk-modal style="z-index: 1002;">
+    <div class="uk-modal-dialog">
+      <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+      <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
+        <div class="uk-background-cover modal-background" style="background-image: url('assets/img/hardware.jpg');" uk-height-viewport></div>
+        <div class="uk-padding-large">
+          <h1 class="text-center hack-modal-title">Pregnancy Monitoring Belt</h1>
+          <p class="hack-modal-by text-center">By :- VIT University</p>
+          <p class="hack-modal-info">"Pregnancy monitoring belt which includes a portable tocodyanomometer and umbilical blood flow measurement for the well being of the fetus and the mother. We intend to use muscle sensor and ultrasound probe."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-full-3" class="uk-modal-full" uk-modal style="z-index: 1002;">
+    <div class="uk-modal-dialog">
+      <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+      <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
+        <div class="uk-background-cover modal-background" style="background-image: url('assets/img/iot.jpg');" uk-height-viewport></div>
+        <div class="uk-padding-large">
+          <h1 class="text-center hack-modal-title">Accidental Prevention &amp; Care</h1>
+          <p class="hack-modal-by text-center">By :- PESIT Bangalore South Campus</p>
+          <p class="hack-modal-info">All we see in the second page of any News paper is about unfortunate incidents,The Accidents. Well we,the young guns of III-CSE, are coming up with amazing features for all four wheelers which on support with statistical reports, prevent 50%
+            of the accidents. That's the minimum margin we put, as our Arduino based quick responsive systems (lot of math involved), and android map application, taking care of the obstructions caused for the drivers which leads to accidents(glare hitting
+            the eyes when other vehicles zoom in with high beams "on" highways in night), and about the junctions, which are very difficult to spot when you are driving at 45+mph and none to warn you about the nearest intersection!! Aren't intersections
+            glare, and drowsiness main reasons for accidents?! We are taking at most care to address each and every aspect.We prevent the glare hitting the the drivers eyes, and keep the vehicles speed in check, mostly at junctions. Its like a 72 hour
+            hackathon for us (24*3). We will also want to take care about the "Care" part of our project. We make sure the emergency wheels reach out soon to the hospitals, using IoT and GPS systems!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-full-4" class="uk-modal-full" uk-modal style="z-index: 1002;">
+    <div class="uk-modal-dialog">
+      <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+      <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
+        <div class="uk-background-cover modal-background" style="background-image: url('assets/img/sportfolio.jpg');" uk-height-viewport></div>
+        <div class="uk-padding-large">
+          <h1 class="text-center hack-modal-title">A.I. Commentator</h1>
+          <p class="hack-modal-by text-center">By :- NIT Trichy</p>
+          <p class="hack-modal-info">An A.I. , that automatically produces running commentary when you feed in the live video of a cricket match . This idea can be extremely useful in websites like cricinfo.com , where in people manually type in comments after each ball in the
+            match . This is also used in places where in , a huge amount of data can't be spent to watch the match video .</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-full-5" class="uk-modal-full" uk-modal style="z-index: 1002;">
+    <div class="uk-modal-dialog">
+      <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+      <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
+        <div class="uk-background-cover modal-background" style="background-image: url('assets/img/lights.jpg');" uk-height-viewport></div>
+        <div class="uk-padding-large">
+          <h1 class="text-center hack-modal-title">Ardor</h1>
+          <p class="hack-modal-by text-center">By :- PESIT Bangalore South Campus</p>
+          <p class="hack-modal-info">Long waiting time at red signal has been a frustrating problem faced by daily commuters in cities all over the country.Motorists spend an equivalent of 8 minutes a day and 2 days a year waiting at red signal. Our software is aimed at providing
+            the average speed that the vehicle should acquire from starting location of journey via every traffic signal on the route till destination in such a way that user passes through every traffic signal without halting at any red signal. It gives
+            the output to the user average speed at which he/she should drive their vehicle,which can be either two/three/four wheeler,so that by the time it reaches the next traffic signal,the red light cycle for that signal has completed and the user
+            faces either green or the orange light so that they can keep moving. We have data sets for distance between different traffic signals,cycle time for each traffic signal,traffic congestion and locations. Our structured algorithm will compute
+            the average speed based on many constraints. The following tools will be used for implementation: Python:Server side scripting. Apache Spark:Advanced analytic application by using data in HDFS(Hadoop Distributed File Management System). Google
+            Map APIs:Extracting information about distances between traffic signals and traffic status.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-full-6" class="uk-modal-full" uk-modal style="z-index: 1002;">
+    <div class="uk-modal-dialog">
+      <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+      <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
+        <div class="uk-background-cover modal-background" style="background-image: url('assets/img/web.jpg');" uk-height-viewport></div>
+        <div class="uk-padding-large">
+          <h1 class="text-center hack-modal-title">Web Navigation</h1>
+          <p class="hack-modal-by text-center">By :- NIT Trichy</p>
+          <p class="hack-modal-info">WEB NAVIGATION FOR THE VISUALLY IMPAIRED An interactive web app for assisting blind people to navigate and access web content using speech and gesture recogniton. It uses web scraping and machine learning algorithms to remove clutter from the
+            web page and preserve important content. It has add-on features like bookmarking URL's and removing content from history .</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-full-7" class="uk-modal-full" uk-modal style="z-index: 1002;">
+    <div class="uk-modal-dialog">
+      <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+      <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
+        <div class="uk-background-cover modal-background" style="background-image: url('assets/img/social.jpg');" uk-height-viewport></div>
+        <div class="uk-padding-large">
+          <h1 class="text-center hack-modal-title">Pied Piper</h1>
+          <p class="hack-modal-by text-center">By :- PESIT Bangalore South Campus</p>
+          <p class="hack-modal-info">Suggestion of products similar to the liked products on social media by the user. We sentimentally analyse a comment on a picture on social media describing a product. If it is positive, we extract the product from the image, analyse the product
+            pattern to display similar products. Social Media API(facebook, instagram) is used to get the comments and picture. Comments are sentimentally analysed using tools available. Product extraction using image processing algorithm. Classifier
+            to categorize the product. Training data from e-commerce website. Python as language and web application to display. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-full-8" class="uk-modal-full" uk-modal style="z-index: 1002;">
+    <div class="uk-modal-dialog">
+      <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+      <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
+        <div class="uk-background-cover modal-background" style="background-image: url('assets/img/barcode.png');" uk-height-viewport></div>
+        <div class="uk-padding-large">
+          <h1 class="text-center hack-modal-title">Team Rocket</h1>
+          <p class="hack-modal-by text-center">By :- PESIT Bangalore South Campus</p>
+          <p class="hack-modal-info">According to surveys conducted, a large number of the population feels that there needs to be some reliable method to receive products ordered online when they're not at home. So we came up with a system to safely recieve the product being delivered
+            and dispense the required amount of money (COD Orders). All you need to do is to input the barcode of the arriving product and put in the required money into the system, and the it takes care of the rest. Here's how we intend on implementing
+            it. Upon delivery, the product is scanned for the barcode and is cross verified with the user input barcode. If it's a match, a slot in the door of the customer opens up (a box placed outside for bigger delivery packages). Once the product
+            has been dropped off, a pressure sensor verifies that the product has been deposited and closes the slot/box. The money dispenser now tenders the exact value of the product and the process is complete. We use a Raspberry Pi to achieve the
+            above operations. The user now recieves a message confirming that the product was recieved. We believe this is an efficient and safe way of solving the problem at hand.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="assets/js/svg.min.js"></script>
+  <script>
+    var menu = SVG('menu-icon').size(60, 60);
+    var item = menu.line(0, 10, 50, 10).move(0, 10);
+    item.stroke({
+      color: '#2d9687',
+      width: 5,
+      linecap: 'round'
+    });
+    var item2 = menu.line(0, 25, 50, 25).move(0, 25);
+    item2.stroke({
+      color: '#2d9687',
+      width: 5,
+      linecap: 'round'
+    });
+    var item3 = menu.line(0, 40, 50, 40).move(0, 40);
+    item3.stroke({
+      color: '#2d9687',
+      width: 5,
+      linecap: 'round'
+    });
+  </script>
+  <script src="assets/js/particles.js"></script>
+  <script>
+    /* ---- particles.js config ---- */
+
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 80,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#000000"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 1,
+            "color": "#ffffff"
+          },
+          "polygon": {
+            "nb_sides": 5
+          }
+        },
+        "opacity": {
+          "value": 0.2,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 1,
+            "opacity_min": 0.1,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 2,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 50,
+            "size_min": 0.1,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 120,
+          "color": "#ffffff",
+          "opacity": 0.2,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 5,
+          "direction": "none",
+          "random": true,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": true,
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "repulse"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 200,
+            "line_linked": {
+              "opacity": 1
+            }
+          },
+          "bubble": {
+            "distance": 400,
+            "size": 40,
+            "duration": 2,
+            "opacity": 8,
+            "speed": 3
+          },
+          "repulse": {
+            "distance": 200,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 4
+          },
+          "remove": {
+            "particles_nb": 2
+          }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+  <script type="text/javascript" src="assets/js/jquery.nicescroll.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      //  $("html").niceScroll({
+      //   cursorcolor:"#2d9687",
+      //   cursorwidth:"12px",
+      //   cursorfixedheight : 80,
+      //   cursorborderradius : "10px",
+      //   cursorborder: "1px solid #0A0924",
+      //   scrollspeed : 200,
+      //   mousescrollstep: 200
+      // });
+      // $("body").niceScroll({
+      //     cursorcolor:"rgb(230, 43,30)",
+      //     cursorwidth:"10px",
+      //     cursorborderradius : "1px",
+      //     cursorborder: "1px solid rgb(230, 43, 30)",
+      //     scrollspeed : 120,
+      //     mousescrollstep: 60
+      // });
+    });
+  </script>
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-67302990-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <script src="js/classie.js"></script>
+  <script src="js/svganimations2.js"></script>
+</body>
+
+</html>
