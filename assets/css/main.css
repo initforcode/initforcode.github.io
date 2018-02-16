@@ -763,29 +763,29 @@ body {
 }
 
 .output {
-  color: white;
+  color: white !important;
 }
 .active:after {
-  content: '_';
+  content: '_' !important;
 }
 
 #cur{
-    animation: cursor 1s infinite;
+    animation: cursor 1s infinite !important;
 }
 @keyframes cursor {
     0% {
-        opacity: 0;
+        opacity: 0 !important;
     }
     40% {
-        opacity: 0;
+        opacity: 0 !important;
     }
     50% {
-        opacity: 1;
+        opacity: 1 !important;
     }
     90% {
-        opacity: 1;
+        opacity: 1 !important;
     }
     100% {
-        opacity: 0;
+        opacity: 0 !important;
     }
 }
