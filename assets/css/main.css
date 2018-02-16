@@ -752,3 +752,40 @@ body {
 .timeline-body>p+p {
     margin-top: 5px;
 }
+
+
+
+#cons {
+    background-color: black;
+    margin-top:20px !important;   
+    padding: 20px !important; 
+    font-size: 12px !important;
+}
+
+.output {
+  color: white;
+}
+.active:after {
+  content: '_';
+}
+
+#cur{
+    animation: cursor 1s infinite;
+}
+@keyframes cursor {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
