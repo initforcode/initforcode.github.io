@@ -75,12 +75,75 @@
       <center>
         <img class="img img-responsive" style="max-height:180px;" src="assets/img/logo.png">
       </center>
-      <h2 style="color : #fff;">
-        <span style="font-weight: 300">September</span>
-        <strong> 23 | 24</strong>
-      </h2>
-      <p style="font-size: 42px; font-weight: 800; padding-top: 80px;">#get
-        <span style="color:#28A8E0">Set</span>Hack</p>
+      <div class="col-sm-6 col-sm-offset-3" id="cons" style="font-size : 16px !important; height: 100px; width: 400px; text-align: left; font-family: monospace !important;">
+        
+          <main class="prompt" style="color: #55ff55;">
+            root@initforcode: <span>Hello World!</span>
+
+          </main>
+       
+      </div>
+
+      <script>
+        var terminal = function(target) {
+          var $lines = $(target);
+          $lines.hide();
+          var lineContents = new Array();
+
+          var skip = 0;
+          typeLine = function(idx) {
+            idx == null && (idx = 0);
+            var element = $lines.eq(idx);
+            var content = lineContents[idx];
+            if(typeof content == "undefined") {
+              $('.skip').hide();
+              return;
+            }
+            var charIdx = 0;
+
+            var typeChar = function() {
+              var rand = Math.round(Math.random() * 150) + 25;
+
+              setTimeout(function() {
+                var char = content[charIdx++];
+                element.append(char);
+                if(typeof char !== "undefined")
+                  typeChar();
+                else {
+                  element.append('<br /><span class="output">' + element.text().slice(6, -1) + '</span><br />root@initforcode: <b id="cur">_</b>');
+                  element.removeClass('active');
+                  typeLine(++idx);
+                }
+              }, skip ? 0 : rand);
+            }
+            content = 'echo "' + content + '"';
+            element.append('').addClass('active');
+            typeChar();
+          }
+
+          $lines.each(function(i) {
+            lineContents[i] = $(this).text();
+            $(this).text('').show();
+          });
+
+          typeLine();
+        }
+
+        terminal('.prompt span');
+
+        var consoleAlreadyDone = 0;
+        $(document).ready(function(){
+          document.onkeypress = function(e){
+            // alert("Key press");
+            if(consoleAlreadyDone != 1){
+              consoleAlreadyDone = 1;
+              $("#cur").text("");
+              $(".prompt").append("<span class='n'>It's just an animation. :P</span>");
+              terminal('.prompt .n');
+            }
+          }
+        });
+      </script>
       <!-- <h2 style="color : #fff;"> <span style="font-weight: bold">#getSetHack</strong></h2> -->
     </div>
     <div id="dot-nav" class="uk-position-center-right uk-position-medium" style="position: fixed !important; z-index: +1;">
@@ -139,7 +202,7 @@
       });
     });
   </script>
-  <section id="ingenius" style="min-height: 100vh;" class="section uk-padding-large">
+  <!-- <section id="ingenius" style="min-height: 100vh;" class="section uk-padding-large">
     <div class="container">
       <div class="row">
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
@@ -158,9 +221,9 @@
                 <a href="brochure.pdf" style="color: #2d9687;" class="uk-button uk-button-default uk-button-large uk-margin-medium uk-margin-remove-bottom"
                   target="_blank">Brochure</a>
               </p>
-              <!-- <p style="color:#fff; letter-spacing: 2px; font-weight: 300 !important; font-size: 15px;">
+              <p style="color:#fff; letter-spacing: 2px; font-weight: 300 !important; font-size: 15px;">
                             PESIT South ACM Student Chapter was started in 2007 by the Computer Science Department of PESIT South Campus. We also organise workshops, seminars and a couple of amazing events like inGenius (annual) and the Pursuit (bi-annual Online Treasure Hunt)!
-                        </p> -->
+                        </p>
             </div>
             <div id="svg-logos" class="col-md-6 uk-margin-large uk-margin-remove-vertical">
               <div class="row uk-margin uk-margin-remove-horizontal">
@@ -174,8 +237,8 @@
         </div>
       </div>
     </div>
-  </section>
-  <section id="participate" uk-scrollspy="cls:uk-animation-fade;repeat:true;" style="min-height: 100vh;" class="section uk-padding-large">
+  </section> -->
+<!--   <section id="participate" uk-scrollspy="cls:uk-animation-fade;repeat:true;" style="min-height: 100vh;" class="section uk-padding-large">
     <div class="container">
       <div class="row">
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
@@ -186,11 +249,9 @@
             <div class="col-sm-4" uk-scrollspy="cls:uk-animation-slide-left">
               <center>
                 <div id="lc-1" class="logo-container uk-margin-medium uk-margin-remove-top">
-                  <!-- <div class="icon-container"> -->
                   <div class="part-icon-cont text-center" style="">
                     <span class="fa fa-calendar" style="color : #fff; font-size : 40px;z-index: 999;"></span>
                   </div>
-                  <!-- </div> -->
                 </div>
               </center>
               <div class="logo-info-container">
@@ -200,11 +261,9 @@
             <div class="col-sm-4" uk-scrollspy="cls:uk-animation-fade">
               <center>
                 <div id="lc-2" class="logo-container uk-margin-medium uk-margin-remove-top">
-                  <!-- <div class="icon-container"> -->
                   <div class="part-icon-cont text-center" style="">
                     <span class="fa fa-camera-retro" style="color : #fff; font-size : 40px;z-index: 999;"></span>
                   </div>
-                  <!-- </div> -->
                 </div>
               </center>
               <div class="logo-info-container">
@@ -230,11 +289,9 @@
             <div class="col-sm-4" uk-scrollspy="cls:uk-animation-slide-left">
               <center>
                 <div id="lc-4" class="logo-container uk-margin-medium uk-margin-remove-top">
-                  <!-- <div class="icon-container"> -->
                   <div class="part-icon-cont text-center" style="">
                     <span class="fa fa-coffee" style="color : #fff; font-size : 40px;z-index: 999;"></span>
                   </div>
-                  <!-- </div> -->
                 </div>
               </center>
               <div class="logo-info-container">
@@ -266,16 +323,14 @@
               </div>
             </div>
           </div>
-          <!-- <div class="row uk-padding uk-padding-remove-vertical"> -->
-          <!-- </div> -->
         </div>
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
           <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">&lt;/Participate&gt;</h3>
         </div>
       </div>
     </div>
-  </section>
-  <section id="inspiration" uk-scrollspy="cls:uk-animation-fade;repeat:true;" style="min-height: 100vh;" class="section uk-padding-large">
+  </section> -->
+<!--   <section id="inspiration" uk-scrollspy="cls:uk-animation-fade;repeat:true;" style="min-height: 100vh;" class="section uk-padding-large">
     <div class="container">
       <div class="row">
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
@@ -473,8 +528,8 @@
       </div>
     </div>
     </div>
-  </section>
-  <section id="register" uk-scrollspy="cls:uk-animation-fade;repeat:true;" style="min-height: 100vh;" class="uk-padding-large">
+  </section> -->
+  <!-- <section id="register" uk-scrollspy="cls:uk-animation-fade;repeat:true;" style="min-height: 100vh;" class="uk-padding-large">
     <div class="container">
       <div class="row">
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
@@ -493,8 +548,8 @@
         </div>
       </div>
     </div>
-  </section>
-  <section id="faq" style="min-height: 100vh;" uk-scrollspy="cls:uk-animation-fade;repeat:true;" class="section uk-padding-large">
+  </section> -->
+  <!-- <section id="faq" style="min-height: 100vh;" uk-scrollspy="cls:uk-animation-fade;repeat:true;" class="section uk-padding-large">
     <div class="container">
       <div class="row">
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
@@ -585,7 +640,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <section id="IEEE" uk-scrollspy="cls:uk-animation-fade;repeat:true;" style="width: 100%; min-height: 100vh;" class="section uk-padding-large uk-padding-remove-vertical">
     <div class="container">
       <div class="row">
@@ -902,138 +957,7 @@
       linecap: 'round'
     });
   </script>
-  <script src="assets/js/particles.js"></script>
-  <script>
-    /* ---- particles.js config ---- */
-
-    particlesJS("particles-js", {
-      "particles": {
-        "number": {
-          "value": 80,
-          "density": {
-            "enable": true,
-            "value_area": 800
-          }
-        },
-        "color": {
-          "value": "#000000"
-        },
-        "shape": {
-          "type": "circle",
-          "stroke": {
-            "width": 1,
-            "color": "#ffffff"
-          },
-          "polygon": {
-            "nb_sides": 5
-          }
-        },
-        "opacity": {
-          "value": 0.2,
-          "random": true,
-          "anim": {
-            "enable": false,
-            "speed": 1,
-            "opacity_min": 0.1,
-            "sync": false
-          }
-        },
-        "size": {
-          "value": 2,
-          "random": true,
-          "anim": {
-            "enable": false,
-            "speed": 50,
-            "size_min": 0.1,
-            "sync": false
-          }
-        },
-        "line_linked": {
-          "enable": true,
-          "distance": 120,
-          "color": "#ffffff",
-          "opacity": 0.2,
-          "width": 1
-        },
-        "move": {
-          "enable": true,
-          "speed": 5,
-          "direction": "none",
-          "random": true,
-          "straight": false,
-          "out_mode": "out",
-          "bounce": true,
-          "attract": {
-            "enable": false,
-            "rotateX": 600,
-            "rotateY": 1200
-          }
-        }
-      },
-      "interactivity": {
-        "detect_on": "canvas",
-        "events": {
-          "onhover": {
-            "enable": true,
-            "mode": "repulse"
-          },
-          "onclick": {
-            "enable": true,
-            "mode": "push"
-          },
-          "resize": true
-        },
-        "modes": {
-          "grab": {
-            "distance": 200,
-            "line_linked": {
-              "opacity": 1
-            }
-          },
-          "bubble": {
-            "distance": 400,
-            "size": 40,
-            "duration": 2,
-            "opacity": 8,
-            "speed": 3
-          },
-          "repulse": {
-            "distance": 200,
-            "duration": 0.4
-          },
-          "push": {
-            "particles_nb": 4
-          },
-          "remove": {
-            "particles_nb": 2
-          }
-        }
-      },
-      "retina_detect": true
-    });
-  </script>
-  <script type="text/javascript" src="assets/js/jquery.nicescroll.min.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function () {
-      //  $("html").niceScroll({
-      //   cursorcolor:"#2d9687",
-      //   cursorwidth:"12px",
-      //   cursorfixedheight : 80,
-      //   cursorborderradius : "10px",
-      //   cursorborder: "1px solid #0A0924",
-      //   scrollspeed : 200,
-      //   mousescrollstep: 200
-      // });
-      // $("body").niceScroll({
-      //     cursorcolor:"rgb(230, 43,30)",
-      //     cursorwidth:"10px",
-      //     cursorborderradius : "1px",
-      //     cursorborder: "1px solid rgb(230, 43, 30)",
-      //     scrollspeed : 120,
-      //     mousescrollstep: 60
-      // });
-    });
-  </script>
+  
   <script>
     (function (i, s, o, g, r, a, m) {
       i['GoogleAnalyticsObject'] = r;

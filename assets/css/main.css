@@ -56,9 +56,10 @@ h4 {
     left: 0;
     width: 100%;
     height: 150%;
-    animation: bg-transitions 4s infinite alternate;
+    /*animation: bg-transitions 4s infinite alternate;
     -moz-animation: bg-transitions 4s infinite alternate;
-    -webkit-animation: bg-transitions 4s infinite alternate;
+    -webkit-animation: bg-transitions 4s infinite alternate;*/
+    background: #000;
     background-image: url("");
     background-repeat: no-repeat;
     background-size: cover;
@@ -128,29 +129,29 @@ h4 {
 
 @-webkit-keyframes bg-transitions {
     0% {
-        background-color: #0D0620;
+        background-color: #022626;
     }
     /*20% {background-color: #1C0C2B;}*/
     40% {
-        background-color: #041024;
+        background-color: #1d3838;
     }
     /*80% {background-color: #042418;}*/
     100% {
-        background-color: #050309;
+        background-color: #134242;
     }
 }
 
 @keyframes bg-transitions {
     0% {
-        background-color: #0D0620;
+        background-color: #022626;
     }
     /*20% {background-color: #1C0C2B;}*/
     40% {
-        background-color: #041024;
+        background-color: #1d3838;
     }
     /*80% {background-color: #042418;}*/
     100% {
-        background-color: #050309;
+        background-color: #134242;
     }
 }
 
@@ -620,4 +621,47 @@ body {
 
 .green-button {
     background-color: #2d9687;
+}
+
+
+
+
+
+
+
+
+
+#cons {
+    background-color: black;
+    margin-top:20px !important;   
+    padding: 20px !important; 
+    font-size: 12px !important;
+}
+
+.output {
+  color: white;
+}
+.active:after {
+  content: '_';
+}
+
+#cur{
+    animation: cursor 1s infinite;
+}
+@keyframes cursor {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
