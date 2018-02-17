@@ -793,7 +793,7 @@ body {
 .material-card {
     color: black;
     position: relative;
-    height: 0;
+    height: 200px;
     padding-bottom: calc(100% - 16px);
     margin-bottom: 6.6em;
 }
@@ -2351,6 +2351,7 @@ body {
 
 .promo .brief {
     color: #f9f9f9;
+    font-size:20px;
 }
 
 .promo .price {
@@ -2368,7 +2369,7 @@ body {
 .promo button {
     padding: 1em 3.25em;
     border: none;
-    border-radius: 40px;
+    border-radius: 0px;
     background: #292b2e;
     color: #f9f9f9;
     cursor: pointer;
@@ -2406,7 +2407,7 @@ body {
     transform: translate3d(0, 0, 0);
     width: 420px;
     margin: 0 auto;
-    height: 450px;
+    height: 570px;
     overflow: hidden;
 }
 
@@ -2565,7 +2566,7 @@ body {
 .details {
     position: relative;
     width: 420px;
-    height: 75px;
+    height: 100px;
     background: rgba(164, 164, 164, 1);
     margin-top: 5px;
     border-radius: 4px;
@@ -2597,7 +2598,7 @@ body {
 }
 
 .events {
-    height: 75px;
+    height: 100px;
     padding: 7px 0;
     overflow-y: auto;
     overflow-x: hidden;
