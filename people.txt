@@ -1,0 +1,51 @@
+Sandra
+---
+Hey
+ 
+Bio for init.
+
+Description: High energy enthusiastic person passionate about technology. I love problem solving and developing systems to tackle challenges in our daily life.
+
+Skills: Python, Neo4j
+---
+
+Arko
+---
+Name
+Arkoprabho Bhattacharjee
+
+Bio
+Determined dreamer. Poet. Artist. 
+Also, a guy who tends to be specifically random at times! :P
+
+Skills
+Android app dev, HTML/CSS
+
+Phone #
++91 9036057140
+
+Email ID
+bhattacharjee.arkoprabho@gmail.com
+---
+
+Prateek
+---
+Bio: Physical Hacker!!! Trying to build stuff by breaking them first.
+
+Skills: Python, Iot, Robotics, Arduino and anything with sensors.
+
+Phone: 7975211160
+---
+
+Somya
+---
+Somya Bansal
+
+A student, listener and learner. Loves music, Vamsi and Vamsi's music. A person with logic and common sense and someone who clearly doesn't know how to write a bio. Good at organising stuff, singing and making bad puns and jokes.
+
+Key skills - Python, JavaScript, Machine-Learning
+
++919740881851
+somyabansal1996@gmail.com
+---
+

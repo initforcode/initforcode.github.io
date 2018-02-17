@@ -337,7 +337,7 @@
         <section class="container">
           <div class="row active-with-click">
             <div class="col-md-4 col-sm-6 col-xs-12">
-              <article class="material-card Red">
+              <article class="material-card Red" >
                 <h2>
                   <span>Abhijit Theophilus</span>
                   <strong>
@@ -348,7 +348,7 @@
                 </h2>
                 <div class="mc-content">
                   <div class="img-container">
-                    <img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-christopher-walken.jpg">
+                    <img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-christopher-walken.jpg" >
                   </div>
                   <div class="mc-description">
                     He has appeared in more than 100 films and television shows, including The Deer Hunter, Annie Hall, The Prophecy trilogy,
@@ -378,7 +378,7 @@
                 </h2>
                 <div class="mc-content">
                   <div class="img-container">
-                    <img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-sean-penn.jpg">
+                    <img class="img-responsive" src="assets/img/somya.jpg">
                   </div>
                   <div class="mc-description">
                     He has won two Academy Awards, for his roles in the mystery drama Mystic River (2003) and the biopic Milk (2008). Penn began
@@ -694,7 +694,37 @@
     </div>
   </section>
   <!-- </div> -->
+<script>
+  $(function() {
+        $('.material-card > .mc-btn-action').click(function () {
+            var card = $(this).parent('.material-card');
+            var icon = $(this).children('i');
+            icon.addClass('fa-spin-fast');
 
+            if (card.hasClass('mc-active')) {
+                card.removeClass('mc-active');
+
+                window.setTimeout(function() {
+                    icon
+                        .removeClass('fa-arrow-left')
+                        .removeClass('fa-spin-fast')
+                        .addClass('fa-bars');
+
+                }, 800);
+            } else {
+                card.addClass('mc-active');
+
+                window.setTimeout(function() {
+                    icon
+                        .removeClass('fa-bars')
+                        .removeClass('fa-spin-fast')
+                        .addClass('fa-arrow-left');
+
+                }, 800);
+            }
+        });
+    });
+</script>
   <script type="text/javascript" src="assets/js/svg.min.js"></script>
   <script>
     var menu = SVG('menu-icon').size(60, 60);

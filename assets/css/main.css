@@ -793,7 +793,6 @@ body {
 .material-card {
     color: black;
     position: relative;
-    height: 200px;
     padding-bottom: calc(100% - 16px);
     margin-bottom: 6.6em;
 }
