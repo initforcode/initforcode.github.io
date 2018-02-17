@@ -2,14 +2,18 @@
 
 
 ## Code with us.
-We built \#!nit from an idea born of the necessity for change, a change that
-takes you from the drawing board of the classroom to pragmatic code.\
-We built \#!nit to instil a culture of hacking through collaboration and to forge a
-platform for collective growth through guidance.\
-We built \#!nit to start a movement that reassess your take on development
-focused on this change.\
-We built \#!nit from our love for code.\
-Share our movement. Code with us. :heart:
+
+Init was an idea born of the necessity for change, a change that would take you
+from the drawing board of the classroom to pragmatic code. We built Init to
+instil a culture of collaborative hacking and to forge a platform for
+collective growth. Init is our love for code, pursued to share our love for
+code. Init is our revolution to the everyday monotony of college. Init is our
+contribution to growing a community we owe much to.
+
+Init is our movement. Be a part of our movement.
+
+For the :heart: of Open Source,\
+The Init Crew
 
 
 ## ASD
@@ -19,8 +23,8 @@ Insert cool text here.
 ## Scripts
 
 ### JavaScript
-#### The chocolate sauce on the vanilla web.
 
+**The chocolate sauce on the vanilla web.**
 Conceived in the early days of the Internet, JavaScript was designed to be easy
 to grasp yet powerful enough to turn static HTML into dynamic web applications.
 The advent of Node.js and its asynchronous runtime has given JavaScript a
@@ -35,18 +39,24 @@ workbench.
 
 
 ### Python
-#### Where magic meets code.
+**Where magic meets code.**
 - _Details to be disclosed soon._
 
 ### Scientific Computing
-#### The Portal to Mad Power.
+**The Portal to Mad Power.**
 - _Details to be disclosed soon._
 
 
 ## Workshops
-### 1. Full Stack Web Development
-### 2. _To be announced later ..._
-### 3. _To be announced later ..._
+### The web in 12 hours.
+**A workshop on Full Stack Web Development.**
+- _Details to be disclosed soon._
+
+### Predicting the future through Math.
+**A workshop on Data Science.**
+- _Details to be disclosed soon._
+
+### _To be announced later ..._
 
 
 ## The Origin Story
