@@ -15,7 +15,7 @@ Init is our movement. Be a part of our movement.
 
 
 ## ASD Sessions
-In order to broaden our reach to you, we intend to conduct the ASD classes, henceforth called *insert expansion here* to talk about the approach and resources required to enter the world of Computer Science. An application oriented series of talks, we intend to touch upon various aspects of programming in terms of our experiences and expertise as well as aspects of practical need, such as placements, competitive coding, project management, etc.
+In order to broaden our reach to you, we intend to conduct the ASD classes, bringing Appealing yet Significant Discussions regarding the approach and resources required to enter the world of Computer Science. An application oriented series of talks, we intend to touch upon various aspects of programming in terms of our experiences and expertise as well as aspects of practical need, such as placements, competitive coding, project management, etc.
 
 
 ## Scripts
