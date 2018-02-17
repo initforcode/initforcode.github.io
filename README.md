@@ -12,8 +12,10 @@ contribution to growing a community we owe much to.
 
 Init is our movement. Be a part of our movement.
 
-For the :heart: of Open Source,\
-The Init Crew
+<p align='right'>
+    For the :heart: of Open Source,</br>
+    The Init Crew
+</p>
 
 
 ## ASD
@@ -24,7 +26,7 @@ Insert cool text here.
 
 ### JavaScript
 
-**The chocolate sauce on the vanilla web.**
+**The chocolate sauce on the vanilla web.**\
 Conceived in the early days of the Internet, JavaScript was designed to be easy
 to grasp yet powerful enough to turn static HTML into dynamic web applications.
 The advent of Node.js and its asynchronous runtime has given JavaScript a
@@ -48,6 +50,7 @@ workbench.
 
 
 ## Workshops
+
 ### The web in 12 hours.
 **A workshop on Full Stack Web Development.**
 - _Details to be disclosed soon._
@@ -55,8 +58,6 @@ workbench.
 ### Predicting the future through Math.
 **A workshop on Data Science.**
 - _Details to be disclosed soon._
-
-### _To be announced later ..._
 
 
 ## The Origin Story
