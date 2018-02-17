@@ -76,75 +76,77 @@
         <br>
       </center>
       <!-- <div class="alert alert-success" role="alert">Hello</div> -->
-        <div class="col-sm-6 col-sm-offset-3" id="cons" style="font-size : 16px !important; height: 100px; width: 400px; text-align: left; font-family: monospace !important;">
-        
-          <main class="prompt" style="color: #55ff55;">
-            root@initforcode: <span>Hello World!</span>
+      <div class="col-sm-6 col-sm-offset-3" id="cons" style="font-size : 16px !important; height: 100px; width: 400px; text-align: left; font-family: monospace !important;">
 
-          </main>
-       
-        </div>
+        <main class="prompt" style="color: #55ff55;">
+          root@initforcode:
+          <span>Hello World!</span>
 
-        <script>
-          var terminal = function(target) {
-            var $lines = $(target);
-            $lines.hide();
-            var lineContents = new Array();
+        </main>
 
-            var skip = 0;
-            typeLine = function(idx) {
-              idx == null && (idx = 0);
-              var element = $lines.eq(idx);
-              var content = lineContents[idx];
-              if(typeof content == "undefined") {
-                $('.skip').hide();
-                return;
-              }
-              var charIdx = 0;
+      </div>
 
-              var typeChar = function() {
-                var rand = Math.round(Math.random() * 150) + 25;
+      <script>
+        var terminal = function (target) {
+          var $lines = $(target);
+          $lines.hide();
+          var lineContents = new Array();
 
-                setTimeout(function() {
-                  var char = content[charIdx++];
-                  element.append(char);
-                  if(typeof char !== "undefined")
-                    typeChar();
-                  else {
-                    element.append('<br /><span class="output">' + element.text().slice(6, -1) + '</span><br />root@initforcode: <b id="cur">_</b>');
-                    element.removeClass('active');
-                    typeLine(++idx);
-                  }
-                }, skip ? 0 : rand);
-              }
-              content = 'echo "' + content + '"';
-              element.append('').addClass('active');
-              typeChar();
+          var skip = 0;
+          typeLine = function (idx) {
+            idx == null && (idx = 0);
+            var element = $lines.eq(idx);
+            var content = lineContents[idx];
+            if (typeof content == "undefined") {
+              $('.skip').hide();
+              return;
             }
+            var charIdx = 0;
 
-            $lines.each(function(i) {
-              lineContents[i] = $(this).text();
-              $(this).text('').show();
-            });
+            var typeChar = function () {
+              var rand = Math.round(Math.random() * 150) + 25;
 
-            typeLine();
+              setTimeout(function () {
+                var char = content[charIdx++];
+                element.append(char);
+                if (typeof char !== "undefined")
+                  typeChar();
+                else {
+                  element.append('<br /><span class="output">' + element.text().slice(6, -1) +
+                    '</span><br />root@initforcode: <b id="cur">_</b>');
+                  element.removeClass('active');
+                  typeLine(++idx);
+                }
+              }, skip ? 0 : rand);
+            }
+            content = 'echo "' + content + '"';
+            element.append('').addClass('active');
+            typeChar();
           }
 
-          terminal('.prompt span');
-
-          var consoleAlreadyDone = 0;
-          $(document).ready(function(){
-            document.onkeypress = function(e){
-              // alert("Key press");
-              if(consoleAlreadyDone != 1){
-                consoleAlreadyDone = 1;
-                $("#cur").text("");
-                $(".prompt").append("<span class='n'>It's just an animation. :P</span>");
-                terminal('.prompt .n');
-              }
-            }
+          $lines.each(function (i) {
+            lineContents[i] = $(this).text();
+            $(this).text('').show();
           });
-        </script>
+
+          typeLine();
+        }
+
+        terminal('.prompt span');
+
+        var consoleAlreadyDone = 0;
+        $(document).ready(function () {
+          document.onkeypress = function (e) {
+            // alert("Key press");
+            if (consoleAlreadyDone != 1) {
+              consoleAlreadyDone = 1;
+              $("#cur").text("");
+              $(".prompt").append("<span class='n'>It's just an animation. :P</span>");
+              terminal('.prompt .n');
+            }
+          }
+        });
+      </script>
     </div>
     <div id="dot-nav" class="uk-position-center-right uk-position-medium" style="position: fixed !important; z-index: +1;">
       <ul class="uk-dotnav uk-dotnav-vertical" uk-scrollspy-nav="closest: li; scroll: true; offset: 30">
@@ -247,43 +249,47 @@
         </div>
         <div class="row container">
           <div class="col-sm-6 uk-padding-large uk-padding-remove-vertical">
-              <p id="timeline" style="color:darkslategray" class="text-center">February</p>
+            <p id="timeline" style="color:darkslategray" class="text-center">February</p>
             <ul class="timeline">
               <li>
-                  <div class="timeline-badge"><i class="wizard icon"></i></div>
-                  <div class="timeline-panel">
-                      <div class="timeline-heading">
-                          <h3 class="timeline-title text-center" style="color:darkslategray">07/02/2018</h3>
-                      </div>
-                      <br>
-                      <div class="timeline-body">
-                          <p class="timeline-text"></p>
-                          <br>
-                          <a class="ui right labeled icon button ui teal basic button" href="/jekyllsetup/">
-<i class="right arrow icon"></i>
-Read
-</a>
-                      </div>
+                <div class="timeline-badge">
+                  <i class="wizard icon"></i>
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3 class="timeline-title text-center" style="color:darkslategray">07/02/2018</h3>
                   </div>
+                  <br>
+                  <div class="timeline-body">
+                    <p class="timeline-text"></p>
+                    <br>
+                    <a class="ui right labeled icon button ui teal basic button" href="/jekyllsetup/">
+                      <i class="right arrow icon"></i>
+                      Read
+                    </a>
+                  </div>
+                </div>
               </li>
               <li>
-                <div class="timeline-badge"><i class="wizard icon"></i></div>
-                <div class="timeline-panel">
-                    <div class="timeline-heading">
-                        <h3 class="timeline-title" style="color:darkslategray">My thoughts on Jekyll</h3>
-                    </div>
-                    <br>
-                    <div class="timeline-body">
-                        <p class="timeline-text">My experiences with Jekyll after going through all the hassle to set up this blog.</p>
-                        <br>
-                        <a class="ui right labeled icon button ui teal basic button" href="/jekyllsetup/">
-<i class="right arrow icon"></i>
-Read
-</a>
-                    </div>
+                <div class="timeline-badge">
+                  <i class="wizard icon"></i>
                 </div>
-            </li>
-          </ul>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3 class="timeline-title" style="color:darkslategray">My thoughts on Jekyll</h3>
+                  </div>
+                  <br>
+                  <div class="timeline-body">
+                    <p class="timeline-text">My experiences with Jekyll after going through all the hassle to set up this blog.</p>
+                    <br>
+                    <a class="ui right labeled icon button ui teal basic button" href="/jekyllsetup/">
+                      <i class="right arrow icon"></i>
+                      Read
+                    </a>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
           <div class="col-sm-6">
 
@@ -296,113 +302,310 @@ Read
       </div>
     </div>
   </section>
-  <section id="workshops" uk-scrollspy="cls:uk-animation-fade;repeat:true;" style="min-height: 100vh;" class="uk-padding-large">
+  <section id="workshops" uk-scrollspy="cls:uk-animation-fade;repeat:true;" style="" class="uk-padding-large">
     <div class="container">
       <div class="row">
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
-          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">&lt;Register&gt;</h3>
-        </div>
-        <div class="col-sm-12">
-          <div class="row container-fluid uk-padding-large uk-padding-remove-vertical text-center">
-            <h2 style="color: #fff;" class="uk-margin-medium">Registrations are now
-              <span class="">closed</span>!</h2>
-            <p class="uk-margin-medium"> Keep checking
-              <a href="http://facebook.com/ingeniushack" target="_blank"> facebook.com/ingeniushack </a> for list of shortlisted teams. </p>
-          </div>
+          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">#!workshops/begin</h3>
         </div>
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
-          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">&lt;/Register&gt;</h3>
+          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">#!workshops/end</h3>
         </div>
       </div>
     </div>
   </section>
-  <section id="faq" style="min-height: 100vh;" uk-scrollspy="cls:uk-animation-fade;repeat:true;" class="section uk-padding-large">
+  <section id="members" style="min-height: 100vh;" uk-scrollspy="cls:uk-animation-fade;repeat:true;" class="section uk-padding-large">
     <div class="container">
       <div class="row">
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
-          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">&lt;FAQ&gt;</h3>
+          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">#!members/begin</h3>
         </div>
-        <div class="col-sm-12">
-          <div class="row container">
-            <div class="col-sm-10 col-sm-offset-1 uk-padding-large uk-padding-remove-vertical main-content">
-              <ul uk-accordion="collapsible: false">
-                <li uk-scrollspy="cls:uk-animation-fade">
-                  <h3 class="uk-accordion-title">Who can attend inGenius 2017?</h3>
-                  <div class="uk-accordion-content">
-                    <p>The only restriction is that you must be a student! Age is no bar as long as you have a valid current
-                      university/ college/ school ID. Build your team with that in mind and register.</p>
-                  </div>
-                </li>
-                <li uk-scrollspy="cls:uk-animation-fade">
-                  <h3 class="uk-accordion-title">Is there a registration fee?</h3>
-                  <div class="uk-accordion-content">
-                    <p>Registering your team along with your hack idea is free (obviously :P). But, once shortlisted, teams
-                      need to buy tickets which are worth ₹400 per person in the team.
-                      <br>There is an optional T-Shirt that can be bought along with your ticket that will cost Rs.200.</p>
-                  </div>
-                </li>
-                <li uk-scrollspy="cls:uk-animation-fade">
-                  <h3 class="uk-accordion-title">How many people can I have in my team?</h3>
-                  <div class="uk-accordion-content">
-                    <p>You must have at least 2 people in your team, and a maximum of 3 people. Fancy, crazy team names are
-                      encouraged! No obscenity, mind you.</p>
-                  </div>
-                </li>
-                <li uk-scrollspy="cls:uk-animation-fade">
-                  <h3 class="uk-accordion-title">How do I get shortlisted?</h3>
-                  <div class="uk-accordion-content">
-                    <p>Register your hack ideas online. Give us a 100 word abstract about your hack to show us how awesome your
-                      idea is! This hack description is what will get you a confirmation mail if we like your idea. You can
-                      also add some weight to your hack by including your github and linkedin profile links. If we like your
-                      idea, you will be sent an email confirming your participation a few weeks before the event. Don't forget
-                      to keep checking your inbox (also, check SPAM, just in case!).
-                      <br>Registrations for the hackathon will open soon!</p>
-                  </div>
-                </li>
-                <li uk-scrollspy="cls:uk-animation-fade">
-                  <h3 class="uk-accordion-title">What do I have to bring?</h3>
-                  <div class="uk-accordion-content">
-                    <p>Mandatory:
-                      <br> A valid College ID (or Government ID if none available).
-                      <br> Laptop, chargers &amp; other required peripherals.
-                      <br> Any and all hardware equipment required for the completion of your hack.
-                      <br> No Objection Certificate for each female participant Unadulterated enthusiasm!
-                      <br>
-                      <br> Optional:
-                      <br> Data card / dongles for internet access (just in case!). Anything you need to be comfy during the
-                      night.
-                    </p>
-                  </div>
-                </li>
-                <li uk-scrollspy="cls:uk-animation-fade">
-                  <h3 class="uk-accordion-title">How long is the event? Do I have to stay throughout?</h3>
-                  <div class="uk-accordion-content">
-                    <p>Everybody gets 24 hours to work on their hacks. Including inauguration and prize distributions etc, the
-                      entire event lasts about 30 hours. You are free to leave the venue before 6 PM on day one and come
-                      back next morning after 5-6 AM.Female participants must carry a No Objection Certificate signed by
-                      their guardian in order to be allowed to stay the night!</p>
-                  </div>
-                </li>
-                <li uk-scrollspy="cls:uk-animation-fade">
-                  <h3 class="uk-accordion-title">How will you judge?</h3>
-                  <div class="uk-accordion-content">
-                    <p>Based on your hack domain, judges will visit your team and do the judgement. The top 10 teams will be
-                      selected and will have to present their hacks on stage to all the judges.</p>
-                  </div>
-                </li>
-                <li uk-scrollspy="cls:uk-animation-fade">
-                  <h3 class="uk-accordion-title">I have a question that's not answered here</h3>
-                  <div class="uk-accordion-content">
-                    <p>We're here to help you however you need! Feel free to drop us an
-                      <a href="mailto:ingeniushack@gmail.com">email</a>. You could also reach out to us on
-                      <a href="https://facebook.com/inGeniusHack">Facebook</a> or on
-                      <a href="https://twitter.com/ingeniushack">Twitter</a>.</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
+        <section class="container">
+          <div class="row active-with-click">
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                  <article class="material-card Red">
+                      <h2>
+                          <span>Christopher Walken</span>
+                          <strong>
+                              <i class="fa fa-fw fa-star"></i>
+                              The Deer Hunter
+                          </strong>
+                      </h2>
+                      <div class="mc-content">
+                          <div class="img-container">
+                              <img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-christopher-walken.jpg">
+                          </div>
+                          <div class="mc-description">
+                              He has appeared in more than 100 films and television shows, including The Deer Hunter, Annie Hall, The Prophecy trilogy, The Dogs of War ...
+                          </div>
+                      </div>
+                      <a class="mc-btn-action">
+                          <i class="fa fa-bars"></i>
+                      </a>
+                      <div class="mc-footer">
+                          <h4>
+                              Social
+                          </h4>
+                          <a class="fa fa-fw fa-facebook"></a>
+                          <a class="fa fa-fw fa-twitter"></a>
+                          <a class="fa fa-fw fa-linkedin"></a>
+                          <a class="fa fa-fw fa-google-plus"></a>
+                      </div>
+                  </article>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                  <article class="material-card Pink">
+                      <h2>
+                          <span>Sean Penn</span>
+                          <strong>
+                              <i class="fa fa-fw fa-star"></i>
+                              Mystic River
+                          </strong>
+                      </h2>
+                      <div class="mc-content">
+                          <div class="img-container">
+                              <img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-sean-penn.jpg">
+                          </div>
+                          <div class="mc-description">
+                              He has won two Academy Awards, for his roles in the mystery drama Mystic River (2003) and the biopic Milk (2008). Penn began his acting career in television with a brief appearance in a 1974 episode of Little House on the Prairie ...
+                          </div>
+                      </div>
+                      <a class="mc-btn-action">
+                          <i class="fa fa-bars"></i>
+                      </a>
+                      <div class="mc-footer">
+                          <h4>
+                              Social
+                          </h4>
+                          <a class="fa fa-fw fa-facebook"></a>
+                          <a class="fa fa-fw fa-twitter"></a>
+                          <a class="fa fa-fw fa-linkedin"></a>
+                          <a class="fa fa-fw fa-google-plus"></a>
+                      </div>
+                  </article>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                  <article class="material-card Purple">
+                      <h2>
+                          <span>Clint Eastwood</span>
+                          <strong>
+                              <i class="fa fa-fw fa-star"></i>
+                              Million Dollar Baby
+                          </strong>
+                      </h2>
+                      <div class="mc-content">
+                          <div class="img-container">
+                              <img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-clint-eastwood.jpg">
+                          </div>
+                          <div class="mc-description">
+                              He rose to international fame with his role as the Man with No Name in Sergio Leone's Dollars trilogy of spaghetti Westerns during the 1960s ...
+                          </div>
+                      </div>
+                      <a class="mc-btn-action">
+                          <i class="fa fa-bars"></i>
+                      </a>
+                      <div class="mc-footer">
+                          <h4>
+                              Social
+                          </h4>
+                          <a class="fa fa-fw fa-facebook"></a>
+                          <a class="fa fa-fw fa-twitter"></a>
+                          <a class="fa fa-fw fa-linkedin"></a>
+                          <a class="fa fa-fw fa-google-plus"></a>
+                      </div>
+                  </article>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                  <article class="material-card Deep-Purple">
+                      <h2>
+                          <span>Dustin Hoffman</span>
+                          <strong>
+                              <i class="fa fa-fw fa-star"></i>
+                              Kramer vs. Kramer
+                          </strong>
+                      </h2>
+                      <div class="mc-content">
+                          <div class="img-container">
+                              <img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-dustin-hoffman.jpg">
+                          </div>
+                          <div class="mc-description">
+                              He has been known for his versatile portrayals of antiheroes and vulnerable characters.[3] He won the Academy Award for Kramer vs. Kramer in 1979 ...
+                          </div>
+                      </div>
+                      <a class="mc-btn-action">
+                          <i class="fa fa-bars"></i>
+                      </a>
+                      <div class="mc-footer">
+                          <h4>
+                              Social
+                          </h4>
+                          <a class="fa fa-fw fa-facebook"></a>
+                          <a class="fa fa-fw fa-twitter"></a>
+                          <a class="fa fa-fw fa-linkedin"></a>
+                          <a class="fa fa-fw fa-google-plus"></a>
+                      </div>
+                  </article>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                  <article class="material-card Indigo">
+                      <h2>
+                          <span>Edward Norton</span>
+                          <strong>
+                              <i class="fa fa-fw fa-star"></i>
+                              American History X
+                          </strong>
+                      </h2>
+                      <div class="mc-content">
+                          <div class="img-container">
+                              <img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-edward-norton.jpg">
+                          </div>
+                          <div class="mc-description">
+                              He has been nominated for three Academy Awards for his work in the films Primal Fear, American History X and Birdman. He also starred in other roles ...
+                          </div>
+                      </div>
+                      <a class="mc-btn-action">
+                          <i class="fa fa-bars"></i>
+                      </a>
+                      <div class="mc-footer">
+                          <h4>
+                              Social
+                          </h4>
+                          <a class="fa fa-fw fa-facebook"></a>
+                          <a class="fa fa-fw fa-twitter"></a>
+                          <a class="fa fa-fw fa-linkedin"></a>
+                          <a class="fa fa-fw fa-google-plus"></a>
+                      </div>
+                  </article>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                  <article class="material-card Blue">
+                      <h2>
+                          <span>Michael Caine</span>
+                          <strong>
+                              <i class="fa fa-fw fa-star"></i>
+                              Educated Rita
+                          </strong>
+                      </h2>
+                      <div class="mc-content">
+                          <div class="img-container">
+                              <img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-michael-caine.jpg">
+                          </div>
+                          <div class="mc-description">
+                              English actor and author. Renowned for his distinctive working class cockney accent, Caine has appeared in over 115 films and is regarded as a British ...
+                          </div>
+                      </div>
+                      <a class="mc-btn-action">
+                          <i class="fa fa-bars"></i>
+                      </a>
+                      <div class="mc-footer">
+                          <h4>
+                              Social
+                          </h4>
+                          <a class="fa fa-fw fa-facebook"></a>
+                          <a class="fa fa-fw fa-twitter"></a>
+                          <a class="fa fa-fw fa-linkedin"></a>
+                          <a class="fa fa-fw fa-google-plus"></a>
+                      </div>
+                  </article>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                  <article class="material-card Light-Blue">
+                      <h2>
+                          <span>Harvey Keitel</span>
+                          <strong>
+                              <i class="fa fa-fw fa-star"></i>
+                              Pulp Fiction
+                          </strong>
+                      </h2>
+                      <div class="mc-content">
+                          <div class="img-container">
+                              <img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-harvey-keitel.jpg">
+                          </div>
+                          <div class="mc-description">
+                              Some of his most notable starring roles were in Martin Scorsese's Mean Streets and Taxi Driver, Ridley Scott's The Duellists and Thelma & Louise, Quentin Tarantino ...
+                          </div>
+                      </div>
+                      <a class="mc-btn-action">
+                          <i class="fa fa-bars"></i>
+                      </a>
+                      <div class="mc-footer">
+                          <h4>
+                              Social
+                          </h4>
+                          <a class="fa fa-fw fa-facebook"></a>
+                          <a class="fa fa-fw fa-twitter"></a>
+                          <a class="fa fa-fw fa-linkedin"></a>
+                          <a class="fa fa-fw fa-google-plus"></a>
+                      </div>
+                  </article>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                  <article class="material-card Cyan">
+                      <h2>
+                          <span>Jack Nicholson</span>
+                          <strong>
+                              <i class="fa fa-fw fa-star"></i>
+                              The Shining
+                          </strong>
+                      </h2>
+                      <div class="mc-content">
+                          <div class="img-container">
+                              <img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-jack-nicholson.jpg">
+                          </div>
+                          <div class="mc-description">
+                              Throughout his career, Nicholson has portrayed unique and challenging roles, many of which include dark portrayals of excitable, neurotic and psychopathic characters ...
+                          </div>
+                      </div>
+                      <a class="mc-btn-action">
+                          <i class="fa fa-bars"></i>
+                      </a>
+                      <div class="mc-footer">
+                          <h4>
+                              Social
+                          </h4>
+                          <a class="fa fa-fw fa-facebook"></a>
+                          <a class="fa fa-fw fa-twitter"></a>
+                          <a class="fa fa-fw fa-linkedin"></a>
+                          <a class="fa fa-fw fa-google-plus"></a>
+                      </div>
+                  </article>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                  <article class="material-card Teal">
+                      <h2>
+                          <span>Jeff Bridges</span>
+                          <strong>
+                              <i class="fa fa-fw fa-star"></i>
+                              The Big Lebowski
+                          </strong>
+                      </h2>
+                      <div class="mc-content">
+                          <div class="img-container">
+                              <img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-jeff-bridges.jpg">
+                          </div>
+                          <div class="mc-description">
+                              He comes from a well-known acting family and began his televised acting in 1958 as a child with his father, Lloyd Bridges, and brother, Beau, on television's Sea Hunt ...
+                          </div>
+                      </div>
+                      <a class="mc-btn-action">
+                          <i class="fa fa-bars"></i>
+                      </a>
+                      <div class="mc-footer">
+                          <h4>
+                              Social
+                          </h4>
+                          <a class="fa fa-fw fa-facebook"></a>
+                          <a class="fa fa-fw fa-twitter"></a>
+                          <a class="fa fa-fw fa-linkedin"></a>
+                          <a class="fa fa-fw fa-google-plus"></a>
+                      </div>
+                  </article>
+              </div>
+
           </div>
-        </div>
+      </section>
+
+      <a href="https://github.com/marlenesco/material-cards" class="github-corner" aria-label="View source on Github" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#f44336; color:#ECEFF1; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
           <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">&lt;/FAQ&gt;</h3>
         </div>
@@ -519,6 +722,37 @@ Read
   </script>
   <script src="js/classie.js"></script>
   <script src="js/svganimations2.js"></script>
+  <script>
+  $(function() {
+        $('.material-card > .mc-btn-action').click(function () {
+            var card = $(this).parent('.material-card');
+            var icon = $(this).children('i');
+            icon.addClass('fa-spin-fast');
+
+            if (card.hasClass('mc-active')) {
+                card.removeClass('mc-active');
+
+                window.setTimeout(function() {
+                    icon
+                        .removeClass('fa-arrow-left')
+                        .removeClass('fa-spin-fast')
+                        .addClass('fa-bars');
+
+                }, 800);
+            } else {
+                card.addClass('mc-active');
+
+                window.setTimeout(function() {
+                    icon
+                        .removeClass('fa-bars')
+                        .removeClass('fa-spin-fast')
+                        .addClass('fa-arrow-left');
+
+                }, 800);
+            }
+        });
+    });
+  </script>
 </body>
 
 </html>
