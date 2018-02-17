@@ -13,7 +13,7 @@ body {
 
 .uk-dotnav>li>a {
     /*background-color: transparent;*/
-    border: 2px solid #fff;
+    border: 2px solid #f9b81a;
     opacity: 0.5;
     width: 12px;
     height: 12px;
@@ -52,7 +52,7 @@ body {
     /*animation: bg-transitions 4s infinite alternate;
     -moz-animation: bg-transitions 4s infinite alternate;
     -webkit-animation: bg-transitions 4s infinite alternate;*/
-    background: #000;
+    background: #FEF8F5;
     background-image: url("");
     background-repeat: no-repeat;
     background-size: cover;
@@ -67,7 +67,7 @@ body {
 
 #logo-area {
     position: absolute;
-    top: 20%;
+    top: 15%;
     z-index: +1;
 }
 

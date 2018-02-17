@@ -2,62 +2,65 @@
 <html>
 
 <head>
+  <!-- Meta info -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Official website of init.">
-  <meta name="author" content="Harsha Vamsi">
+  <meta name="author" content="The init Crew">
+
   <title>Home | #!nit</title>
-  <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Inconsolata" /> -->
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+
+  <!-- jQuery -->
   <!-- <link rel="stylesheet" type="text/css" href="css/jquery.fullpage.min.css" /> -->
-  <link rel="shortcut icon" href="assets/img/favicon.png">
-  <!-- UIkit CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.28/css/uikit.min.css" />
-  <link rel='stylesheet' href='assets/css/animate.css'>
-  <link rel='stylesheet' href='assets/css/font-awesome.min.css'>
-  <!-- jQuery is required -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
   <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-  <!-- UIkit JS -->
+  
+  <!-- UIkit -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.28/css/uikit.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.28/js/uikit.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.28/js/uikit-icons.min.js"></script>
+
+  <!-- Misc Plugins -->
+  <link rel='stylesheet' href='assets/css/animate.css' />                     <!-- Cool animations -->
+  <link rel='stylesheet' href='assets/css/font-awesome.min.css' />            <!-- Font Awesome Icons -->
+
+  <!-- Our resources -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="shortcut icon" href="assets/img/favicon.png" />
+  <script type="text/javascript" src="assets/js/terminal.js"></script>
+ 
 </head>
 
 <body data-spy="scroll" data-target=".uk-dotnav" data-offset="50">
+
+  <!-- Someone please tell me what this does? -->
   <div id="menu-icon" style="position: fixed; top:10px; right:10px; z-index: 1001 !important;" uk-toggle="target: #offcanvas-nav-primary">
   </div>
+
+  <!-- Again, what the hell is this? If not required, please delete. -->
   <!-- <button class="uk-button uk-button-default uk-margin-small-right" type="button">Primary Nav</button> -->
   <div class="uk-offcanvas-content">
     <div id="offcanvas-nav-primary" uk-offcanvas="overlay: false; flip: true">
       <div class="uk-offcanvas-bar uk-flex uk-flex-column" style="background-color: #000; width:100vw; z-index: -1; letter-spacing: 2px; font-size : 32px;">
         <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical" uk-scrollspy-nav="closest: li; scroll: true">
-          <li class="uk-active">
-            <a href="#home" uk-scroll>Home</a>
-          </li>
-          <li>
-            <a href="#init" uk-scroll>#!nit</a>
-          </li>
-          <li>
-            <a href="#scripts" uk-scroll>Scripts</a>
-          </li>
-          <li>
-            <a href="#asd" uk-scroll>ASD</a>
-          </li>
-
-          <!-- <li>
-            <a href="#workshops" uk-scroll>Workshops</a>
-          </li> -->
-          <li>
-            <a href="#members" uk-scroll>Members</a>
-          </li>
-          <li>
-            <a href="#IEEE" uk-scroll>IEEE CompSoc</a>
-          </li>
+          <li class="uk-active"><a href="#home" uk-scroll>Home</a></li>
+          <li><a href="#init" uk-scroll>#!nit</a></li>
+          <li><a href="#scripts" uk-scroll>Scripts</a></li>
+          <li><a href="#asd" uk-scroll>ASD</a></li>
+          <!-- <li><a href="#workshops" uk-scroll>Workshops</a></li> -->
+          <li><a href="#members" uk-scroll>Members</a></li>
+          <li><a href="#IEEE" uk-scroll>IEEE CompSoc</a></li>
         </ul>
       </div>
     </div>
+
+    <!-- Document Ready script. Move to main.js -->
     <script>
       $(document).ready(function () {
         $(".uk-nav-primary li").click(function () {
@@ -65,89 +68,44 @@
         });
       });
     </script>
+  
   </div>
+
+  <!-- Does this still do anything other than set the background? -->
   <div id="particles-js"></div>
   <!-- <div id="fullpage"> -->
+  
+
+  <!-- HOME SECTION BEGINS HERE -->
+
   <section id="home" class="section active" style="width: 100%; min-height: 100vh;">
+    
+    <!-- Logo -->
     <div class="col-md-6 col-md-offset-3 text-center" id="logo-area">
       <center>
         <img class="img img-responsive" style="max-height:180px;" src="assets/img/logo.png">
-        <br>
-        <br>
+        <h3 class="uk-heading-line uk-text-center">
+          <span>Code With Us</span>
+        </h3>
       </center>
-      <!-- <div class="alert alert-success" role="alert">Hello</div> -->
-      <div class="col-sm-6 col-sm-offset-3" id="cons" style="font-size : 16px !important; height: 100px; width: 400px; text-align: left; font-family: monospace !important;">
 
+      <!-- Terminal -->
+      <div class="col-sm-6 col-sm-offset-3 center-block" id="cons"
+        style="font-size : 16px !important; height: 200px; width: 100%; text-align: left; font-family: monospace !important;">
         <main class="prompt" style="color: #55ff55;">
-          root@initforcode:
-          <span>Hello World!</span>
-
+          thecrew@initforcode $ 
+          <span>JavaScript on Feb 20-21 @ 3:45 in Room 201.</span>
+          <span>ASD Session on Feb 21 for the 6th Semester.</span>
         </main>
-
       </div>
-
-      <script>
-        var terminal = function (target) {
-          var $lines = $(target);
-          $lines.hide();
-          var lineContents = new Array();
-
-          var skip = 0;
-          typeLine = function (idx) {
-            idx == null && (idx = 0);
-            var element = $lines.eq(idx);
-            var content = lineContents[idx];
-            if (typeof content == "undefined") {
-              $('.skip').hide();
-              return;
-            }
-            var charIdx = 0;
-
-            var typeChar = function () {
-              var rand = Math.round(Math.random() * 150) + 25;
-
-              setTimeout(function () {
-                var char = content[charIdx++];
-                element.append(char);
-                if (typeof char !== "undefined")
-                  typeChar();
-                else {
-                  element.append('<br /><span class="output">' + element.text().slice(6, -1) +
-                    '</span><br />root@initforcode: <b id="cur">_</b>');
-                  element.removeClass('active');
-                  typeLine(++idx);
-                }
-              }, skip ? 0 : rand);
-            }
-            content = 'echo "' + content + '"';
-            element.append('').addClass('active');
-            typeChar();
-          }
-
-          $lines.each(function (i) {
-            lineContents[i] = $(this).text();
-            $(this).text('').show();
-          });
-
-          typeLine();
-        }
-
+      <script type="text/javascript">
+        // Check assets/js/terminal.js for the rest of the code.
         terminal('.prompt span');
-
-        var consoleAlreadyDone = 0;
-        $(document).ready(function () {
-          document.onkeypress = function (e) {
-            // alert("Key press");
-            if (consoleAlreadyDone != 1) {
-              consoleAlreadyDone = 1;
-              $("#cur").text("");
-              $(".prompt").append("<span class='n'>It's just an animation. :P</span>");
-              terminal('.prompt .n');
-            }
-          }
-        });
       </script>
+
     </div>
+
+    <!-- The Dotted Navigation -->
     <div id="dot-nav" class="uk-position-center-right uk-position-medium" style="position: fixed !important; z-index: +1;">
       <ul class="uk-dotnav uk-dotnav-vertical" uk-scrollspy-nav="closest: li; scroll: true; offset: 30">
         <li class="uk-active" title="Home" uk-tooltip="pos: left">
@@ -173,43 +131,57 @@
         </li>
       </ul>
     </div>
+
   </section>
-  <div class="bulblogo hidden" style="position: fixed; top: 10px; left: 15px; z-index: 999;">
+
+  <!-- HOME SECTION ENDS HERE -->
+
+  <!-- Logo on top left. Can this be moved to the top of page? -->
+  <div class="hashlogo hidden" style="position: fixed; top: 10px; left: 15px; z-index: 999;">
     <a href="#home" uk-scroll>
-      <img class="img img-responsive" style="height:60px;" src="assets/img/icon.png">
+      <img class="img img-responsive" style="height:35px;" src="assets/img/icon.png">
     </a>
   </div>
+
+  <!-- Another document ready function -->
   <script>
     $(document).ready(function () {
       $(window).scroll(function () {
         var scrollPos = $(window).scrollTop();
         if (scrollPos >= 600) {
-          $(".bulblogo").addClass("large-nav").promise().done(function () {
-            $(".bulblogo").removeClass("hidden").addClass("fadeInLeft animated");
+          $(".hashlogo").addClass("large-nav").promise().done(function () {
+            $(".hashlogo").removeClass("hidden").addClass("fadeInLeft animated");
           });
         } else if (scrollPos <= 500) {
-          $(".bulblogo").removeClass("large-nav").promise().done(function () {
-            $(".bulblogo").removeClass("fadeInLeft").addClass("fadeOutLeft").promise().done(function () {
-              $(".bulblogo").removeClass("fadeOutLeft").addClass("hidden");
+          $(".hashlogo").removeClass("large-nav").promise().done(function () {
+            $(".hashlogo").removeClass("fadeInLeft").addClass("fadeOutLeft").promise().done(function () {
+              $(".hashlogo").removeClass("fadeOutLeft").addClass("hidden");
             });
           });
         }
       });
     });
   </script>
-  <section id="init" style="" class="section uk-padding-large">
+
+
+  <!-- INIT SECTION BEGINS HERE -->
+
+  <section id="init" style="width: 100%" class="section uk-padding-large">
     <div class="container">
       <div class="row">
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
-          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">program init begin</h3>
+          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">program init begin</h3>
         </div>
         <div class="col-sm-12">
           <div class="row container">
             <div class="col-md-6 uk-padding-large uk-padding-remove-vertical main-content">
-              <p style="color:#2d9687;">
-                Init was an idea born of the necessity for change, a change that would take you from the drawing board of the classroom to pragmatic code. We built Init to instil a culture of collaborative hacking and to forge a platform for collective growth. Init is our love for code, pursued to share our love for code. Init is our revolution to the everyday monotony of college. Init is our contribution to growing a community we owe much to.
-<br>
-<br>
+              <p class="text-justify" style="color:#426E86; font-size: 18px !important">
+                <span style="font-family: monospace">#!nit</span> was an idea born of the necessity for change, a change that would take you from the drawing board of the classroom to pragmatic code.
+                We built <span style="font-family: monospace">#!nit</span> to instil a culture of collaborative hacking and to forge a platform for collective growth.
+                <span style="font-family: monospace">#!nit</span> is our love for code, pursued to share this passion among others.
+                <span style="font-family: monospace">#!nit</span> is our revolution to the everyday monotony of college.
+                <span style="font-family: monospace">#!nit</span> is our contribution to growing a community we owe much to.
+                <br><br>
                 Init is our movement. Be a part of our movement.
               </p>
             </div>
@@ -217,16 +189,16 @@
               <div class="row uk-margin uk-margin-remove-horizontal">
                 <img class="img img-responsive pull-right" style="max-height: 400px !important;" src="assets/img/logo.png">
               </div>
-              <br>
-              <div class="main-content text-center" style="color:#2d9687;">
-                For the ❤️ of Open Source,
+              <br><br>
+              <div class="main-content text-right" style="color:#426E86;">
+                For the ❤️ of Open Source<br>
                 The Init Crew
               </div>
             </div>
           </div>
         </div>
-        <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
-          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">program init end</h3>
+        <div class="col-sm-12 uk-padding uk-padding-remove-top">
+          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">program init end</h3>
         </div>
       </div>
     </div>
@@ -236,8 +208,13 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
-          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">program scripts begin</h3>
+          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">program scripts begin</h3>
         </div>
+        <p class="text-justify uk-padding uk-padding-remove-bottom" style="color:#426E86; font-size: 18px !important">
+          Scripts have been designed with a focus towards core programming skills in order to give you a boost into development.
+          Each session will walk you across the basics of a programming language or framework and gear you with enough intel to guide your progress through
+          the murky waters of the Internet.
+        </p>
         <div class="promos">
           <div class="promo first scale">
             <ul class="features">
@@ -282,7 +259,7 @@
           </div>
         </div>
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
-          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">program scripts end</h3>
+          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">program scripts end</h3>
         </div>
       </div>
     </div>
@@ -292,26 +269,26 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
-          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">program asd begin</h3>
+          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">
+            program asd begin
+          </h3>
         </div>
         <div class="row container">
           <div class="col-sm-6">
             <div id="calendar"></div>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
           </div>
-          <div class="col-sm-6 main-content" style="color:#2d9687;">
-            <br>
-            <br>
-            <br>
-            In order to broaden our reach to you, we intend to conduct the ASD classes, henceforth called insert expansion here to talk about the approach and resources required to enter the world of Computer Science.
-              <br>
-            <br>
-              An application oriented series of talks, we intend to touch upon various aspects of programming in terms of our experiences and expertise as well as aspects of practical need, such as placements, competitive coding, project management, etc.
+          <div class="col-sm-6 main-content text-justify" style="color: #426E86; font-size: 18px">
+            In order to broaden our reach to you, we intend to conduct the ASD classes, bringing Appealing yet Significant Discussions
+            regarding the approach and resources required to enter the world of Computer Science. An application oriented series of talks,
+            we intend to touch upon various aspects of programming in terms of our experiences and expertise as well as aspects of practical
+            need, such as placements, competitive coding, project management, etc.
           </div>
         </div>
-
-        <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
-          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">program asd end</h3>
+        <div class="col-sm-12 uk-padding uk-padding-remove-top">
+          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">
+            program asd end
+          </h3>
         </div>
       </div>
     </div>
@@ -320,10 +297,10 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
-          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">#!workshops/begin</h3>
+          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">#!workshops/begin</h3>
         </div>
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
-          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">#!workshops/end</h3>
+          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">#!workshops/end</h3>
         </div>
       </div>
     </div>
@@ -332,7 +309,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
-          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">program members begin</h3>
+          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">program members begin</h3>
         </div>
         <section class="container">
           <div class="row active-with-click">
@@ -340,19 +317,16 @@
               <article class="material-card Red" >
                 <h2>
                   <span>Abhijit Theophilus</span>
-                  <strong>
-                    {
-                    The Deer Hunter
-                    }
-                  </strong>
                 </h2>
                 <div class="mc-content">
                   <div class="img-container">
-                    <img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-christopher-walken.jpg" >
+                    <img class="img-responsive" src="assets/img/jerry.jpg" >
                   </div>
                   <div class="mc-description">
-                    He has appeared in more than 100 films and television shows, including The Deer Hunter, Annie Hall, The Prophecy trilogy,
-                    The Dogs of War ...
+                    An ardent Coder. A passionate Gamer.<br>
+                    A love for Coffee and Conversation.<br>
+                    A strong believer in collective growth,<br>
+                    persistence and a free-spirited mindset.
                   </div>
                 </div>
                 <a class="mc-btn-action">
@@ -371,19 +345,13 @@
               <article class="material-card Pink">
                 <h2>
                   <span>Somya Bansal</span>
-                  <strong>
-
-                    {Mystic River}
-                  </strong>
                 </h2>
                 <div class="mc-content">
                   <div class="img-container">
                     <img class="img-responsive" src="assets/img/somya.jpg">
                   </div>
                   <div class="mc-description">
-                    He has won two Academy Awards, for his roles in the mystery drama Mystic River (2003) and the biopic Milk (2008). Penn began
-                    his acting career in television with a brief appearance in a 1974 episode of Little House on the Prairie
-                    ...
+                     A student, listener and learner. Loves music. A logical person, good at organising, singing and making bad puns and jokes.
                   </div>
                 </div>
                 <a class="mc-btn-action">
@@ -404,16 +372,10 @@
               <article class="material-card Purple">
                 <h2>
                   <span>Harsha Vamsi</span>
-                  <strong>
-                    {
-                      Million Dollar Baby
-                    }
-
-                  </strong>
                 </h2>
                 <div class="mc-content">
                   <div class="img-container">
-                    <img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-clint-eastwood.jpg">
+                    <img class="img-responsive" src="assets/img/vamsi.jpg">
                   </div>
                   <div class="mc-description">
                     He rose to international fame with his role as the Man with No Name in Sergio Leone's Dollars trilogy of spaghetti Westerns
@@ -438,20 +400,13 @@
               <article class="material-card Deep-Purple">
                 <h2>
                   <span>Krishna Chaitanya</span>
-                  <strong>
-                    {
-                      Kramer vs. Kramer
-                    }
-
-                  </strong>
                 </h2>
                 <div class="mc-content">
                   <div class="img-container">
-                    <img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-dustin-hoffman.jpg">
+                    <img class="img-responsive" src="assets/img/krishna.jpg">
                   </div>
                   <div class="mc-description">
-                    He has been known for his versatile portrayals of antiheroes and vulnerable characters.[3] He won the Academy Award for Kramer
-                    vs. Kramer in 1979 ...
+                    Final year comp science engineer, with hint of knowledge in technology. Like to listen to anything interesting.
                   </div>
                 </div>
                 <a class="mc-btn-action">
@@ -472,20 +427,14 @@
               <article class="material-card Indigo">
                 <h2>
                   <span>Sandra Anil</span>
-                  <strong>
-                    {
-                      American History X
-                    }
-
-                  </strong>
                 </h2>
                 <div class="mc-content">
                   <div class="img-container">
-                    <img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-edward-norton.jpg">
+                    <img class="img-responsive" src="assets/img/sandra.jpg">
                   </div>
                   <div class="mc-description">
-                    He has been nominated for three Academy Awards for his work in the films Primal Fear, American History X and Birdman. He
-                    also starred in other roles ...
+                    High energy enthusiastic person passionate about technology. I love problem solving and developing systems to tackle challenges
+                    in our daily life.
                   </div>
                 </div>
                 <a class="mc-btn-action">
@@ -506,18 +455,13 @@
               <article class="material-card Blue">
                 <h2>
                   <span>Prateek Gupta</span>
-                  <strong>
-
-                    {}
-                  </strong>
                 </h2>
                 <div class="mc-content">
                   <div class="img-container">
-                    <img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-michael-caine.jpg">
+                    <img class="img-responsive" src="assets/img/prateek.jpg">
                   </div>
                   <div class="mc-description">
-                    English actor and author. Renowned for his distinctive working class cockney accent, Caine has appeared in over 115 films
-                    and is regarded as a British ...
+                    Physical Hacker! Trying to build stuff by breaking them first.
                   </div>
                 </div>
                 <a class="mc-btn-action">
@@ -538,14 +482,10 @@
               <article class="material-card Light-Blue">
                 <h2>
                   <span>Ankit Sinha</span>
-                  <strong>
-                    <i class="fa fa-fw fa-star"></i>
-                    Pulp Fiction
-                  </strong>
                 </h2>
                 <div class="mc-content">
                   <div class="img-container">
-                    <img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-harvey-keitel.jpg">
+                    <img class="img-responsive" src="assets/img/ankit.jpg">
                   </div>
                   <div class="mc-description">
                     Some of his most notable starring roles were in Martin Scorsese's Mean Streets and Taxi Driver, Ridley Scott's The Duellists
@@ -570,18 +510,14 @@
               <article class="material-card Cyan">
                 <h2>
                   <span>Arkoprabho Bhattacharjee</span>
-                  <strong>
-                    <i class="fa fa-fw fa-star"></i>
-                    The Shining
-                  </strong>
                 </h2>
                 <div class="mc-content">
                   <div class="img-container">
-                    <img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-jack-nicholson.jpg">
+                    <img class="img-responsive" src="assets/img/arko.jpg">
                   </div>
                   <div class="mc-description">
-                    Throughout his career, Nicholson has portrayed unique and challenging roles, many of which include dark portrayals of excitable,
-                    neurotic and psychopathic characters ...
+                    Determined dreamer. Poet. Artist.<br>
+                    Also, a guy who tends to be specifically random at times! :P
                   </div>
                 </div>
                 <a class="mc-btn-action">
@@ -632,7 +568,7 @@
           }
         </style>
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
-          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">program members end</h3>
+          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">program members end</h3>
         </div>
       </div>
     </div>
@@ -641,17 +577,17 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
-          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">program compsoc begin</h3>
+          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">program compsoc begin</h3>
         </div>
         <div class="col-sm-12">
           <div class="row container">
             <div class="col-md-5 uk-margin-large pull-right">
               <center>
-                <img class="img img-responsive" src="assets/img/compsoc_white_1.png" uk-scrollspy="cls:uk-animation-fade">
+                <img class="img img-responsive" src="assets/img/compsoc.png" uk-scrollspy="cls:uk-animation-fade">
               </center>
             </div>
             <div class="col-md-7 uk-padding-large uk-padding-remove-vertical pull-left main-content">
-              <p style="color:#FFBA4C;">
+              <p style="color:#426E86; font-size: 18px" class="text-justify">
                 PESITSouth IEEE Computer Society was started in 2017 by the Computer Science Department of PESIT South Campus. We also
                 organize workshops, seminars and a couple of amazing events like inGenius (annual) and the Pursuit (bi-annual
                 Online Treasure Hunt)!
@@ -665,7 +601,7 @@
               </center>
             </div>
             <div class="col-md-7 uk-padding-large uk-padding-remove-vertical pull-left main-content">
-              <p>
+              <p style="color:#426E86; font-size: 18px" class="text-justify">
                 The IEEE Computer Society is the world's leading membership organization dedicated to computer science and technology. Serving
                 more than 60,000 members, the IEEE Computer Society is the trusted information, networking, and career-development
                 source for a global community of technology leaders that includes researchers, educators, software engineers,
@@ -674,8 +610,8 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
-          <h3 style="color:#B88FC2;" uk-scrollspy="cls:uk-animation-slide-left">program compsoc end</h3>
+        <div class="col-sm-12 uk-padding uk-padding-remove-top">
+          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">program compsoc end</h3>
         </div>
       </div>
     </div>

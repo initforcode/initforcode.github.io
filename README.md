@@ -19,7 +19,7 @@ In order to broaden our reach to you, we intend to conduct the ASD classes, brin
 
 
 ## Scripts
-Scripts have been designed to focus on core programming skills to give you a boost into development. Each session will walk your across the basics of a programming language or framework and gear you with enough intel to guide your progress through the murky waters of the Internet.
+Scripts have been designed to focus on core programming skills to give you a boost into development. Each session will walk you across the basics of a programming language or framework and gear you with enough intel to guide your progress through the murky waters of the Internet.
 
 ### JavaScript
 
