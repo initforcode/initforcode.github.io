@@ -123,13 +123,18 @@ var calendarSetup = function (month) {
     }
 
     var numOfDays = new Date(year, month, 0).getDate();
-    var currentDay = new Date(year, month-1, 1).getDay();
-    console.log(currentDay);
+    var currentDay = new Date(year, month - 1, 1).getDay();
+    var monthData = data[month];
 
     var cal = '<tr class="week">';
     for (var i = 0; i < currentDay; ++i) cal += '<td></td>';
     for (var i = 1; i <= numOfDays; ++i) {
-        cal += '<td id="day' + i + '">' + i + '</td>';
+    
+        if (i in monthData)
+            cal += '<td><button id="day' + i + '" class="daybtn">' + i + '</button></td>';
+        else
+            cal += '<td id="day' + i + '">' + i + '</td>';
+    
         currentDay++;
         if (currentDay == 7) {
             cal += '</tr><tr class="week">';
@@ -154,6 +159,7 @@ var calendarSetup = function (month) {
                 $('#day' + day).addClass('sem6-asd');
                 break;
         }
+        $('#day' + day).click(displayInfo);
     }
 }
 
@@ -164,7 +170,7 @@ var prevMonth = function () {
     if (monthname == 'March')
         calendarSetup(2);
     else if (monthname == 'April')
-        calendarSetup(3);    
+        calendarSetup(3);
 }
 
 var nextMonth = function () {
@@ -175,6 +181,55 @@ var nextMonth = function () {
         calendarSetup(4);
 }
 
+
+/* Function to display event information. */
+var displayInfo = function (event) {
+    var date = event.target.id.slice(3);
+    var monthname = $('#monthname').text();
+    $('#monthname').text(monthname + ' ' + date);
+    $('.daysoftheweek').hide();
+    $('.week').each(function () {
+        $(this).remove();
+    })
+
+    if (monthname == 'February')
+        var month = 2;
+    else if (monthname == 'March')
+        var month = 3;
+    else if (monthname == 'April')
+        var month = 4;
+
+    var spk = data[month][date].speakers;
+    var sem = data[month][date].semester;
+    eventinfo = '<tr class="event-info"><td colspan=7><ul>';
+    eventinfo += '<li><span class="room">' + sem + 'A' + '</span><span class="speaker">' + spk.A + '</span></li>';
+    eventinfo += '<li><span class="room">' + sem + 'B' + '</span><span class="speaker">' + spk.B + '</span></li>';
+    eventinfo += '<li><span class="room">' + sem + 'C' + '</span><span class="speaker">' + spk.C + '</span></li>';
+    eventinfo += '</ul></td></tr>';
+    $('.calendar').append(eventinfo);
+
+    $('#next').attr('disabled', true);
+    $('#prev').attr('disabled', false);
+
+    $('#prev').off('click');
+    $('#prev').click(displayCal);
+
+}
+
+var k = 0;
+var displayCal = function () {
+    k++;
+    var monthname = $('#monthname').text();
+    if (monthname.startsWith('February'))
+        var month = 2;
+    if (monthname.startsWith('March'))
+        var month = 3;
+    if (monthname.startsWith('April'))
+        var month = 4;
+    $('.event-info').each(function () { $(this).remove(); });
+    $('.daysoftheweek').show();
+    calendarSetup(month);
+}
 
 
 $(document).ready(function () {
