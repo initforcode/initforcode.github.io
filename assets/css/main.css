@@ -2313,7 +2313,7 @@ body {
 
 .promo {
     margin: 1em .5em 1.625em;
-    padding: .25em 0 2em;
+    padding: 1.0em 0 2em;
     background: #0F1012;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
@@ -2939,4 +2939,8 @@ body {
 
 .panel .data {
     padding-left: 20px;
+}
+
+.panel .disclaimer {
+    font-size: 14px;
 }

@@ -14,12 +14,11 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
 
   <!-- jQuery -->
-  <!-- <link rel="stylesheet" type="text/css" href="css/jquery.fullpage.min.css" /> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <!-- UIkit -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.28/css/uikit.min.css" />
@@ -225,7 +224,7 @@
         <div class="col-sm-12">
           <div class="row container">
 
-            <div class="col-md-6 uk-padding uk-padding-remove-bottom main-content">
+            <div class="col-md-6 uk-padding-large uk-padding-remove-vertical main-content">
               <p class="text-justify" style="color:#426E86; font-size: 18px !important">
                 Scripts have been designed with a focus on core programming skills to give you a boost into development. Each session will
                 walk you across the basics of a programming language or framework and gear you with enough intel to guide
@@ -238,15 +237,15 @@
 
             <div class="col-md-6 uk-padding uk-padding-remove-bottom main-content">
               <!-- This really needs to be fixed. -->
-              <div class="panel-group" id="scripts">
+              <div class="panel-group" id="scriptsAccord">
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                      <a data-toggle="collapse" data-parent="#scriptsAccord" href="#javascript">
                         JavaScript: The Chocolate Sauce to the Vanilla Web</a>
                     </h4>
                   </div>
-                  <div id="collapse1" class="panel-collapse collapse in">
+                  <div id="javascript" class="panel-collapse collapse in">
                     <div class="panel-body">
                       <center>
                         <table>
@@ -282,14 +281,14 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                      <a data-toggle="collapse" data-parent="#scriptsAccord" href="#python">
                         Python: Where Magic Meets Code</a>
                     </h4>
                   </div>
-                  <div id="collapse2" class="panel-collapse collapse">
+                  <div id="python" class="panel-collapse collapse">
                     <div class="panel-body">
                       <center>
-                        <small>Details to be disclosed later.</small>
+                        <span class="disclaimer">Details to be disclosed soon.</span>
                       </center>
                     </div>
                   </div>
@@ -297,15 +296,15 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                      <a data-toggle="collapse" data-parent="#scriptsAccord" href="#science">
                         Scientific Computing: The Portal to Mad Power</a>
                     </h4>
                   </div>
-                  <div id="collapse3" class="panel-collapse collapse">
+                  <div id="science" class="panel-collapse collapse">
                     <div class="panel-body">
                       <center>
-                        <small>Details to be disclosed later.</small>
-                        <center>
+                        <span class="disclaimer">Details to be disclosed soon.</span>
+                      <center>
                     </div>
                   </div>
                 </div>
@@ -315,52 +314,7 @@
           </div>
         </div>
 
-
-
-        <!-- <div class="promos">
-            <div class="promo first scale">
-              <ul class="features">
-                <li class="brief">JavaScript</li>
-                <li class="price">20th and 21st February</li>
-                <li>Time: 3:45 p.m. to 5:00 p.m.</li>
-                <li>Venue: Room 201</li>
-                <li>By: Harsha Vamsi and Ankit Sinha</li>
-                <li class="buy">
-                  <button>
-                    <a style="color:white">Register</a>
-                  </button>
-                </li>
-              </ul>
-            </div>
-            <div class="promo second">
-              <ul class="features">
-                <li class="brief">Scientific Computing</li>
-                <li class="price">Upcoming</li>
-                <li>&zwnj;</li>
-                <li>Details to be disclosed</li>
-                <li>&zwnj;</li>
-                <li class="buy">
-                  <button>Soon</button>
-                </li>
-              </ul>
-            </div>
-            <div class="promo third">
-              <ul class="features">
-                <li class="brief">Python</li>
-                <li class="price">Upcoming</li>
-                <li>&zwnj;</li>
-                <li>Details to be disclosed</li>
-                <li>&zwnj;</li>
-                <li class="buy">
-                  <button>Soon</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div> -->
-
-
-        <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
+        <div class="col-sm-12 uk-padding uk-padding-remove-top">
           <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">
             program scripts end
           </h3>
@@ -422,16 +376,16 @@
           <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">program workshops begin</h3>
         </div>
         <div class="uk-padding uk-padding-remove-bottom ">
-          <p class=" main-content" style="color:#426E86; font-size: 18px !important">
-            Workshops will be more detailed, hands-on events that focus on taking you from the 101s of a skill to prepping you to use
-            your newfound abilities in practical environments. Each workshop focuses on a core upcoming subfield in Computer
-            Science and arms you with a working understanding of its fundamentals and reach.
-            <br> Workshops will be conducted on a weekend, or a holiday and will be wrapped up at lunch. We know no one likes
-            to spend a Sunday afternoon in college, we'll ensure you won't have to. The Workshop may span a day or two depending
-            on the content being presented.
+          <p class="main-content" style="color:#426E86; font-size: 18px !important">
+             Workshops will be more detailed, hands-on events that focus on taking you from the 101s of a skill to prepping you to use
+            your newfound abilities in practical environments. Each workshop focuses on a core upcoming subfield in Computer Science
+            and arms you with a working understanding of its fundamentals and reach.
+            <br>
+            Workshops will be conducted on a weekend, or a holiday and will be wrapped up at lunch. We know no one likes to spend a Sunday
+            afternoon in college, we'll ensure you won't have to. The Workshop may span a day or two depending on the content being
+            presented.
           </p>
-
-          <!-- This really needs to be fixed. -->
+  
           <div class="promos">
             <div class="promo first">
               <ul class="features">
