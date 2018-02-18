@@ -42,22 +42,22 @@
 <body data-spy="scroll" data-target=".uk-dotnav" data-offset="50">
 
 <!-- Preloader Begin-->
-<div class="preloader" style="display: block; height: 100vh; width: 100vw;position: absolute; top:0; left:0; z-index: 999 !important; background: #fff;">
-	<div style="position: absolute;top:200px; left:500px;">
-		<div class="heart-rate">
-		  <svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="150px" height="73px" viewBox="0 0 150 73" enable-background="new 0 0 150 73" xml:space="preserve">
-		    <polyline fill="none" stroke="#009B9E" stroke-width="3" stroke-miterlimit="10" points="0,45.486 38.514,45.486 44.595,33.324 50.676,45.486 57.771,45.486 62.838,55.622 71.959,9 80.067,63.729 84.122,45.486 97.297,45.486 103.379,40.419 110.473,45.486 150,45.486"
-		    />
-		  </svg>
-		  <div class="fade-in-hr"></div>
-		  <div class="fade-out-hr"></div>
+<div class="preloader" style="">
+	<center>
+		<div style="margin-top : 250px; vertical-align: middle !important;">
+			<div class="heart-rate">
+			  <svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="150px" height="73px" viewBox="0 0 150 73" enable-background="new 0 0 150 73" xml:space="preserve">
+			    <polyline fill="none" stroke="#009B9E" stroke-width="3" stroke-miterlimit="10" points="0,45.486 38.514,45.486 44.595,33.324 50.676,45.486 57.771,45.486 62.838,55.622 71.959,9 80.067,63.729 84.122,45.486 97.297,45.486 103.379,40.419 110.473,45.486 150,45.486"
+			    />
+			  </svg>
+			  <div class="fade-in-hr"></div>
+			  <div class="fade-out-hr"></div>
+			</div>
 		</div>
-	</div>
+	</center>
 </div>
 <script>
-	$(document).ready(function(){
-		$(".preloader").hide(100);
-	});
+
 </script>
 <!-- Preloader End -->
 
@@ -158,10 +158,15 @@
         </main>
       </div>
       <script type="text/javascript">
-        // Check assets/js/terminal.js for the rest of the code.
+        // Check assets/js/terminal.js for the rest of the code
         $(document).ready(function(){
-        	terminal('.prompt span');
-        })
+			setTimeout(function(){
+				$(".preloader").hide(100);
+				$("body").addClass("scrollY");
+	        	terminal('.prompt span');
+			}, 1000);
+
+		});
       </script>
 
     </div>
@@ -477,7 +482,7 @@
         <section class="container">
           <div class="row active-with-click">
             <div class="col-md-4 col-sm-6 col-xs-12">
-              <article class="material-card Red">
+              <article class="material-card Blue-Grey">
                 <h2>
                   <span>Abhijit Theophilus<br><span style="font-size:16px; margin:0;">{}</span></span>
 <!--                   <strong>
@@ -504,13 +509,19 @@
                 <a class="mc-btn-action">
                   <i class="fa fa-bars"></i>
                 </a>
+                <div class="mc-footer">
+                  <a class="fa fa-fw fa-phone" data-toggle="tooltip" data-placement="top" title="123232"></a>
+                  <a class="fa fa-fw fa-envelope"></a>
+                  <!-- <a class="fa fa-fw fa-linkedin"></a> -->
+                  <a class="fa fa-fw fa-github"></a>
+                </div>
 
               </article>
             </div>
 
             <!-- SOMYA'S SECTION -->
             <div class="col-md-4 col-sm-6 col-xs-12">
-              <article class="material-card Pink">
+              <article class="material-card Grey">
                 <h2>
                   <span>Somya Bansal<br><span style="font-size:16px; margin:0;">{}</span></span>
                 </h2>
@@ -528,7 +539,7 @@
                 <div class="mc-footer">
                   <a class="fa fa-fw fa-phone" data-toggle="tooltip" data-placement="top" title="123232"></a>
                   <a class="fa fa-fw fa-envelope"></a>
-                  <a class="fa fa-fw fa-linkedin"></a>
+                  <!-- <a class="fa fa-fw fa-linkedin"></a> -->
                   <a class="fa fa-fw fa-github"></a>
                 </div>
               </article>
@@ -536,7 +547,7 @@
 
             <!-- VAMSI'S SECTION -->
             <div class="col-md-4 col-sm-6 col-xs-12">
-              <article class="material-card Purple">
+              <article class="material-card Blue-Grey">
                 <h2>
                   <span>Harsha Vamsi<br><span style="font-size:16px; margin:0;">{}</span></span>
                 </h2>
@@ -553,17 +564,17 @@
                   <i class="fa fa-bars"></i>
                 </a>
                 <div class="mc-footer">
-                  <a class="fa fa-fw fa-facebook"></a>
-                  <a class="fa fa-fw fa-twitter"></a>
-                  <a class="fa fa-fw fa-linkedin"></a>
-                  <a class="fa fa-fw fa-google-plus"></a>
+                  <a class="fa fa-fw fa-phone" data-toggle="tooltip" data-placement="top" title="123232"></a>
+                  <a class="fa fa-fw fa-envelope"></a>
+                  <!-- <a class="fa fa-fw fa-linkedin"></a> -->
+                  <a class="fa fa-fw fa-github"></a>
                 </div>
               </article>
             </div>
 
             <!-- KRISHNA'S SECTION -->
             <div class="col-md-4 col-sm-6 col-xs-12">
-              <article class="material-card Deep-Purple">
+              <article class="material-card Grey">
                 <h2>
                   <span>Krishna Chaitanya<br><span style="font-size:16px; margin:0;">{}</span></span>
                 </h2>
@@ -579,17 +590,17 @@
                   <i class="fa fa-bars"></i>
                 </a>
                 <div class="mc-footer">
-                  <a class="fa fa-fw fa-facebook"></a>
-                  <a class="fa fa-fw fa-twitter"></a>
-                  <a class="fa fa-fw fa-linkedin"></a>
-                  <a class="fa fa-fw fa-google-plus"></a>
+                  <a class="fa fa-fw fa-phone" data-toggle="tooltip" data-placement="top" title="123232"></a>
+                  <a class="fa fa-fw fa-envelope"></a>
+                  <!-- <a class="fa fa-fw fa-linkedin"></a> -->
+                  <a class="fa fa-fw fa-github"></a>
                 </div>
               </article>
             </div>
 
             <!-- SANDRA'S SECTION -->
             <div class="col-md-4 col-sm-6 col-xs-12">
-              <article class="material-card Indigo">
+              <article class="material-card Blue-Grey">
                 <h2>
                   <span>Sandra Anil<br><span style="font-size:16px; margin:0;">{}</span></span>
                 </h2>
@@ -606,17 +617,17 @@
                   <i class="fa fa-bars"></i>
                 </a>
                 <div class="mc-footer">
-                  <a class="fa fa-fw fa-facebook"></a>
-                  <a class="fa fa-fw fa-twitter"></a>
-                  <a class="fa fa-fw fa-linkedin"></a>
-                  <a class="fa fa-fw fa-google-plus"></a>
+                  <a class="fa fa-fw fa-phone" data-toggle="tooltip" data-placement="top" title="123232"></a>
+                  <a class="fa fa-fw fa-envelope"></a>
+                  <!-- <a class="fa fa-fw fa-linkedin"></a> -->
+                  <a class="fa fa-fw fa-github"></a>
                 </div>
               </article>
             </div>
 
             <!-- PRATEEK'S SECTION -->
             <div class="col-md-4 col-sm-6 col-xs-12">
-              <article class="material-card Blue">
+              <article class="material-card Grey">
                 <h2>
                   <span>Prateek Gupta<br><span style="font-size:16px; margin:0;">{}</span></span>
                 </h2>
@@ -633,17 +644,17 @@
                   <i class="fa fa-bars"></i>
                 </a>
                 <div class="mc-footer">
-                  <a class="fa fa-fw fa-facebook"></a>
-                  <a class="fa fa-fw fa-twitter"></a>
-                  <a class="fa fa-fw fa-linkedin"></a>
-                  <a class="fa fa-fw fa-google-plus"></a>
+                  <a class="fa fa-fw fa-phone" data-toggle="tooltip" data-placement="top" title="123232"></a>
+                  <a class="fa fa-fw fa-envelope"></a>
+                  <!-- <a class="fa fa-fw fa-linkedin"></a> -->
+                  <a class="fa fa-fw fa-github"></a>
                 </div>
               </article>
             </div>
 
             <!-- ANKIT'S SECTION -->
             <div class="col-md-4 col-md-offset-2 col-sm-6 col-xs-12">
-              <article class="material-card Purple">
+              <article class="material-card Blue-Grey">
                 <h2>
                   <span>Ankit Sinha<br><span style="font-size:16px; margin:0;">{Developement.}</span></span>
 
@@ -660,17 +671,17 @@
                   <i class="fa fa-bars"></i>
                 </a>
                 <div class="mc-footer">
-                  <a class="fa fa-fw fa-facebook"></a>
-                  <a class="fa fa-fw fa-twitter"></a>
-                  <a class="fa fa-fw fa-linkedin"></a>
-                  <a class="fa fa-fw fa-google-plus"></a>
+                  <a class="fa fa-fw fa-phone" data-toggle="tooltip" data-placement="top" title="8789551015"></a>
+                  <a href="mailto:ankit.sinha2000@gmail.com" class="fa fa-fw fa-envelope" data-toggle="tooltip" data-placement="top" title="ankit.sinha2000@gmail.com"></a>
+                  <!-- <a class="fa fa-fw fa-linkedin"></a> -->
+                  <a class="fa fa-fw fa-github" data-toggle="tooltip" data-placement="top" title="ankitksinha"></a>
                 </div>
               </article>
             </div>
 
             <!-- ARKO'S SECTION -->
             <div class="col-md-4 col-sm-6 col-xs-12">
-              <article class="material-card Cyan">
+              <article class="material-card Grey">
                 <h2>
                   <span>Arkoprabho Bhattacharjee<br><span style="font-size:16px; margin:0;">{}</span></span>
                 </h2>
@@ -687,10 +698,10 @@
                   <i class="fa fa-bars"></i>
                 </a>
                 <div class="mc-footer">
-                  <a class="fa fa-fw fa-facebook"></a>
-                  <a class="fa fa-fw fa-twitter"></a>
-                  <a class="fa fa-fw fa-linkedin"></a>
-                  <a class="fa fa-fw fa-google-plus"></a>
+                  <a class="fa fa-fw fa-phone" data-toggle="tooltip" data-placement="top" title="123232"></a>
+                  <a class="fa fa-fw fa-envelope"></a>
+                  <!-- <a class="fa fa-fw fa-linkedin"></a> -->
+                  <a class="fa fa-fw fa-github"></a>
                 </div>
               </article>
             </div>
