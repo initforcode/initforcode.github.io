@@ -1,495 +1,182 @@
-/* A buttload of functions to set up a calendar
-   that looks like shit. */
+/*
+    Calendar that actually looks good and looks simple
+    without any HAML or Pug bullshit.
 
-! function () {
+*/
 
-    var today = moment();
+var data = {
 
-    function Calendar(selector, events) {
-        this.el = document.querySelector(selector);
-        this.events = events;
-        this.current = moment().date(1);
-        this.events.forEach(function (ev) {
-            ev.date = moment(ev.date);
-        });
-        this.draw();
-        var current = document.querySelector('.today');
-        if (current) {
-            var self = this;
-            window.setTimeout(function () {
-                self.openDay(current);
-            }, 500);
-        }
-
-    }
-
-    Calendar.prototype.draw = function () {
-        //Create Header
-        this.drawHeader();
-
-        //Draw Month
-        this.drawMonth();
-
-        this.drawLegend();
-    }
-
-    Calendar.prototype.drawHeader = function () {
-        var self = this;
-        if (!this.header) {
-            //Create the header elements
-            this.header = createElement('div', 'header');
-            this.header.className = 'header';
-
-            this.title = createElement('h1');
-
-            var right = createElement('div', 'right');
-            right.addEventListener('click', function () {
-                self.nextMonth();
-            });
-
-            var left = createElement('div', 'left');
-            left.addEventListener('click', function () {
-                self.prevMonth();
-            });
-
-            //Append the Elements
-            this.header.appendChild(this.title);
-            this.header.appendChild(right);
-            this.header.appendChild(left);
-            this.el.appendChild(this.header);
-        }
-
-        this.title.innerHTML = this.current.format('MMMM YYYY');
-    }
-
-    Calendar.prototype.drawMonth = function () {
-        var self = this;
-
-
-        if (this.month) {
-            this.oldMonth = this.month;
-            this.oldMonth.className = 'month out ' + (self.next ? 'next' : 'prev');
-            this.oldMonth.addEventListener('webkitAnimationEnd', function () {
-                self.oldMonth.parentNode.removeChild(self.oldMonth);
-                self.month = createElement('div', 'month');
-                self.backFill();
-                self.currentMonth();
-                self.fowardFill();
-                self.el.appendChild(self.month);
-                window.setTimeout(function () {
-                    self.month.className = 'month in ' + (self.next ? 'next' : 'prev');
-                }, 16);
-            });
-        } else {
-            this.month = createElement('div', 'month');
-            this.el.appendChild(this.month);
-            this.backFill();
-            this.currentMonth();
-            this.fowardFill();
-            this.month.className = 'month new';
-        }
-    }
-
-    Calendar.prototype.backFill = function () {
-        var clone = this.current.clone();
-        var dayOfWeek = clone.day();
-
-        if (!dayOfWeek) {
-            return;
-        }
-
-        clone.subtract('days', dayOfWeek + 1);
-
-        for (var i = dayOfWeek; i > 0; i--) {
-            this.drawDay(clone.add('days', 1));
-        }
-    }
-
-    Calendar.prototype.fowardFill = function () {
-        var clone = this.current.clone().add('months', 1).subtract('days', 1);
-        var dayOfWeek = clone.day();
-
-        if (dayOfWeek === 6) {
-            return;
-        }
-
-        for (var i = dayOfWeek; i < 6; i++) {
-            this.drawDay(clone.add('days', 1));
-        }
-    }
-
-    Calendar.prototype.currentMonth = function () {
-        var clone = this.current.clone();
-
-        while (clone.month() === this.current.month()) {
-            this.drawDay(clone);
-            clone.add('days', 1);
-        }
-    }
-
-    Calendar.prototype.getWeek = function (day) {
-        if (!this.week || day.day() === 0) {
-            this.week = createElement('div', 'week');
-            this.month.appendChild(this.week);
-        }
-    }
-
-    Calendar.prototype.drawDay = function (day) {
-        var self = this;
-        this.getWeek(day);
-
-        //Outer Day
-        var outer = createElement('div', this.getDayClass(day));
-        outer.addEventListener('click', function () {
-            self.openDay(this);
-        });
-
-        //Day Name
-        var name = createElement('div', 'day-name', day.format('ddd'));
-
-        //Day Number
-        var number = createElement('div', 'day-number', day.format('DD'));
-
-
-        //Events
-        var events = createElement('div', 'day-events');
-        this.drawEvents(day, events);
-
-        outer.appendChild(name);
-        outer.appendChild(number);
-        outer.appendChild(events);
-        this.week.appendChild(outer);
-    }
-
-    Calendar.prototype.drawEvents = function (day, element) {
-        if (day.month() === this.current.month()) {
-            var todaysEvents = this.events.reduce(function (memo, ev) {
-                if (ev.date.isSame(day, 'day')) {
-                    memo.push(ev);
-                }
-                return memo;
-            }, []);
-
-            todaysEvents.forEach(function (ev) {
-                var evSpan = createElement('span', ev.color);
-                element.appendChild(evSpan);
-            });
-        }
-    }
-
-    Calendar.prototype.getDayClass = function (day) {
-        classes = ['day'];
-        if (day.month() !== this.current.month()) {
-            classes.push('other');
-        } else if (today.isSame(day, 'day')) {
-            classes.push('today');
-        }
-        return classes.join(' ');
-    }
-
-    Calendar.prototype.openDay = function (el) {
-        var details, arrow;
-        var dayNumber = +el.querySelectorAll('.day-number')[0].innerText || +el.querySelectorAll('.day-number')[0].textContent;
-        var day = this.current.clone().date(dayNumber);
-
-        var currentOpened = document.querySelector('.details');
-
-        //Check to see if there is an open detais box on the current row
-        if (currentOpened && currentOpened.parentNode === el.parentNode) {
-            details = currentOpened;
-            arrow = document.querySelector('.arrow');
-        } else {
-            //Close the open events on differnt week row
-            //currentOpened && currentOpened.parentNode.removeChild(currentOpened);
-            if (currentOpened) {
-                currentOpened.addEventListener('webkitAnimationEnd', function () {
-                    currentOpened.parentNode.removeChild(currentOpened);
-                });
-                currentOpened.addEventListener('oanimationend', function () {
-                    currentOpened.parentNode.removeChild(currentOpened);
-                });
-                currentOpened.addEventListener('msAnimationEnd', function () {
-                    currentOpened.parentNode.removeChild(currentOpened);
-                });
-                currentOpened.addEventListener('animationend', function () {
-                    currentOpened.parentNode.removeChild(currentOpened);
-                });
-                currentOpened.className = 'details out';
+    // Feb data
+    2: {
+        7: {
+            semester: 4,
+            speakers: {
+                'A': 'Vamsi and Arko',
+                'B': 'Somya and Sandra',
+                'C': 'Krishna and Prateek'
             }
-
-            //Create the Details Container
-            details = createElement('div', 'details in');
-
-            //Create the arrow
-            var arrow = createElement('div', 'arrow');
-
-            //Create the event wrapper
-
-            details.appendChild(arrow);
-            el.parentNode.appendChild(details);
-        }
-
-        var todaysEvents = this.events.reduce(function (memo, ev) {
-            if (ev.date.isSame(day, 'day')) {
-                memo.push(ev);
+        },
+        14: {
+            semester: 6,
+            speakers: {
+                'A': 'Somya and Sandra',
+                'B': 'Krishna and Prateek',
+                'C': 'Vamsi and Jerry',
             }
-            return memo;
-        }, []);
-
-        this.renderEvents(todaysEvents, details);
-
-        arrow.style.left = el.offsetLeft - el.parentNode.offsetLeft + 27 + 'px';
-    }
-
-    Calendar.prototype.renderEvents = function (events, ele) {
-        //Remove any events in the current details element
-        var currentWrapper = ele.querySelector('.events');
-        var wrapper = createElement('div', 'events in' + (currentWrapper ? ' new' : ''));
-
-        events.forEach(function (ev) {
-            var div = createElement('div', 'event');
-            var square = createElement('div', 'event-category ' + ev.color);
-            var span = createElement('span', '', ev.eventName);
-
-            div.appendChild(square);
-            div.appendChild(span);
-            wrapper.appendChild(div);
-        });
-
-        if (!events.length) {
-            var div = createElement('div', 'event empty');
-            var span = createElement('span', '', 'No Events');
-
-            div.appendChild(span);
-            wrapper.appendChild(div);
-        }
-
-        if (currentWrapper) {
-            currentWrapper.className = 'events out';
-            currentWrapper.addEventListener('webkitAnimationEnd', function () {
-                currentWrapper.parentNode.removeChild(currentWrapper);
-                ele.appendChild(wrapper);
-            });
-            currentWrapper.addEventListener('oanimationend', function () {
-                currentWrapper.parentNode.removeChild(currentWrapper);
-                ele.appendChild(wrapper);
-            });
-            currentWrapper.addEventListener('msAnimationEnd', function () {
-                currentWrapper.parentNode.removeChild(currentWrapper);
-                ele.appendChild(wrapper);
-            });
-            currentWrapper.addEventListener('animationend', function () {
-                currentWrapper.parentNode.removeChild(currentWrapper);
-                ele.appendChild(wrapper);
-            });
-        } else {
-            ele.appendChild(wrapper);
-        }
-    }
-
-    Calendar.prototype.drawLegend = function () {
-        var legend = createElement('div', 'legend');
-        var calendars = this.events.map(function (e) {
-            return e.calendar + '|' + e.color;
-        }).reduce(function (memo, e) {
-            if (memo.indexOf(e) === -1) {
-                memo.push(e);
+        },
+        21: {
+            semester: 4,
+            speakers: {
+                'A': 'Vamsi and Jerry',
+                'B': 'Somya and Sandra',
+                'C': 'Krishna and Prateek',
             }
-            return memo;
-        }, []).forEach(function (e) {
-            var parts = e.split('|');
-            var entry = createElement('span', 'entry ' + parts[1], parts[0]);
-            legend.appendChild(entry);
-        });
-        this.el.appendChild(legend);
-    }
-
-    Calendar.prototype.nextMonth = function () {
-        this.current.add('months', 1);
-        this.next = true;
-        this.draw();
-    }
-
-    Calendar.prototype.prevMonth = function () {
-        this.current.subtract('months', 1);
-        this.next = false;
-        this.draw();
-    }
-
-    window.Calendar = Calendar;
-
-    function createElement(tagName, className, innerText) {
-        var ele = document.createElement(tagName);
-        if (className) {
-            ele.className = className;
         }
-        if (innerText) {
-            ele.innderText = ele.textContent = innerText;
-        }
-        return ele;
+    },
+
+    // March Data
+    3: {
+        7: {
+            semester: 6,
+            speakers: {
+                'A': 'Krishna and Prateek',
+                'B': 'Vamsi and Jerry',
+                'C': 'Somya and Sandra',
+            }
+        },
+        21: {
+            semester: 4,
+            speakers: {
+                'A': 'Somya and Sandra',
+                'B': 'Krishna and Prateek',
+                'C': 'Vamsi and Jerry',
+            }
+        },
+        28: {
+            semester: 6,
+            speakers: {
+                'A': 'Vamsi and Jerry',
+                'B': 'Somya and Sandra',
+                'C': 'Krishna and Prateek',
+            }
+        },
+    },
+
+    // April Data
+    4: {
+        16: {
+            semester: 4,
+            speakers: {
+                'A': 'Krishna and Prateek',
+                'B': 'Vamsi and Jerry',
+                'C': 'Somya and Sandra',
+            }
+        },
+        23: {
+            semester: 6,
+            speakers: {
+                'A': 'Somya and Sandra',
+                'B': 'Krishna and Prateek',
+                'C': 'Vamsi and Jerry',
+            }
+        },
     }
-}();
-
-! function () {
-    var data = [{
-            eventName: 'ASD session in 4A - Vamsi and Arko',
-            calendar: 'ASD',
-            color: 'blue',
-            date: '2018-02-07'
-        },
-        {
-            eventName: 'ASD session in 4B - Somya and Sandra',
-            calendar: 'ASD',
-            color: 'blue',
-            date: '2018-02-07'
-        },
-        {
-            eventName: 'ASD session in 4C - Krishna and Prateek',
-            calendar: 'ASD',
-            color: 'blue',
-            date: '2018-02-07'
-        },
-
-        {
-            eventName: 'ASD session in 6A - Somya and Sandra',
-            calendar: 'ASD',
-            color: 'blue',
-            date: '2018-02-14'
-        },
-        {
-            eventName: 'ASD session in 6B - Krishna and Prateek',
-            calendar: 'ASD',
-            color: 'blue',
-            date: '2018-02-14'
-        },
-        {
-            eventName: 'ASD session in 6C - Vamsi and Jerry',
-            calendar: 'ASD',
-            color: 'blue',
-            date: '2018-02-14'
-        },
-
-        {
-            eventName: 'ASD session in 4A - Vamsi and Jerry',
-            calendar: 'ASD',
-            color: 'blue',
-            date: '2018-02-21'
-        },
-        {
-            eventName: 'ASD session in 4B - Somya and Sandra',
-            calendar: 'ASD',
-            color: 'blue',
-            date: '2018-02-21'
-        },
-        {
-            eventName: 'ASD session in 4C - Krishna and Prateek',
-            calendar: 'ASD',
-            color: 'blue',
-            date: '2018-02-21'
-        },
-
-        {
-            eventName: 'ASD session in 6A - Krishna and Prateek',
-            calendar: 'ASD',
-            color: 'blue',
-            date: '2018-03-07'
-        },
-        {
-            eventName: 'ASD session in 6B - Vamsi ad Jerry',
-            calendar: 'ASD',
-            color: 'blue',
-            date: '2018-03-07'
-        },
-        {
-            eventName: 'ASD session in 6C - Somya and Sandra',
-            calendar: 'ASD',
-            color: 'blue',
-            date: '2018-03-07'
-        },
-
-        {
-            eventName: 'ASD session in 4A - Somya and Sandra',
-            calendar: 'ASD',
-            color: 'blue',
-            date: '2018-03-21'
-        },
-        {
-            eventName: 'ASD session in 4B - Krishna and Prateek',
-            calendar: 'ASD',
-            color: 'blue',
-            date: '2018-03-21'
-        },
-        {
-            eventName: 'ASD session in 4C - Vamsi and Jerry',
-            calendar: 'ASD',
-            color: 'blue',
-            date: '2018-03-21'
-        },
-
-        {
-            eventName: 'ASD session in 6A - Vamsi and Jerry',
-            calendar: 'ASD',
-            color: 'blue',
-            date: '2018-03-28'
-        },
-        {
-            eventName: 'ASD session in 6B - Somya and Sandra',
-            calendar: 'ASD',
-            color: 'blue',
-            date: '2018-03-28'
-        },
-        {
-            eventName: 'ASD session in 6C - Krishna and Prateek',
-            calendar: 'ASD',
-            color: 'blue',
-            date: '2018-03-28'
-        },
-
-        {
-            eventName: 'ASD session in 4A - Krishna and Prateek',
-            calendar: 'ASD',
-            color: 'blue',
-            date: '2018-04-16'
-        },
-        {
-            eventName: 'ASD session in 4B - Vamsi and Jerry',
-            calendar: 'ASD',
-            color: 'blue',
-            date: '2018-04-16'
-        },
-        {
-            eventName: 'ASD session in 4C - Somya and Sandra',
-            calendar: 'ASD',
-            color: 'blue',
-            date: '2018-04-16'
-        },
-
-        {
-            eventName: 'ASD session in 6A - Somya and Sandra',
-            calendar: 'ASD',
-            color: 'blue',
-            date: '2018-04-23'
-        },
-        {
-            eventName: 'ASD session in 6B - Krishna and Prateek',
-            calendar: 'ASD',
-            color: 'blue',
-            date: '2018-04-23'
-        },
-        {
-            eventName: 'ASD session in 6C - Vamsi and Jerry',
-            calendar: 'ASD',
-            color: 'blue',
-            date: '2018-04-23'
-        },
-
-
-    ];
+}
 
 
 
+/* This is going to set up the calendar. */
+var calendarSetup = function (month) {
+    month == null && (month = new Date().getMonth() + 1);
+    var year = 2018;
+
+    $('.week').each(function () { $(this).remove(); })
+
+    switch (month) {
+        case 1:
+            month = 2;
+        case 2:
+            $('#monthname').text('February');
+            $('#prev').attr('disabled', true);
+            $('#next').attr('disabled', false);
+            break;
+        case 3:
+            $('#monthname').text('March');
+            $('#prev').attr('disabled', false);
+            $('#next').attr('disabled', false);
+            break;
+        case 12:
+        case 11:
+        case 10:
+        case 9:
+        case 8:
+        case 7:
+        case 6:
+        case 5:
+            month = 4;
+        case 4:
+            $('#monthname').text('April');
+            $('#prev').attr('disabled', false);
+            $('#next').attr('disabled', true);
+        default:
+            break;
+    }
+
+    var numOfDays = new Date(year, month, 0).getDate();
+    var currentDay = new Date(year, month-1, 1).getDay();
+    console.log(currentDay);
+
+    var cal = '<tr class="week">';
+    for (var i = 0; i < currentDay; ++i) cal += '<td></td>';
+    for (var i = 1; i <= numOfDays; ++i) {
+        cal += '<td id="day' + i + '">' + i + '</td>';
+        currentDay++;
+        if (currentDay == 7) {
+            cal += '</tr><tr class="week">';
+            currentDay = 0;
+        }
+    }
+    for (; currentDay < 7; currentDay++) cal += '<td></td>';
+    cal += '</tr>';
+    $('.calendar').append(cal);
+
+    var today = new Date();
+    if (today.getFullYear() == 2018 && (today.getMonth() + 1) == month) {
+        $('#day' + today.getDate()).addClass('current-date');
+    }
+
+    for (var day in data[month]) {
+        switch (data[month][day]['semester']) {
+            case 4:
+                $('#day' + day).addClass('sem4-asd');
+                break;
+            case 6:
+                $('#day' + day).addClass('sem6-asd');
+                break;
+        }
+    }
+}
 
 
-    var calendar = new Calendar('#calendar', data);
+/* Functions used to switch calendars. */
+var prevMonth = function () {
+    var monthname = $('#monthname').text();
+    if (monthname == 'March')
+        calendarSetup(2);
+    else if (monthname == 'April')
+        calendarSetup(3);    
+}
 
-}();
+var nextMonth = function () {
+    var monthname = $('#monthname').text();
+    if (monthname == 'February')
+        calendarSetup(3);
+    else if (monthname == 'March')
+        calendarSetup(4);
+}
+
+
+
+$(document).ready(function () {
+    calendarSetup();
+});
