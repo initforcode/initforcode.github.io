@@ -730,7 +730,7 @@ body {
     background-color: black;
     -webkit-box-shadow: 1px 0px 27px -1px rgba(163,163,163,1);
 -moz-box-shadow: 1px 0px 27px -1px rgba(163,163,163,1);
-box-shadow: 1px 0px 27px -1px rgba(163,163,163,1);      
+box-shadow: 1px 0px 27px -1px rgba(163,163,163,1);
     border-radius: 2%;
     margin-top: 20px !important;
     padding: 20px !important;
@@ -2463,7 +2463,7 @@ body {
 }
 
 .calendar td {
-    color: #426E86;    
+    color: #426E86;
 }
 
 /* .daysoftheweek th {
