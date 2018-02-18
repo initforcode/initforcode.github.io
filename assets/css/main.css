@@ -2640,3 +2640,9 @@ body {
 .room {
     padding-right: 30px;
 }
+
+/* MEMBER INFO */
+
+.memname {
+    font-family: 'Open Sans' !important;
+}
