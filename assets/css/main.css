@@ -729,7 +729,11 @@ body {
     background-color: black;
     margin-top: 20px !important;
     padding: 20px !important;
-    font-size: 12px !important;
+    font-size: 16px !important;
+    height: 200px;
+    width: 100%;
+    text-align: left;
+    font-family: monospace !important;
 }
 
 .output {
@@ -846,6 +850,9 @@ body {
 }
 
 @media screen and (max-width: 767px) {
+    #cons{
+        height:300px;
+    }
     .material-card.mc-active {
         padding-bottom: 0;
         height: auto;
@@ -909,7 +916,7 @@ body {
     top: 100%;
     right: 30px;
     left: 30px;
-    bottom: 54px;
+    bottom: 0px;
     overflow: hidden;
     opacity: 0;
     filter: alpha(opacity=0);
@@ -921,7 +928,7 @@ body {
 }
 
 .material-card .mc-footer {
-    height: 0;
+    height: 0px;
     overflow: hidden;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
@@ -2350,7 +2357,7 @@ body {
 
 .promo .brief {
     color: #f9f9f9;
-    font-size:20px;
+    font-size: 20px;
 }
 
 .promo .price {
@@ -2413,7 +2420,7 @@ body {
 .header {
     height: 50px;
     width: 420px;
-    background:#ffffff;
+    background: #ffffff;
     text-align: center;
     position: relative;
     z-index: 100;
@@ -2889,3 +2896,4 @@ body {
         height: 0px;
     }
 }
+
