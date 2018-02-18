@@ -27,9 +27,9 @@ var data = {
         21: {
             semester: 4,
             speakers: {
-                'A': 'Harsha and Abhijit',
-                'B': 'Somya and Sandra',
-                'C': 'Krishna and Prateek',
+                'A': 'Somya and Sandra',
+                'B': 'Krishna and Prateek',
+                'C': 'Harsha and Abhijit',
             }
         }
     },
@@ -47,9 +47,9 @@ var data = {
         21: {
             semester: 4,
             speakers: {
-                'A': 'Somya and Sandra',
-                'B': 'Krishna and Prateek',
-                'C': 'Harsha and Abhijit',
+                'A': 'Harsha and Abhijit',
+                'B': 'Somya and Sandra',
+                'C': 'Krishna and Prateek',
             }
         },
         28: {
