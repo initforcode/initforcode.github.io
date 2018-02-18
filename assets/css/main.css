@@ -280,7 +280,7 @@ iframe {
 }
 
 body {
-    color: #fff;
+    color: #000000;
     font: 18px/28px "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 300;
 }
@@ -2357,14 +2357,14 @@ body {
 
 .promo .brief {
     color: #f9f9f9;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .promo .price {
     margin: .5em 0;
     padding: .25em 0;
     background: #292b2e;
-    font-size: 150%;
+    font-size: 125%;
     color: #f9f9f9;
 }
 
@@ -2897,3 +2897,44 @@ body {
     }
 }
 
+
+.panel-heading {
+    padding: 0;
+}
+
+.panel-title {
+    padding: 15px;
+    color: #f9f9f9;
+    margin: 0 auto;
+    background-color: #0F1012;
+    font-size: 16px;
+}
+
+.panel-title:hover {
+    background-color: #29282E;
+}
+
+.panel-body {
+    /* color: #f9f9f9; */
+    color: #426E86;
+    font-size: 16px;
+}
+
+.panel a {
+    text-decoration: none;
+}
+
+.panel a:hover {
+    color: #f9f9f9;
+}
+
+
+.panel b {
+    color: #2F3131;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.panel .data {
+    padding-left: 20px;
+}
