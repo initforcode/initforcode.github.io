@@ -2664,3 +2664,17 @@ body {
     color: #FEF8F5 !important;
     background-color: #0F1012;
 }
+
+.phone, .phone-alt {
+    font-family: monospace !important;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.phone {
+    color: #263238;
+}
+
+.phone-alt {
+    color: #212121;
+}
