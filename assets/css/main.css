@@ -2938,3 +2938,7 @@ body {
 .panel .data {
     padding-left: 20px;
 }
+
+.panel .disclaimer {
+    font-size: 14px;
+}
