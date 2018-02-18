@@ -43,6 +43,26 @@
 
 <body data-spy="scroll" data-target=".uk-dotnav" data-offset="50">
 
+<!-- Preloader Begin-->
+<div class="preloader" style="">
+	<center>
+		<div style="margin-top : 250px; vertical-align: middle !important;">
+			<div class="heart-rate">
+			  <svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="150px" height="73px" viewBox="0 0 150 73" enable-background="new 0 0 150 73" xml:space="preserve">
+			    <polyline fill="none" stroke="#009B9E" stroke-width="3" stroke-miterlimit="10" points="0,45.486 38.514,45.486 44.595,33.324 50.676,45.486 57.771,45.486 62.838,55.622 71.959,9 80.067,63.729 84.122,45.486 97.297,45.486 103.379,40.419 110.473,45.486 150,45.486"
+			    />
+			  </svg>
+			  <div class="fade-in-hr"></div>
+			  <div class="fade-out-hr"></div>
+			</div>
+		</div>
+	</center>
+</div>
+<script>
+
+</script>
+<!-- Preloader End -->
+
   <!-- FLOATING OBJECTS DEFINED HERE -->
 
   <!-- Logo on top left. -->
@@ -121,7 +141,6 @@
 
 
   <!-- HOME SECTION BEGINS HERE -->
-
   <section id="home" class="section active" style="width: 100%; min-height: 100vh;">
 
     <!-- Logo -->
@@ -141,8 +160,15 @@
         </main>
       </div>
       <script type="text/javascript">
-        // Check assets/js/terminal.js for the rest of the code.
-        terminal('.prompt span');
+        // Check assets/js/terminal.js for the rest of the code
+        $(document).ready(function(){
+			setTimeout(function(){
+				$(".preloader").hide(100);
+				$("body").addClass("scrollY");
+	        	terminal('.prompt span');
+			}, 1000);
+
+		});
       </script>
 
     </div>
@@ -478,13 +504,13 @@
         <section class="container">
           <div class="row active-with-click">
             <div class="col-md-4 col-sm-6 col-xs-12">
-              <article class="material-card Red">
+              <article class="material-card Blue-Grey">
                 <h2>
-                  <span>Abhijit Theophilus</span>
-                  <strong>
+                  <span>Abhijit Theophilus<br><span style="font-size:16px; margin:0;">{}</span></span>
+<!--                   <strong>
 
                     {}
-                  </strong>
+                  </strong> -->
                 </h2>
                 <div class="mc-content">
                   <div class="img-container">
@@ -495,25 +521,31 @@
                     <br> A love for Coffee and Conversation.
                     <br> A strong believer in collective growth,
                     <br> persistence and a free-spirited mindset.
-                    <i class="fa fa-fw fa-phone"></i> - +91 80500 12762
+                    <!-- <i class="fa fa-fw fa-phone"></i> - +91 80500 12762
                     <br>
                     <i class="fa fa-fw fa-envelope"></i> - harshavamsi096@gmail.com
                     <br>
-                    <i class="fa fa-fw fa-github"></i> - sampe
+                    <i class="fa fa-fw fa-github"></i> - sampe -->
                   </div>
                 </div>
                 <a class="mc-btn-action">
                   <i class="fa fa-bars"></i>
                 </a>
+                <div class="mc-footer">
+                  <a class="fa fa-fw fa-phone" data-toggle="tooltip" data-placement="top" title="123232"></a>
+                  <a class="fa fa-fw fa-envelope"></a>
+                  <!-- <a class="fa fa-fw fa-linkedin"></a> -->
+                  <a class="fa fa-fw fa-github"></a>
+                </div>
 
               </article>
             </div>
 
             <!-- SOMYA'S SECTION -->
             <div class="col-md-4 col-sm-6 col-xs-12">
-              <article class="material-card Pink">
+              <article class="material-card Grey">
                 <h2>
-                  <span>Somya Bansal</span>
+                  <span>Somya Bansal<br><span style="font-size:16px; margin:0;">{}</span></span>
                 </h2>
                 <div class="mc-content">
                   <div class="img-container">
@@ -527,19 +559,19 @@
                   <i class="fa fa-bars"></i>
                 </a>
                 <div class="mc-footer">
-                  <a class="fa fa-fw fa-facebook"></a>
-                  <a class="fa fa-fw fa-twitter"></a>
-                  <a class="fa fa-fw fa-linkedin"></a>
-                  <a class="fa fa-fw fa-google-plus"></a>
+                  <a class="fa fa-fw fa-phone" data-toggle="tooltip" data-placement="top" title="123232"></a>
+                  <a class="fa fa-fw fa-envelope"></a>
+                  <!-- <a class="fa fa-fw fa-linkedin"></a> -->
+                  <a class="fa fa-fw fa-github"></a>
                 </div>
               </article>
             </div>
 
             <!-- VAMSI'S SECTION -->
             <div class="col-md-4 col-sm-6 col-xs-12">
-              <article class="material-card Purple">
+              <article class="material-card Blue-Grey">
                 <h2>
-                  <span>Harsha Vamsi</span>
+                  <span>Harsha Vamsi<br><span style="font-size:16px; margin:0;">{}</span></span>
                 </h2>
                 <div class="mc-content">
                   <div class="img-container">
@@ -554,19 +586,19 @@
                   <i class="fa fa-bars"></i>
                 </a>
                 <div class="mc-footer">
-                  <a class="fa fa-fw fa-facebook"></a>
-                  <a class="fa fa-fw fa-twitter"></a>
-                  <a class="fa fa-fw fa-linkedin"></a>
-                  <a class="fa fa-fw fa-google-plus"></a>
+                  <a class="fa fa-fw fa-phone" data-toggle="tooltip" data-placement="top" title="123232"></a>
+                  <a class="fa fa-fw fa-envelope"></a>
+                  <!-- <a class="fa fa-fw fa-linkedin"></a> -->
+                  <a class="fa fa-fw fa-github"></a>
                 </div>
               </article>
             </div>
 
             <!-- KRISHNA'S SECTION -->
             <div class="col-md-4 col-sm-6 col-xs-12">
-              <article class="material-card Deep-Purple">
+              <article class="material-card Grey">
                 <h2>
-                  <span>Krishna Chaitanya</span>
+                  <span>Krishna Chaitanya<br><span style="font-size:16px; margin:0;">{}</span></span>
                 </h2>
                 <div class="mc-content">
                   <div class="img-container">
@@ -580,19 +612,19 @@
                   <i class="fa fa-bars"></i>
                 </a>
                 <div class="mc-footer">
-                  <a class="fa fa-fw fa-facebook"></a>
-                  <a class="fa fa-fw fa-twitter"></a>
-                  <a class="fa fa-fw fa-linkedin"></a>
-                  <a class="fa fa-fw fa-google-plus"></a>
+                  <a class="fa fa-fw fa-phone" data-toggle="tooltip" data-placement="top" title="123232"></a>
+                  <a class="fa fa-fw fa-envelope"></a>
+                  <!-- <a class="fa fa-fw fa-linkedin"></a> -->
+                  <a class="fa fa-fw fa-github"></a>
                 </div>
               </article>
             </div>
 
             <!-- SANDRA'S SECTION -->
             <div class="col-md-4 col-sm-6 col-xs-12">
-              <article class="material-card Indigo">
+              <article class="material-card Blue-Grey">
                 <h2>
-                  <span>Sandra Anil</span>
+                  <span>Sandra Anil<br><span style="font-size:16px; margin:0;">{}</span></span>
                 </h2>
                 <div class="mc-content">
                   <div class="img-container">
@@ -607,23 +639,23 @@
                   <i class="fa fa-bars"></i>
                 </a>
                 <div class="mc-footer">
-                  <a class="fa fa-fw fa-facebook"></a>
-                  <a class="fa fa-fw fa-twitter"></a>
-                  <a class="fa fa-fw fa-linkedin"></a>
-                  <a class="fa fa-fw fa-google-plus"></a>
+                  <a class="fa fa-fw fa-phone" data-toggle="tooltip" data-placement="top" title="123232"></a>
+                  <a class="fa fa-fw fa-envelope"></a>
+                  <!-- <a class="fa fa-fw fa-linkedin"></a> -->
+                  <a class="fa fa-fw fa-github"></a>
                 </div>
               </article>
             </div>
 
             <!-- PRATEEK'S SECTION -->
             <div class="col-md-4 col-sm-6 col-xs-12">
-              <article class="material-card Blue">
+              <article class="material-card Grey">
                 <h2>
-                  <span>Prateek Gupta</span>
+                  <span>Prateek Gupta<br><span style="font-size:16px; margin:0;">{}</span></span>
                 </h2>
                 <div class="mc-content">
                   <div class="img-container">
-                    <img class="img-responsive" src="assets/img/prateek.jpg">
+                    <img class="img-responsive" src="assets/img/Prateek.jpg">
                   </div>
                   <div class="mc-description">
                     Physical Hacker!
@@ -634,46 +666,46 @@
                   <i class="fa fa-bars"></i>
                 </a>
                 <div class="mc-footer">
-                  <a class="fa fa-fw fa-facebook"></a>
-                  <a class="fa fa-fw fa-twitter"></a>
-                  <a class="fa fa-fw fa-linkedin"></a>
-                  <a class="fa fa-fw fa-google-plus"></a>
+                  <a class="fa fa-fw fa-phone" data-toggle="tooltip" data-placement="top" title="123232"></a>
+                  <a class="fa fa-fw fa-envelope"></a>
+                  <!-- <a class="fa fa-fw fa-linkedin"></a> -->
+                  <a class="fa fa-fw fa-github"></a>
                 </div>
               </article>
             </div>
 
             <!-- ANKIT'S SECTION -->
             <div class="col-md-4 col-md-offset-2 col-sm-6 col-xs-12">
-              <article class="material-card Light-Blue">
+              <article class="material-card Blue-Grey">
                 <h2>
-                  <span>Ankit Sinha</span>
+                  <span>Ankit Sinha<br><span style="font-size:16px; margin:0;">{Developement.}</span></span>
+
                 </h2>
                 <div class="mc-content">
                   <div class="img-container">
                     <img class="img-responsive" src="assets/img/ankit.jpg">
                   </div>
                   <div class="mc-description">
-                    Some of his most notable starring roles were in Martin Scorsese's Mean Streets and Taxi Driver, Ridley Scott's The Duellists
-                    and Thelma & Louise, Quentin Tarantino ...
+                    Full time science student, love dogs, can build stuff.
                   </div>
                 </div>
                 <a class="mc-btn-action">
                   <i class="fa fa-bars"></i>
                 </a>
                 <div class="mc-footer">
-                  <a class="fa fa-fw fa-facebook"></a>
-                  <a class="fa fa-fw fa-twitter"></a>
-                  <a class="fa fa-fw fa-linkedin"></a>
-                  <a class="fa fa-fw fa-google-plus"></a>
+                  <a class="fa fa-fw fa-phone" data-toggle="tooltip" data-placement="top" title="8789551015"></a>
+                  <a href="mailto:ankit.sinha2000@gmail.com" class="fa fa-fw fa-envelope" data-toggle="tooltip" data-placement="top" title="ankit.sinha2000@gmail.com"></a>
+                  <!-- <a class="fa fa-fw fa-linkedin"></a> -->
+                  <a class="fa fa-fw fa-github" data-toggle="tooltip" data-placement="top" title="ankitksinha"></a>
                 </div>
               </article>
             </div>
 
             <!-- ARKO'S SECTION -->
             <div class="col-md-4 col-sm-6 col-xs-12">
-              <article class="material-card Cyan">
+              <article class="material-card Grey">
                 <h2>
-                  <span>Arkoprabho Bhattacharjee</span>
+                  <span>Arkoprabho Bhattacharjee<br><span style="font-size:16px; margin:0;">{}</span></span>
                 </h2>
                 <div class="mc-content">
                   <div class="img-container">
@@ -688,15 +720,20 @@
                   <i class="fa fa-bars"></i>
                 </a>
                 <div class="mc-footer">
-                  <a class="fa fa-fw fa-facebook"></a>
-                  <a class="fa fa-fw fa-twitter"></a>
-                  <a class="fa fa-fw fa-linkedin"></a>
-                  <a class="fa fa-fw fa-google-plus"></a>
+                  <a class="fa fa-fw fa-phone" data-toggle="tooltip" data-placement="top" title="123232"></a>
+                  <a class="fa fa-fw fa-envelope"></a>
+                  <!-- <a class="fa fa-fw fa-linkedin"></a> -->
+                  <a class="fa fa-fw fa-github"></a>
                 </div>
               </article>
             </div>
           </div>
         </section>
+        <script>
+          $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();   
+          });
+        </script>
 
         <!-- Why is this here and not in a css file? -->
         <style>

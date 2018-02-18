@@ -4,6 +4,7 @@ html {
 
 body {
     overflow-x: hidden;
+    overflow-y: hidden;
     /*background-color: #000 !important;*/
     /*animation: bg-transitions 5s infinite alternate;
   -moz-animation: bg-transitions 5s infinite alternate;
@@ -727,6 +728,10 @@ body {
 
 #cons {
     background-color: black;
+    -webkit-box-shadow: 1px 0px 27px -1px rgba(163,163,163,1);
+-moz-box-shadow: 1px 0px 27px -1px rgba(163,163,163,1);
+box-shadow: 1px 0px 27px -1px rgba(163,163,163,1);      
+    border-radius: 2%;
     margin-top: 20px !important;
     padding: 20px !important;
     font-size: 16px !important;
@@ -2538,4 +2543,75 @@ body {
 
 .panel .disclaimer {
     font-size: 14px;
+}
+
+/*Preloader Heart Rate*/
+.heart-rate {
+  width: 150px;
+  height: 73px;
+  position: relative;
+  margin: 20px auto;
+}
+
+.fade-in-hr{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  top: 0;
+  right: 0;
+  animation: heartRateIn 2.5s linear infinite;
+}
+
+.fade-out-hr{
+  position: absolute;
+  width: 120%;
+  height: 100%;
+  top: 0;
+  left: -120%;
+  animation: heartRateOut 2.5s linear infinite;
+  background: rgba(255, 255, 255, 1);
+  background: -moz-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+  background: -ms-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 0) 100%);
+}
+
+@keyframes heartRateIn {
+  0% {
+    width: 100%;
+  }
+  50% {
+    width: 0;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes heartRateOut {
+  0% {
+    left: -120%;
+  }
+  30% {
+    left: -120%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+.scrollY{
+    overflow-y: scroll;
+}
+.preloader{
+    display: block;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 999 !important;
+    background: #fff;
 }
