@@ -11,7 +11,7 @@ var data = {
         7: {
             semester: 4,
             speakers: {
-                'A': 'Vamsi and Arko',
+                'A': 'Harsha and Arko',
                 'B': 'Somya and Sandra',
                 'C': 'Krishna and Prateek'
             }
@@ -21,13 +21,13 @@ var data = {
             speakers: {
                 'A': 'Somya and Sandra',
                 'B': 'Krishna and Prateek',
-                'C': 'Vamsi and Jerry',
+                'C': 'Harsha and Abhijit',
             }
         },
         21: {
             semester: 4,
             speakers: {
-                'A': 'Vamsi and Jerry',
+                'A': 'Harsha and Abhijit',
                 'B': 'Somya and Sandra',
                 'C': 'Krishna and Prateek',
             }
@@ -40,7 +40,7 @@ var data = {
             semester: 6,
             speakers: {
                 'A': 'Krishna and Prateek',
-                'B': 'Vamsi and Jerry',
+                'B': 'Harsha and Abhijit',
                 'C': 'Somya and Sandra',
             }
         },
@@ -49,13 +49,13 @@ var data = {
             speakers: {
                 'A': 'Somya and Sandra',
                 'B': 'Krishna and Prateek',
-                'C': 'Vamsi and Jerry',
+                'C': 'Harsha and Abhijit',
             }
         },
         28: {
             semester: 6,
             speakers: {
-                'A': 'Vamsi and Jerry',
+                'A': 'Harsha and Abhijit',
                 'B': 'Somya and Sandra',
                 'C': 'Krishna and Prateek',
             }
@@ -68,7 +68,7 @@ var data = {
             semester: 4,
             speakers: {
                 'A': 'Krishna and Prateek',
-                'B': 'Vamsi and Jerry',
+                'B': 'Harsha and Abhijit',
                 'C': 'Somya and Sandra',
             }
         },
@@ -77,7 +77,7 @@ var data = {
             speakers: {
                 'A': 'Somya and Sandra',
                 'B': 'Krishna and Prateek',
-                'C': 'Vamsi and Jerry',
+                'C': 'Harsha and Abhijit',
             }
         },
     }
