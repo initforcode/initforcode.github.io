@@ -33,11 +33,48 @@
   <!-- Our resources -->
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="shortcut icon" href="assets/img/favicon.png" />
+  <script type="text/javascript" src="assets/js/main.js"></script>
   <script type="text/javascript" src="assets/js/terminal.js"></script>
  
 </head>
 
 <body data-spy="scroll" data-target=".uk-dotnav" data-offset="50">
+
+  <!-- FLOATING OBJECTS DEFINED HERE -->
+
+  <!-- Logo on top left. -->
+  <div class="hashlogo hidden" style="position: fixed; top: 10px; left: 15px; z-index: 999;">
+    <a href="#home" uk-scroll>
+      <img class="img img-responsive" style="height:35px;" src="assets/img/icon.png">
+    </a>
+  </div>
+
+  <!-- The Dotted Navigation -->
+  <div id="dot-nav" class="uk-position-center-right uk-position-medium" style="position: fixed !important; z-index: +1;">
+    <ul class="uk-dotnav uk-dotnav-vertical" uk-scrollspy-nav="closest: li; scroll: true; offset: 30">
+      <li class="uk-active" title="Home" uk-tooltip="pos: left">
+        <a href="#home" uk-scroll>Home</a>
+      </li>
+      <li title="#!nit" uk-tooltip="pos: left">
+        <a href="#init" uk-scroll>#!nit</a>
+      </li>
+      <li title="Scripts" uk-tooltip="pos: left">
+        <a href="#scripts" uk-scroll>Scripts</a>
+      </li>
+      <li title="ASD" uk-tooltip="pos: left">
+        <a href="#asd" uk-scroll>ASD</a>
+      </li>
+      <!-- <li title="Workshops" uk-tooltip="pos: left">
+          <a href="#workshops" uk-scroll>Workshops</a>
+        </li> -->
+      <li title="Members" uk-tooltip="pos: left">
+        <a href="#members" uk-scroll>Members</a>
+      </li>
+      <li title="IEEE Compsoc" uk-tooltip="pos: left">
+        <a href="#IEEE" uk-scroll>IEEE CompSoc</a>
+      </li>
+    </ul>
+  </div>
 
   <!-- Someone please tell me what this does? -->
   <div id="menu-icon" style="position: fixed; top:10px; right:10px; z-index: 1001 !important;" uk-toggle="target: #offcanvas-nav-primary">
@@ -59,21 +96,13 @@
         </ul>
       </div>
     </div>
-
-    <!-- Document Ready script. Move to main.js -->
-    <script>
-      $(document).ready(function () {
-        $(".uk-nav-primary li").click(function () {
-          UIkit.offcanvas("#offcanvas-nav-primary").hide();
-        });
-      });
-    </script>
-  
   </div>
 
   <!-- Does this still do anything other than set the background? -->
   <div id="particles-js"></div>
   <!-- <div id="fullpage"> -->
+    
+  <!-- FLOATING OBJECTS END HERE -->
   
 
   <!-- HOME SECTION BEGINS HERE -->
@@ -105,63 +134,10 @@
 
     </div>
 
-    <!-- The Dotted Navigation -->
-    <div id="dot-nav" class="uk-position-center-right uk-position-medium" style="position: fixed !important; z-index: +1;">
-      <ul class="uk-dotnav uk-dotnav-vertical" uk-scrollspy-nav="closest: li; scroll: true; offset: 30">
-        <li class="uk-active" title="Home" uk-tooltip="pos: left">
-          <a href="#home" uk-scroll>Home</a>
-        </li>
-        <li title="#!nit" uk-tooltip="pos: left">
-          <a href="#init" uk-scroll>#!nit</a>
-        </li>
-        <li title="Scripts" uk-tooltip="pos: left">
-          <a href="#scripts" uk-scroll>Scripts</a>
-        </li>
-        <li title="ASD" uk-tooltip="pos: left">
-          <a href="#asd" uk-scroll>ASD</a>
-        </li>
-        <!-- <li title="Workshops" uk-tooltip="pos: left">
-          <a href="#workshops" uk-scroll>Workshops</a>
-        </li> -->
-        <li title="Members" uk-tooltip="pos: left">
-          <a href="#members" uk-scroll>Members</a>
-        </li>
-        <li title="IEEE Compsoc" uk-tooltip="pos: left">
-          <a href="#IEEE" uk-scroll>IEEE CompSoc</a>
-        </li>
-      </ul>
-    </div>
-
+    
   </section>
-
+  
   <!-- HOME SECTION ENDS HERE -->
-
-  <!-- Logo on top left. Can this be moved to the top of page? -->
-  <div class="hashlogo hidden" style="position: fixed; top: 10px; left: 15px; z-index: 999;">
-    <a href="#home" uk-scroll>
-      <img class="img img-responsive" style="height:35px;" src="assets/img/icon.png">
-    </a>
-  </div>
-
-  <!-- Another document ready function -->
-  <script>
-    $(document).ready(function () {
-      $(window).scroll(function () {
-        var scrollPos = $(window).scrollTop();
-        if (scrollPos >= 600) {
-          $(".hashlogo").addClass("large-nav").promise().done(function () {
-            $(".hashlogo").removeClass("hidden").addClass("fadeInLeft animated");
-          });
-        } else if (scrollPos <= 500) {
-          $(".hashlogo").removeClass("large-nav").promise().done(function () {
-            $(".hashlogo").removeClass("fadeInLeft").addClass("fadeOutLeft").promise().done(function () {
-              $(".hashlogo").removeClass("fadeOutLeft").addClass("hidden");
-            });
-          });
-        }
-      });
-    });
-  </script>
 
 
   <!-- INIT SECTION BEGINS HERE -->
@@ -169,15 +145,20 @@
   <section id="init" style="width: 100%" class="section uk-padding-large">
     <div class="container">
       <div class="row">
+
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
-          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">program init begin</h3>
+          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">
+            program init begin
+          </h3>
         </div>
+
         <div class="col-sm-12">
           <div class="row container">
             <div class="col-md-6 uk-padding-large uk-padding-remove-vertical main-content">
               <p class="text-justify" style="color:#426E86; font-size: 18px !important">
-                <span style="font-family: monospace">#!nit</span> was an idea born of the necessity for change, a change that would take you from the drawing board of the classroom to pragmatic code.
-                We built <span style="font-family: monospace">#!nit</span> to instil a culture of collaborative hacking and to forge a platform for collective growth.
+                <span style="font-family: monospace">#!nit</span> was an idea born of the necessity for change, a change that would take
+                you from the drawing board of the classroom to pragmatic code. We built <span style="font-family: monospace">#!nit</span>
+                to instil a culture of collaborative hacking and to forge a platform for collective growth.
                 <span style="font-family: monospace">#!nit</span> is our love for code, pursued to share this passion among others.
                 <span style="font-family: monospace">#!nit</span> is our revolution to the everyday monotony of college.
                 <span style="font-family: monospace">#!nit</span> is our contribution to growing a community we owe much to.
@@ -197,31 +178,42 @@
             </div>
           </div>
         </div>
+
         <div class="col-sm-12 uk-padding uk-padding-remove-top">
-          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">program init end</h3>
+          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">
+            program init end
+          </h3>
         </div>
+
       </div>
     </div>
   </section>
 
+  <!-- INIT SECTION ENDS HERE -->
+  
+
+  <!-- SCRIPTS SECTION BEGINS HERE -->  
+
   <section id="scripts" uk-scrollspy="cls:uk-animation-fade;repeat:true;" style="" class="section uk-padding-large">
     <div class="container">
       <div class="row">
+
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
           <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">program scripts begin</h3>
         </div>
+
         <p class="text-justify uk-padding uk-padding-remove-bottom" style="color:#426E86; font-size: 18px !important">
-          Scripts have been designed with a focus towards core programming skills in order to give you a boost into development.
-          Each session will walk you across the basics of a programming language or framework and gear you with enough intel to guide your progress through
-          the murky waters of the Internet.
+          Scripts have been designed with a focus towards core programming skills in order to give you a boost into development. Each
+          session will walk you across the basics of a programming language or framework and gear you with enough intel to guide your
+          progress through the murky waters of the Internet.
         </p>
+
+        <!-- This really needs to be fixed. -->
         <div class="promos">
           <div class="promo first scale">
             <ul class="features">
               <li class="brief">JavaScript</li>
-
-              <li class="price">20th and 21st February
-              </li>
+              <li class="price">20th and 21st February</li>
               <li>Time: 3:45 p.m. to 5:00 p.m.</li>
               <li>Venue: Room 201</li>
               <li>By: Harsha Vamsi and Ankit Sinha</li>
@@ -245,11 +237,8 @@
           <div class="promo third">
             <ul class="features">
               <li class="brief">Python</li>
-              <li class="price">Upcoming</span>
-              </li>
-              <li>
-                  &zwnj;
-              </li>
+              <li class="price">Upcoming</li>
+              <li>&zwnj;</li>
               <li>Details to be disclosed</li>
               <li>&zwnj;</li>
               <li class="buy">
@@ -258,59 +247,93 @@
             </ul>
           </div>
         </div>
+
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
-          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">program scripts end</h3>
+          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">
+            program scripts end
+          </h3>
         </div>
+
       </div>
     </div>
-    </div>
   </section>
+
   <section id="asd" uk-scrollspy="cls:uk-animation-fade;repeat:true;" style="" class="section uk-padding-large">
     <div class="container">
       <div class="row">
+
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
           <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">
             program asd begin
           </h3>
         </div>
+
         <div class="row container">
+          <!-- Pleeaaase fix this piece of shit calendar before going live. -->
           <div class="col-sm-6">
             <div id="calendar"></div>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
           </div>
+
           <div class="col-sm-6 main-content text-justify" style="color: #426E86; font-size: 18px">
             In order to broaden our reach to you, we intend to conduct the ASD classes, bringing Appealing yet Significant Discussions
             regarding the approach and resources required to enter the world of Computer Science. An application oriented series of talks,
             we intend to touch upon various aspects of programming in terms of our experiences and expertise as well as aspects of practical
             need, such as placements, competitive coding, project management, etc.
           </div>
+
         </div>
+
         <div class="col-sm-12 uk-padding uk-padding-remove-top">
           <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">
             program asd end
           </h3>
         </div>
+
       </div>
     </div>
   </section>
+
+  <!-- SCRIPTS SECTION ENDS HERE -->
+  
+
+  <!-- WORKSHOP SECTION BEGINS HERE -->
+  <!-- Is there no way we can include this? :/ -->
+
   <!-- <section id="workshops" uk-scrollspy="cls:uk-animation-fade;repeat:true;" style="" class="uk-padding-large">
     <div class="container">
       <div class="row">
+
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
-          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">#!workshops/begin</h3>
+          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">
+            program workshop begin</h3>
         </div>
+
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
-          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">#!workshops/end</h3>
+          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">
+            program workshop end</h3>
         </div>
+
       </div>
     </div>
   </section> -->
+
+  <!-- WORKSHOP SECTION ENDS HERE -->
+
+
+  <!-- MEMBERS SECTION BEGINS HERE -->
+  
   <section id="members" style="min-height: 100vh;" uk-scrollspy="cls:uk-animation-fade;repeat:true;" class="section uk-padding-large">
     <div class="container">
       <div class="row">
+        
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
-          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">program members begin</h3>
+          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">
+            program members begin
+          </h3>
         </div>
+        
+        <!-- JERRY'S SECTION -->
         <section class="container">
           <div class="row active-with-click">
             <div class="col-md-4 col-sm-6 col-xs-12">
@@ -341,6 +364,8 @@
                 </div>
               </article>
             </div>
+
+            <!-- SOMYA'S SECTION -->            
             <div class="col-md-4 col-sm-6 col-xs-12">
               <article class="material-card Pink">
                 <h2>
@@ -351,7 +376,8 @@
                     <img class="img-responsive" src="assets/img/somya.jpg">
                   </div>
                   <div class="mc-description">
-                     A student, listener and learner. Loves music. A logical person, good at organising, singing and making bad puns and jokes.
+                     A student, listener and learner. Loves music. A logical person, good at organising, singing and making bad puns and
+                     jokes.
                   </div>
                 </div>
                 <a class="mc-btn-action">
@@ -368,6 +394,8 @@
                 </div>
               </article>
             </div>
+
+            <!-- VAMSI'S SECTION -->
             <div class="col-md-4 col-sm-6 col-xs-12">
               <article class="material-card Purple">
                 <h2>
@@ -396,6 +424,8 @@
                 </div>
               </article>
             </div>
+
+            <!-- KRISHNA'S SECTION -->
             <div class="col-md-4 col-sm-6 col-xs-12">
               <article class="material-card Deep-Purple">
                 <h2>
@@ -423,6 +453,8 @@
                 </div>
               </article>
             </div>
+            
+            <!-- SANDRA'S SECTION -->
             <div class="col-md-4 col-sm-6 col-xs-12">
               <article class="material-card Indigo">
                 <h2>
@@ -451,6 +483,8 @@
                 </div>
               </article>
             </div>
+
+            <!-- PRATEEK'S SECTION -->
             <div class="col-md-4 col-sm-6 col-xs-12">
               <article class="material-card Blue">
                 <h2>
@@ -478,6 +512,8 @@
                 </div>
               </article>
             </div>
+
+            <!-- ANKIT'S SECTION -->
             <div class="col-md-4 col-md-offset-2 col-sm-6 col-xs-12">
               <article class="material-card Light-Blue">
                 <h2>
@@ -506,6 +542,8 @@
                 </div>
               </article>
             </div>
+
+            <!-- ARKO'S SECTION -->
             <div class="col-md-4 col-sm-6 col-xs-12">
               <article class="material-card Cyan">
                 <h2>
@@ -537,7 +575,7 @@
           </div>
         </section>
 
-
+        <!-- Why is this here and not in a css file? -->
         <style>
           .github-corner:hover .octo-arm {
             animation: octocat-wave 560ms ease-in-out
@@ -567,18 +605,30 @@
             }
           }
         </style>
+
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
           <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">program members end</h3>
         </div>
+
       </div>
     </div>
   </section>
+
+  <!-- MEMBER SECTION ENDS HERE -->
+
+
+  <!-- IEEE SECTION BEGINS HERE -->  
+
   <section id="IEEE" uk-scrollspy="cls:uk-animation-fade;repeat:true;" style="width: 100%; min-height: 100vh;" class="section uk-padding-large uk-padding-remove-vertical">
     <div class="container">
       <div class="row">
+
         <div class="col-sm-12 uk-padding uk-padding-remove-bottom">
-          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">program compsoc begin</h3>
+          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">
+            program compsoc begin
+          </h3>
         </div>
+
         <div class="col-sm-12">
           <div class="row container">
             <div class="col-md-5 uk-margin-large pull-right">
@@ -588,9 +638,8 @@
             </div>
             <div class="col-md-7 uk-padding-large uk-padding-remove-vertical pull-left main-content">
               <p style="color:#426E86; font-size: 18px" class="text-justify">
-                PESITSouth IEEE Computer Society was started in 2017 by the Computer Science Department of PESIT South Campus. We also
-                organize workshops, seminars and a couple of amazing events like inGenius (annual) and the Pursuit (bi-annual
-                Online Treasure Hunt)!
+                PESITSouth IEEE Computer Society was started in 2017 by the Computer Science Department of PESIT South Campus. We
+                organize workshops, seminars and renowned events like inGenius (annual) and the Pursuit (bi-annual Online Treasure Hunt)!
               </p>
             </div>
           </div>
@@ -602,35 +651,48 @@
             </div>
             <div class="col-md-7 uk-padding-large uk-padding-remove-vertical pull-left main-content">
               <p style="color:#426E86; font-size: 18px" class="text-justify">
-                The IEEE Computer Society is the world's leading membership organization dedicated to computer science and technology. Serving
-                more than 60,000 members, the IEEE Computer Society is the trusted information, networking, and career-development
-                source for a global community of technology leaders that includes researchers, educators, software engineers,
-                IT professionals, employers, and students.
+                The IEEE Computer Society is the world's leading membership organization dedicated to computer science and technology.
+                Serving more than 60,000 members, the IEEE Computer Society is the trusted information, networking, and career-development
+                source for a global community of technology leaders that includes researchers, educators, software engineers, IT
+                professionals, employers, and students.
               </p>
             </div>
           </div>
         </div>
+
         <div class="col-sm-12 uk-padding uk-padding-remove-top">
-          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">program compsoc end</h3>
+          <h3 style="color:#2F3131; font-family: monospace !important; font-weight: bold" uk-scrollspy="cls:uk-animation-slide-left">
+            program compsoc end
+          </h3>
         </div>
+
       </div>
     </div>
   </section>
+
+  <!-- IEEE SECTION ENDS HERE -->
+
+
+  <!-- FOOTER BEGINS HERE -->
 
   <section id="footer" class="footer">
     <div class="container">
       <div class="row">
 
         <div class="col-sm-12 text-center" style="padding-bottom: 10px;">
-          <span class="made-with">Made with &#x2764; by the #!nit crew
-
-          </span>
+          <span class="made-with" style="color:#2F3131">Made with <span style="color:firebrick">&#x2764;</span> by the #!nit crew</span>
         </div>
+
       </div>
     </div>
   </section>
-  <!-- </div> -->
-<script>
+
+  <!-- FOOTER BEGINS HERE -->
+
+
+  <!-- What are all these functions here for?
+       Can we please clean this up?   -->
+  <script>
   $(function() {
         $('.material-card > .mc-btn-action').click(function () {
             var card = $(this).parent('.material-card');
@@ -660,7 +722,7 @@
             }
         });
     });
-</script>
+  </script>
   <script type="text/javascript" src="assets/js/svg.min.js"></script>
   <script>
     var menu = SVG('menu-icon').size(60, 60);
@@ -701,376 +763,12 @@
     ga('create', 'UA-67302990-1', 'auto');
     ga('send', 'pageview');
   </script>
-  <script src="js/classie.js"></script>
-  <script src="js/svganimations2.js"></script>
-  <script>
-!function() {
 
-var today = moment();
+  <!-- These scripts break the logo. --> 
+  <!--  <script src="assets/js/classie.js"></script>
+        <script src="assets/js/svganimations2.js"></script> -->
 
-function Calendar(selector, events) {
-  this.el = document.querySelector(selector);
-  this.events = events;
-  this.current = moment().date(1);
-  this.events.forEach(function(ev) {
-   ev.date = moment(ev.date);
-  });
-  this.draw();
-  var current = document.querySelector('.today');
-  if(current) {
-    var self = this;
-    window.setTimeout(function() {
-      self.openDay(current);
-    }, 500);
-  }
-
-}
-
-Calendar.prototype.draw = function() {
-  //Create Header
-  this.drawHeader();
-
-  //Draw Month
-  this.drawMonth();
-
-  this.drawLegend();
-}
-
-Calendar.prototype.drawHeader = function() {
-  var self = this;
-  if(!this.header) {
-    //Create the header elements
-    this.header = createElement('div', 'header');
-    this.header.className = 'header';
-
-    this.title = createElement('h1');
-
-    var right = createElement('div', 'right');
-    right.addEventListener('click', function() { self.nextMonth(); });
-
-    var left = createElement('div', 'left');
-    left.addEventListener('click', function() { self.prevMonth(); });
-
-    //Append the Elements
-    this.header.appendChild(this.title);
-    this.header.appendChild(right);
-    this.header.appendChild(left);
-    this.el.appendChild(this.header);
-  }
-
-  this.title.innerHTML = this.current.format('MMMM YYYY');
-}
-
-Calendar.prototype.drawMonth = function() {
-  var self = this;
-
-
-  if(this.month) {
-    this.oldMonth = this.month;
-    this.oldMonth.className = 'month out ' + (self.next ? 'next' : 'prev');
-    this.oldMonth.addEventListener('webkitAnimationEnd', function() {
-      self.oldMonth.parentNode.removeChild(self.oldMonth);
-      self.month = createElement('div', 'month');
-      self.backFill();
-      self.currentMonth();
-      self.fowardFill();
-      self.el.appendChild(self.month);
-      window.setTimeout(function() {
-        self.month.className = 'month in ' + (self.next ? 'next' : 'prev');
-      }, 16);
-    });
-  } else {
-      this.month = createElement('div', 'month');
-      this.el.appendChild(this.month);
-      this.backFill();
-      this.currentMonth();
-      this.fowardFill();
-      this.month.className = 'month new';
-  }
-}
-
-Calendar.prototype.backFill = function() {
-  var clone = this.current.clone();
-  var dayOfWeek = clone.day();
-
-  if(!dayOfWeek) { return; }
-
-  clone.subtract('days', dayOfWeek+1);
-
-  for(var i = dayOfWeek; i > 0 ; i--) {
-    this.drawDay(clone.add('days', 1));
-  }
-}
-
-Calendar.prototype.fowardFill = function() {
-  var clone = this.current.clone().add('months', 1).subtract('days', 1);
-  var dayOfWeek = clone.day();
-
-  if(dayOfWeek === 6) { return; }
-
-  for(var i = dayOfWeek; i < 6 ; i++) {
-    this.drawDay(clone.add('days', 1));
-  }
-}
-
-Calendar.prototype.currentMonth = function() {
-  var clone = this.current.clone();
-
-  while(clone.month() === this.current.month()) {
-    this.drawDay(clone);
-    clone.add('days', 1);
-  }
-}
-
-Calendar.prototype.getWeek = function(day) {
-  if(!this.week || day.day() === 0) {
-    this.week = createElement('div', 'week');
-    this.month.appendChild(this.week);
-  }
-}
-
-Calendar.prototype.drawDay = function(day) {
-  var self = this;
-  this.getWeek(day);
-
-  //Outer Day
-  var outer = createElement('div', this.getDayClass(day));
-  outer.addEventListener('click', function() {
-    self.openDay(this);
-  });
-
-  //Day Name
-  var name = createElement('div', 'day-name', day.format('ddd'));
-
-  //Day Number
-  var number = createElement('div', 'day-number', day.format('DD'));
-
-
-  //Events
-  var events = createElement('div', 'day-events');
-  this.drawEvents(day, events);
-
-  outer.appendChild(name);
-  outer.appendChild(number);
-  outer.appendChild(events);
-  this.week.appendChild(outer);
-}
-
-Calendar.prototype.drawEvents = function(day, element) {
-  if(day.month() === this.current.month()) {
-    var todaysEvents = this.events.reduce(function(memo, ev) {
-      if(ev.date.isSame(day, 'day')) {
-        memo.push(ev);
-      }
-      return memo;
-    }, []);
-
-    todaysEvents.forEach(function(ev) {
-      var evSpan = createElement('span', ev.color);
-      element.appendChild(evSpan);
-    });
-  }
-}
-
-Calendar.prototype.getDayClass = function(day) {
-  classes = ['day'];
-  if(day.month() !== this.current.month()) {
-    classes.push('other');
-  } else if (today.isSame(day, 'day')) {
-    classes.push('today');
-  }
-  return classes.join(' ');
-}
-
-Calendar.prototype.openDay = function(el) {
-  var details, arrow;
-  var dayNumber = +el.querySelectorAll('.day-number')[0].innerText || +el.querySelectorAll('.day-number')[0].textContent;
-  var day = this.current.clone().date(dayNumber);
-
-  var currentOpened = document.querySelector('.details');
-
-  //Check to see if there is an open detais box on the current row
-  if(currentOpened && currentOpened.parentNode === el.parentNode) {
-    details = currentOpened;
-    arrow = document.querySelector('.arrow');
-  } else {
-    //Close the open events on differnt week row
-    //currentOpened && currentOpened.parentNode.removeChild(currentOpened);
-    if(currentOpened) {
-      currentOpened.addEventListener('webkitAnimationEnd', function() {
-        currentOpened.parentNode.removeChild(currentOpened);
-      });
-      currentOpened.addEventListener('oanimationend', function() {
-        currentOpened.parentNode.removeChild(currentOpened);
-      });
-      currentOpened.addEventListener('msAnimationEnd', function() {
-        currentOpened.parentNode.removeChild(currentOpened);
-      });
-      currentOpened.addEventListener('animationend', function() {
-        currentOpened.parentNode.removeChild(currentOpened);
-      });
-      currentOpened.className = 'details out';
-    }
-
-    //Create the Details Container
-    details = createElement('div', 'details in');
-
-    //Create the arrow
-    var arrow = createElement('div', 'arrow');
-
-    //Create the event wrapper
-
-    details.appendChild(arrow);
-    el.parentNode.appendChild(details);
-  }
-
-  var todaysEvents = this.events.reduce(function(memo, ev) {
-    if(ev.date.isSame(day, 'day')) {
-      memo.push(ev);
-    }
-    return memo;
-  }, []);
-
-  this.renderEvents(todaysEvents, details);
-
-  arrow.style.left = el.offsetLeft - el.parentNode.offsetLeft + 27 + 'px';
-}
-
-Calendar.prototype.renderEvents = function(events, ele) {
-  //Remove any events in the current details element
-  var currentWrapper = ele.querySelector('.events');
-  var wrapper = createElement('div', 'events in' + (currentWrapper ? ' new' : ''));
-
-  events.forEach(function(ev) {
-    var div = createElement('div', 'event');
-    var square = createElement('div', 'event-category ' + ev.color);
-    var span = createElement('span', '', ev.eventName);
-
-    div.appendChild(square);
-    div.appendChild(span);
-    wrapper.appendChild(div);
-  });
-
-  if(!events.length) {
-    var div = createElement('div', 'event empty');
-    var span = createElement('span', '', 'No Events');
-
-    div.appendChild(span);
-    wrapper.appendChild(div);
-  }
-
-  if(currentWrapper) {
-    currentWrapper.className = 'events out';
-    currentWrapper.addEventListener('webkitAnimationEnd', function() {
-      currentWrapper.parentNode.removeChild(currentWrapper);
-      ele.appendChild(wrapper);
-    });
-    currentWrapper.addEventListener('oanimationend', function() {
-      currentWrapper.parentNode.removeChild(currentWrapper);
-      ele.appendChild(wrapper);
-    });
-    currentWrapper.addEventListener('msAnimationEnd', function() {
-      currentWrapper.parentNode.removeChild(currentWrapper);
-      ele.appendChild(wrapper);
-    });
-    currentWrapper.addEventListener('animationend', function() {
-      currentWrapper.parentNode.removeChild(currentWrapper);
-      ele.appendChild(wrapper);
-    });
-  } else {
-    ele.appendChild(wrapper);
-  }
-}
-
-Calendar.prototype.drawLegend = function() {
-  var legend = createElement('div', 'legend');
-  var calendars = this.events.map(function(e) {
-    return e.calendar + '|' + e.color;
-  }).reduce(function(memo, e) {
-    if(memo.indexOf(e) === -1) {
-      memo.push(e);
-    }
-    return memo;
-  }, []).forEach(function(e) {
-    var parts = e.split('|');
-    var entry = createElement('span', 'entry ' +  parts[1], parts[0]);
-    legend.appendChild(entry);
-  });
-  this.el.appendChild(legend);
-}
-
-Calendar.prototype.nextMonth = function() {
-  this.current.add('months', 1);
-  this.next = true;
-  this.draw();
-}
-
-Calendar.prototype.prevMonth = function() {
-  this.current.subtract('months', 1);
-  this.next = false;
-  this.draw();
-}
-
-window.Calendar = Calendar;
-
-function createElement(tagName, className, innerText) {
-  var ele = document.createElement(tagName);
-  if(className) {
-    ele.className = className;
-  }
-  if(innerText) {
-    ele.innderText = ele.textContent = innerText;
-  }
-  return ele;
-}
-}();
-
-!function() {
-var data = [
-  { eventName: 'ASD session in 4A - Vamsi and Arko', calendar: 'Work', color: 'orange', date: '2018-02-07' },
-  { eventName: 'ASD session in 4B - Somya and Sandra', calendar: 'Work', color: 'orange', date: '2018-02-07' },
-  { eventName: 'ASD session in 4C - Krishna and Prateek', calendar: 'Work', color: 'orange', date: '2018-02-07' },
-
-  { eventName: 'ASD session in 6A - Somya and Sandra', calendar: 'Work', color: 'orange', date: '2018-02-14' },
-  { eventName: 'ASD session in 6B - Krishna and Prateek', calendar: 'Work', color: 'orange', date: '2018-02-14' },
-  { eventName: 'ASD session in 6C - Vamsi and Jerry', calendar: 'Work', color: 'orange', date: '2018-02-14' },
-
-    { eventName: 'ASD session in 4A - Vamsi and Jerry', calendar: 'Work', color: 'orange', date: '2018-02-21' },
-  { eventName: 'ASD session in 4B - Somya and Sandra', calendar: 'Work', color: 'orange', date: '2018-02-21' },
-  { eventName: 'ASD session in 4C - Krishna and Prateek', calendar: 'Work', color: 'orange', date: '2018-02-21' },
-
-    { eventName: 'ASD session in 6A - Krishna and Prateek', calendar: 'Work', color: 'orange', date: '2018-03-07' },
-  { eventName: 'ASD session in 6B - Vamsi ad Jerry', calendar: 'Work', color: 'orange', date: '2018-03-07' },
-  { eventName: 'ASD session in 6C - Somya and Sandra', calendar: 'Work', color: 'orange', date: '2018-03-07' },
-
-    { eventName: 'ASD session in 4A - Somya and Sandra', calendar: 'Work', color: 'orange', date: '2018-03-21' },
-  { eventName: 'ASD session in 4B - Krishna and Prateek', calendar: 'Work', color: 'orange', date: '2018-03-21' },
-  { eventName: 'ASD session in 4C - Vamsi and Jerry', calendar: 'Work', color: 'orange', date: '2018-03-21' },
-
-      { eventName: 'ASD session in 6A - Vamsi and Jerry', calendar: 'Work', color: 'orange', date: '2018-03-28' },
-  { eventName: 'ASD session in 6B - Somya and Sandra', calendar: 'Work', color: 'orange', date: '2018-03-28' },
-  { eventName: 'ASD session in 6C - Krishna and Prateek', calendar: 'Work', color: 'orange', date: '2018-03-28' },
-
-      { eventName: 'ASD session in 4A - Krishna and Prateek', calendar: 'Work', color: 'orange', date: '2018-04-16' },
-  { eventName: 'ASD session in 4B - Vamsi and Jerry', calendar: 'Work', color: 'orange', date: '2018-04-16' },
-  { eventName: 'ASD session in 4C - Somya and Sandra', calendar: 'Work', color: 'orange', date: '2018-04-16' },
-
-      { eventName: 'ASD session in 6A - Somya and Sandra', calendar: 'Work', color: 'orange', date: '2018-04-23' },
-  { eventName: 'ASD session in 6B - Krishna and Prateek', calendar: 'Work', color: 'orange', date: '2018-04-23' },
-  { eventName: 'ASD session in 6C - Vamsi and Jerry', calendar: 'Work', color: 'orange', date: '2018-04-23' },
-
-
-];
-
-
-
-
-
-var calendar = new Calendar('#calendar', data);
-
-}();
-
-  </script>
+  <script type="text/javascript" src="assets/js/calendar.js"></script>
 </body>
 
 </html>
