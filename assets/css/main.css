@@ -2652,6 +2652,7 @@ body {
     display: inline-block;
     margin: 6px 0 0;
     vertical-align: top;
+
 }
 
 .event span {
@@ -2666,6 +2667,7 @@ body {
     height: 30px;
     background: rgba(60, 60, 60, 1);
     line-height: 30px;
+    color:white
 }
 
 .entry {
