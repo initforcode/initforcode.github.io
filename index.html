@@ -41,6 +41,26 @@
 
 <body data-spy="scroll" data-target=".uk-dotnav" data-offset="50">
 
+<!-- Preloader Begin-->
+<div class="preloader" style="display: block; height: 100vh; width: 100vw;position: absolute; top:0; left:0; z-index: 999 !important; background: #fff;">
+	<div style="position: absolute;top:200px; left:500px;">
+		<div class="heart-rate">
+		  <svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="150px" height="73px" viewBox="0 0 150 73" enable-background="new 0 0 150 73" xml:space="preserve">
+		    <polyline fill="none" stroke="#009B9E" stroke-width="3" stroke-miterlimit="10" points="0,45.486 38.514,45.486 44.595,33.324 50.676,45.486 57.771,45.486 62.838,55.622 71.959,9 80.067,63.729 84.122,45.486 97.297,45.486 103.379,40.419 110.473,45.486 150,45.486"
+		    />
+		  </svg>
+		  <div class="fade-in-hr"></div>
+		  <div class="fade-out-hr"></div>
+		</div>
+	</div>
+</div>
+<script>
+	$(document).ready(function(){
+		$(".preloader").hide(100);
+	});
+</script>
+<!-- Preloader End -->
+
   <!-- FLOATING OBJECTS DEFINED HERE -->
 
   <!-- Logo on top left. -->
@@ -119,7 +139,6 @@
 
 
   <!-- HOME SECTION BEGINS HERE -->
-
   <section id="home" class="section active" style="width: 100%; min-height: 100vh;">
 
     <!-- Logo -->
@@ -140,7 +159,9 @@
       </div>
       <script type="text/javascript">
         // Check assets/js/terminal.js for the rest of the code.
-        terminal('.prompt span');
+        $(document).ready(function(){
+        	terminal('.prompt span');
+        })
       </script>
 
     </div>
@@ -601,7 +622,7 @@
                 </h2>
                 <div class="mc-content">
                   <div class="img-container">
-                    <img class="img-responsive" src="assets/img/prateek.jpg">
+                    <img class="img-responsive" src="assets/img/Prateek.jpg">
                   </div>
                   <div class="mc-description">
                     Physical Hacker!
