@@ -36,6 +36,8 @@
   <link rel="shortcut icon" href="assets/img/favicon.png" />
   <script type="text/javascript" src="assets/js/main.js"></script>
   <script type="text/javascript" src="assets/js/terminal2.js"></script>
+  <script type="text/javascript" src="assets/js/mycalendar.js"></script>
+  
 
 </head>
 
@@ -324,7 +326,7 @@
     </div>
   </section>
 
-  <section id="asd" uk-scrollspy="cls:uk-animation-fade;repeat:true;" style="" class="section uk-padding-large">
+  <section id="asd" uk-scrollspy="cls:uk-animation-fade;repeat:true;" style="width: 100%" class="section uk-padding-large">
     <div class="container">
       <div class="row">
 
@@ -334,14 +336,34 @@
           </h3>
         </div>
 
-        <div class="row container">
+        <div class="row container uk-padding-large uk-padding-remove-vertical">
           <!-- Pleeaaase fix this piece of shit calendar before going live. -->
-          <div class="col-sm-6" style="margin-bottom:30px;">
-            <div id="calendar"></div>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+          <div class="col-sm-6">
+            <!-- My own motherfucking calendar. Fuck this shit. -->
+            <table class="calendar text-center">
+              <tr class="month">
+                <th colspan="7">
+                  <button id="prev" onclick="prevMonth()">&#10094;</button>
+                  <span id="monthname"></span>
+                  <button id="next" onclick="nextMonth()">&#10095;</button>
+                </th>
+              </tr>
+              <tr class="daysofweek">
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+              </tr>
+            </table>
+            
+            <!-- <div id="calendar"></div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script> -->
           </div>
 
-          <div class="col-sm-6 main-content text-justify" style="color: #426E86; font-size: 18px; margin-top:100px; margin-bottom:30px;">
+          <div class="col-sm-6 main-content text-justify" style="color: #426E86; font-size: 18px">
             In order to broaden our reach to you, we intend to conduct the ASD classes, bringing Appealing yet Significant Discussions
             regarding the approach and resources required to enter the world of Computer Science.
             <br>
@@ -870,7 +892,7 @@
   </script>
 
   <script type="text/javascript" src="assets/js/classie.js"></script>
-  <script type="text/javascript" src="assets/js/calendar.js"></script>
+  <!-- <script type="text/javascript" src="assets/js/calendar.js"></script> -->
 
   <!-- This breaks the logo. -->
   <!-- <script type="text/javascript" src="assets/js/svganimations2.js"></script> -->
