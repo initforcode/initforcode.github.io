@@ -962,7 +962,7 @@ box-shadow: 1px 0px 27px -1px rgba(163,163,163,1);
     display: block;
     float: left;
     position: relative;
-    width: 52px;
+    width: 48px;
     height: 52px;
     margin-left: 5px;
     margin-bottom: 15px;
@@ -2430,7 +2430,7 @@ body {
     padding: 14px 20px 14px;
     font-size: 16px;
     font-weight: normal;
-    min-width: 300px;
+    width:300px;
 }
 
 #prev, #next {
@@ -2666,8 +2666,7 @@ body {
 }
 
 .phone, .phone-alt {
-    font-family: monospace !important;
-    font-size: 20px;
+    font-size: 14px;
     font-weight: bold;
 }
 
