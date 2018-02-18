@@ -1,7 +1,7 @@
 /* A buttload of functions to set up a calendar
    that looks like shit. */
 
-!function () {
+! function () {
 
     var today = moment();
 
@@ -43,10 +43,14 @@
             this.title = createElement('h1');
 
             var right = createElement('div', 'right');
-            right.addEventListener('click', function () { self.nextMonth(); });
+            right.addEventListener('click', function () {
+                self.nextMonth();
+            });
 
             var left = createElement('div', 'left');
-            left.addEventListener('click', function () { self.prevMonth(); });
+            left.addEventListener('click', function () {
+                self.prevMonth();
+            });
 
             //Append the Elements
             this.header.appendChild(this.title);
@@ -90,7 +94,9 @@
         var clone = this.current.clone();
         var dayOfWeek = clone.day();
 
-        if (!dayOfWeek) { return; }
+        if (!dayOfWeek) {
+            return;
+        }
 
         clone.subtract('days', dayOfWeek + 1);
 
@@ -103,7 +109,9 @@
         var clone = this.current.clone().add('months', 1).subtract('days', 1);
         var dayOfWeek = clone.day();
 
-        if (dayOfWeek === 6) { return; }
+        if (dayOfWeek === 6) {
+            return;
+        }
 
         for (var i = dayOfWeek; i < 6; i++) {
             this.drawDay(clone.add('days', 1));
@@ -322,39 +330,158 @@
     }
 }();
 
-!function () {
-    var data = [
-        { eventName: 'ASD session in 4A - Vamsi and Arko', calendar: 'Work', color: 'orange', date: '2018-02-07' },
-        { eventName: 'ASD session in 4B - Somya and Sandra', calendar: 'Work', color: 'orange', date: '2018-02-07' },
-        { eventName: 'ASD session in 4C - Krishna and Prateek', calendar: 'Work', color: 'orange', date: '2018-02-07' },
+! function () {
+    var data = [{
+            eventName: 'ASD session in 4A - Vamsi and Arko',
+            calendar: 'ASD',
+            color: 'blue',
+            date: '2018-02-07'
+        },
+        {
+            eventName: 'ASD session in 4B - Somya and Sandra',
+            calendar: 'ASD',
+            color: 'blue',
+            date: '2018-02-07'
+        },
+        {
+            eventName: 'ASD session in 4C - Krishna and Prateek',
+            calendar: 'ASD',
+            color: 'blue',
+            date: '2018-02-07'
+        },
 
-        { eventName: 'ASD session in 6A - Somya and Sandra', calendar: 'Work', color: 'orange', date: '2018-02-14' },
-        { eventName: 'ASD session in 6B - Krishna and Prateek', calendar: 'Work', color: 'orange', date: '2018-02-14' },
-        { eventName: 'ASD session in 6C - Vamsi and Jerry', calendar: 'Work', color: 'orange', date: '2018-02-14' },
+        {
+            eventName: 'ASD session in 6A - Somya and Sandra',
+            calendar: 'ASD',
+            color: 'blue',
+            date: '2018-02-14'
+        },
+        {
+            eventName: 'ASD session in 6B - Krishna and Prateek',
+            calendar: 'ASD',
+            color: 'blue',
+            date: '2018-02-14'
+        },
+        {
+            eventName: 'ASD session in 6C - Vamsi and Jerry',
+            calendar: 'ASD',
+            color: 'blue',
+            date: '2018-02-14'
+        },
 
-        { eventName: 'ASD session in 4A - Vamsi and Jerry', calendar: 'Work', color: 'orange', date: '2018-02-21' },
-        { eventName: 'ASD session in 4B - Somya and Sandra', calendar: 'Work', color: 'orange', date: '2018-02-21' },
-        { eventName: 'ASD session in 4C - Krishna and Prateek', calendar: 'Work', color: 'orange', date: '2018-02-21' },
+        {
+            eventName: 'ASD session in 4A - Vamsi and Jerry',
+            calendar: 'ASD',
+            color: 'blue',
+            date: '2018-02-21'
+        },
+        {
+            eventName: 'ASD session in 4B - Somya and Sandra',
+            calendar: 'ASD',
+            color: 'blue',
+            date: '2018-02-21'
+        },
+        {
+            eventName: 'ASD session in 4C - Krishna and Prateek',
+            calendar: 'ASD',
+            color: 'blue',
+            date: '2018-02-21'
+        },
 
-        { eventName: 'ASD session in 6A - Krishna and Prateek', calendar: 'Work', color: 'orange', date: '2018-03-07' },
-        { eventName: 'ASD session in 6B - Vamsi ad Jerry', calendar: 'Work', color: 'orange', date: '2018-03-07' },
-        { eventName: 'ASD session in 6C - Somya and Sandra', calendar: 'Work', color: 'orange', date: '2018-03-07' },
+        {
+            eventName: 'ASD session in 6A - Krishna and Prateek',
+            calendar: 'ASD',
+            color: 'blue',
+            date: '2018-03-07'
+        },
+        {
+            eventName: 'ASD session in 6B - Vamsi ad Jerry',
+            calendar: 'ASD',
+            color: 'blue',
+            date: '2018-03-07'
+        },
+        {
+            eventName: 'ASD session in 6C - Somya and Sandra',
+            calendar: 'ASD',
+            color: 'blue',
+            date: '2018-03-07'
+        },
 
-        { eventName: 'ASD session in 4A - Somya and Sandra', calendar: 'Work', color: 'orange', date: '2018-03-21' },
-        { eventName: 'ASD session in 4B - Krishna and Prateek', calendar: 'Work', color: 'orange', date: '2018-03-21' },
-        { eventName: 'ASD session in 4C - Vamsi and Jerry', calendar: 'Work', color: 'orange', date: '2018-03-21' },
+        {
+            eventName: 'ASD session in 4A - Somya and Sandra',
+            calendar: 'ASD',
+            color: 'blue',
+            date: '2018-03-21'
+        },
+        {
+            eventName: 'ASD session in 4B - Krishna and Prateek',
+            calendar: 'ASD',
+            color: 'blue',
+            date: '2018-03-21'
+        },
+        {
+            eventName: 'ASD session in 4C - Vamsi and Jerry',
+            calendar: 'ASD',
+            color: 'blue',
+            date: '2018-03-21'
+        },
 
-        { eventName: 'ASD session in 6A - Vamsi and Jerry', calendar: 'Work', color: 'orange', date: '2018-03-28' },
-        { eventName: 'ASD session in 6B - Somya and Sandra', calendar: 'Work', color: 'orange', date: '2018-03-28' },
-        { eventName: 'ASD session in 6C - Krishna and Prateek', calendar: 'Work', color: 'orange', date: '2018-03-28' },
+        {
+            eventName: 'ASD session in 6A - Vamsi and Jerry',
+            calendar: 'ASD',
+            color: 'blue',
+            date: '2018-03-28'
+        },
+        {
+            eventName: 'ASD session in 6B - Somya and Sandra',
+            calendar: 'ASD',
+            color: 'blue',
+            date: '2018-03-28'
+        },
+        {
+            eventName: 'ASD session in 6C - Krishna and Prateek',
+            calendar: 'ASD',
+            color: 'blue',
+            date: '2018-03-28'
+        },
 
-        { eventName: 'ASD session in 4A - Krishna and Prateek', calendar: 'Work', color: 'orange', date: '2018-04-16' },
-        { eventName: 'ASD session in 4B - Vamsi and Jerry', calendar: 'Work', color: 'orange', date: '2018-04-16' },
-        { eventName: 'ASD session in 4C - Somya and Sandra', calendar: 'Work', color: 'orange', date: '2018-04-16' },
+        {
+            eventName: 'ASD session in 4A - Krishna and Prateek',
+            calendar: 'ASD',
+            color: 'blue',
+            date: '2018-04-16'
+        },
+        {
+            eventName: 'ASD session in 4B - Vamsi and Jerry',
+            calendar: 'ASD',
+            color: 'blue',
+            date: '2018-04-16'
+        },
+        {
+            eventName: 'ASD session in 4C - Somya and Sandra',
+            calendar: 'ASD',
+            color: 'blue',
+            date: '2018-04-16'
+        },
 
-        { eventName: 'ASD session in 6A - Somya and Sandra', calendar: 'Work', color: 'orange', date: '2018-04-23' },
-        { eventName: 'ASD session in 6B - Krishna and Prateek', calendar: 'Work', color: 'orange', date: '2018-04-23' },
-        { eventName: 'ASD session in 6C - Vamsi and Jerry', calendar: 'Work', color: 'orange', date: '2018-04-23' },
+        {
+            eventName: 'ASD session in 6A - Somya and Sandra',
+            calendar: 'ASD',
+            color: 'blue',
+            date: '2018-04-23'
+        },
+        {
+            eventName: 'ASD session in 6B - Krishna and Prateek',
+            calendar: 'ASD',
+            color: 'blue',
+            date: '2018-04-23'
+        },
+        {
+            eventName: 'ASD session in 6C - Vamsi and Jerry',
+            calendar: 'ASD',
+            color: 'blue',
+            date: '2018-04-23'
+        },
 
 
     ];

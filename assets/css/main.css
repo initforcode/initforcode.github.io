@@ -2413,7 +2413,7 @@ body {
     transform: translate3d(0, 0, 0);
     width: 420px;
     margin: 0 auto;
-    height: 570px;
+    height: 640px;
     overflow: hidden;
 }
 
@@ -2572,7 +2572,7 @@ body {
 .details {
     position: relative;
     width: 420px;
-    height: 100px;
+    height: 75px;
     background: rgba(164, 164, 164, 1);
     margin-top: 5px;
     border-radius: 4px;
@@ -2604,7 +2604,7 @@ body {
 }
 
 .events {
-    height: 100px;
+    height: 75px;
     padding: 7px 0;
     overflow-y: auto;
     overflow-x: hidden;
