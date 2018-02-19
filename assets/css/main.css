@@ -2666,7 +2666,7 @@ body {
 }
 
 .regclosed {
-    color: #9e9e9e;
+    color: #9e9e9e !important;
     padding-top: 16px;
     font-size: 14px;
 }
