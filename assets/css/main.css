@@ -2665,6 +2665,12 @@ body {
     background-color: #0F1012;
 }
 
+.regclosed {
+    color: #9e9e9e;
+    padding-top: 16px;
+    font-size: 14px;
+}
+
 .phone, .phone-alt {
     font-size: 14px;
     font-weight: bold;
